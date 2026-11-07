@@ -1,0 +1,29 @@
+CAS3401-LAB-08, changements et sauvegardes d'e-RECETTES
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  mises_en_production_2025.csv   les 14 mises en production de 2025
+  demandes_de_changement.csv     les demandes approuvées
+  journal_base_extrait.csv       extrait du journal de la base
+  journal_sauvegardes_2025.csv   une ligne par jour de sauvegarde
+  MANIFESTE_SHA256.txt           empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Rapprocher les mises en production des demandes.
+
+3. Repérer dans le journal de la base une modification hors mise en production.
+
+4. Compter les échecs de sauvegarde et la plus longue suite : =SI(B2="ECHEC";C1+1;0).
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

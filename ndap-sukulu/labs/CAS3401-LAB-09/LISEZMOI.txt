@@ -1,0 +1,26 @@
+CAS3401-LAB-09, tester des contrôles d'application par la population
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  mandats_2025.csv   les 9 611 mandats de 2025 (extraits le 23/03/2026)
+  MANIFESTE_SHA256.txtempreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Liquidation > engagement : =SI(E2>D2;"ECART";"").
+
+3. Mandats de plus de 50 000 000 FCFA sans visa : =SI(ET(F2>50000000;G2<>"OUI");"SANS VISA";"").
+
+4. Doublons : clé fournisseur|montant, puis fournisseur|montant|facture normalisée (sans espaces, tirets ni « bis »).
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

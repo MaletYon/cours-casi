@@ -1,0 +1,9 @@
+Risque;Intitulé;Risque inhérent (1-3);Risque lié au contrôle (1-3)
+R1;Un agent parti agit encore;3;3
+R2;Un agent émet seul un mandat;3;2
+R3;Le bénéficiaire est changé;3;3
+R4;Une facture est payée deux fois;3;2
+R5;Le mandat n'est pas justifié;2;1
+R6;Une opération ne laisse pas de trace;2;1
+R7;Une anomalie de fin de gestion passe;2;3
+R8;Les traces disparaissent;2;2

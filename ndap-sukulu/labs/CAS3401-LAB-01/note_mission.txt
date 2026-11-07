@@ -1,0 +1,7 @@
+Mission du CONSUPE à la DAF du MINÉQUIR, exercice 2025.
+(Document fictif établi pour le cours CAS3401. Noms, dates, adresses et montants fictifs.)
+
+Ordre de mission du 16 mars 2026. Fondement : décret n° 2013/287, art. 2, al. 3 et 4.
+Règle de l'équipe : la priorité d'un risque est le produit du risque inhérent et
+du risque lié au contrôle. Les risques de priorité 2 ou moins sont testés par un
+simple cheminement ; les autres par échantillon ou analyse de la population.

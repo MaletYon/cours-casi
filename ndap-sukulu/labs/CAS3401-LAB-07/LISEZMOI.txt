@@ -1,0 +1,27 @@
+CAS3401-LAB-07, loi de Benford et fractionnement
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  bons_commande_2025.csv   les 500 bons de commande de 2025
+  regle_seuil.txt          le seuil de mise en concurrence
+  MANIFESTE_SHA256.txt     empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Compter les bons entre 4 800 000 et 4 999 999 FCFA, par fournisseur.
+
+3. Extraire le premier chiffre : =GAUCHE(TEXTE(D2;"0");1)*1.
+
+4. Comparer la proportion observée du chiffre 4 à LOG10(1+1/4).
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

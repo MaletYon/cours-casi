@@ -1,0 +1,7 @@
+Procès-verbal de remise d'extraction, CAPNO, 6 mai 2026.
+(Document fictif établi pour le cours CAS3401. Noms, dates, adresses et montants fictifs.)
+
+Fichier : paie_2025-12_extraction2_devant_auditeur.csv
+Extraction faite par l'informaticien de la CAPNO devant M. HAMADOU, auditeur interne.
+Empreinte SHA-256 calculée à la remise : 9f67e30f16883bb043fa20e890f46071573e2c7e195777adcccf5f1431318585
+Signatures : l'informaticien ; M. HAMADOU.

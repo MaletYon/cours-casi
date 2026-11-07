@@ -1,0 +1,4 @@
+Application;Fonction;Propriétaire;Flux sortant
+SIDÉPENSE;Engagement, liquidation, ordonnancement, fournisseurs;DAF;Mandats vers le poste comptable (fichier quotidien)
+Logiciel du poste comptable;Paiement, comptabilité;Poste comptable;Ordres de virement vers les banques
+Fichier du personnel;Mutations, départs;Direction des ressources humaines;Aucun flux vers SIDÉPENSE

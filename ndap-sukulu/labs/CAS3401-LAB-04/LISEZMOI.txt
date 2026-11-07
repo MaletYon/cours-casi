@@ -1,0 +1,27 @@
+CAS3401-LAB-04, chronologie du double paiement
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  journal_sidepense_2025-12.csv   journal des opérations de décembre 2025 (extrait le 23/03/2026)
+  decisions_rh.txt                décision de mutation de M. MBARGA
+  MANIFESTE_SHA256.txt            empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Filtrer le journal sur BATIRURAL et sur les montants de 187450000.
+
+3. Filtrer sur l'utilisateur mbarga.j, puis sur les ordonnancements hors heures (avant 7 h ou après 20 h).
+
+4. Reconstituer la chronologie, en séparant les faits de leur interprétation.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.

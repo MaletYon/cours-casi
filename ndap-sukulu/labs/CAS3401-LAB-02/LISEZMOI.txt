@@ -1,0 +1,26 @@
+CAS3401-LAB-02, évaluer le contrôle interne du circuit de la dépense
+
+Les pièces du lab se trouvent dans le dossier preuves, en lecture seule, et
+une copie de travail modifiable dans le dossier travail (ouvert au démarrage).
+  evaluation_sci_minequir.xlsx   QCI, résultats des tests, regroupement des déficiences
+  MANIFESTE_SHA256.txt           empreintes de référence (preuves)
+
+Marche à suivre.
+
+1. Vérifier l'intégrité avant toute analyse. Ouvrez un terminal, puis tapez :
+       cd ~/preuves
+       sha256sum -c MANIFESTE_SHA256.txt
+   Chaque fichier doit afficher OK.
+
+2. Coter chaque contrôle OUI, NON ou NEK à partir de l'onglet TESTS.
+
+3. Comparer les déclarations du QCI aux résultats.
+
+4. Classer les déficiences et situer le circuit sur l'échelle de maturité.
+
+5. Répondre. Saisissez vos réponses dans le volet Points de contrôle de la
+   page du lab, puis enregistrez. Nombres avec un point ou une virgule
+   décimale ; codes et listes comme indiqué dans chaque question. Quand vous
+   avez terminé, cliquez sur Terminer et corriger pour obtenir votre note.
+
+Toute votre activité dans le terminal est journalisée.
