@@ -1,0 +1,277 @@
+% ============================================================================
+% Fichier  : partie4/P04_C13_gouvernance_projets_prestataires.tex
+% Titre    : Gouvernance, Projets Numériques et Prestataires
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : INF3226 C17, C19, C24 (resserrés) ; COBIT 2019 (gouvernance,
+% projets) ; GUID 5100 ; loi n° 2024/017 (décrite sans citation d'article).
+% Faits e-RECETTES établis ici : marché de 640 000 000 FCFA attribué à
+% NUMÉRIKA SARL en mars 2024 ; mise en service le 2 janvier 2025 ; PV de
+% réception du 15 janvier 2025 signé avec 47 anomalies ouvertes, dont 9
+% bloquantes ; aucun schéma directeur ; pas de clause de réversibilité ni
+% de propriété des données ; hébergement hors du pays ; compte du
+% prestataire avec droits d'administration en production ; 12 400
+% contribuables enregistrés (données personnelles).
+% ============================================================================
+
+\chapter{Gouvernance, Projets Numériques et Prestataires}
+\label{chap:gouvernance}
+\chaptermark{Gouvernance, projets, prestataires}
+
+\epigraph{%
+    « On peut confier un service~; on ne confie pas sa responsabilité. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitre~\ref{chap:sci}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Évaluer la gouvernance de la fonction informatique d'une
+          administration~: schéma directeur, organisation, pilotage.
+    \item Auditer un projet numérique et le marché qui le porte, de
+          l'expression du besoin à la réception.
+    \item Évaluer les contrats avec les prestataires~: propriété des
+          données, réversibilité, accès, niveaux de service.
+    \item Repérer les risques de l'hébergement externe.
+    \item Situer les obligations de protection des données personnelles.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Les déficiences des chapitres précédents ont souvent une cause commune,
+plus haut~: un système acheté sans besoin écrit, reçu sans tests, confié
+à un prestataire sans contrat solide, piloté par personne. Ce chapitre
+remonte à cette cause, sur le dossier e-RECETTES.
+
+\separateur
+
+% ============================================================================
+\section{La gouvernance de la fonction informatique}
+\label{sec:c13-gouvernance}
+% ============================================================================
+
+\begin{tableaucours}{L{3.2cm}L{4.4cm}L{4.6cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Question} &
+    \tableauHeader{Pièce}
+}
+Schéma directeur & Les projets répondent-ils à des objectifs écrits~? &
+Schéma directeur adopté, suivi annuel \\
+Organisation & Qui décide, qui exécute, qui contrôle~? & Organigramme,
+décisions, propriétaires d'application \\
+Pilotage & Un comité suit-il les projets et les risques~? & Comptes rendus
+\\
+Budget & Le coût complet du SI est-il connu~? & Budget informatique,
+contrats \\
+Compétences & L'entité peut-elle contrôler ses prestataires~? & Effectifs,
+formations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.1. Les éléments de la gouvernance
+de la fonction informatique}\end{center}
+
+COBIT~2019 sépare la \emph{gouvernance} (évaluer, diriger, surveiller),
+qui relève de la direction, de la \emph{gestion}, qui relève des
+services~\cite{isaca2018cobitintro}. Dans une administration, la
+gouvernance revient à l'ordonnateur et à la direction~; elle ne peut pas
+être laissée au prestataire.
+
+\separateur
+
+% ============================================================================
+\section{Auditer un projet numérique}
+\label{sec:c13-projet}
+% ============================================================================
+
+\subsection{Le cycle du projet et ses contrôles}
+
+\begin{tableaucours}{L{2.6cm}L{5.0cm}L{4.6cm}}{%
+    \tableauHeader{Phase} &
+    \tableauHeader{Contrôle attendu} &
+    \tableauHeader{Pièce}
+}
+Besoin & Besoin écrit par le métier, rattaché au schéma directeur & Note
+de besoin, étude d'opportunité \\
+Marché & Cahier des charges qui inclut les contrôles internes attendus,
+la sécurité, la réversibilité & Dossier d'appel d'offres, contrat \\
+Réalisation & Suivi par un comité, avec les risques & Comptes rendus \\
+Recette & Tests par le métier, anomalies bloquantes levées avant
+réception & Cahier de recette, PV de réception \\
+Mise en service & Reprise des données contrôlée, formation & PV de reprise,
+totaux de contrôle \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.2. Les contrôles du cycle d'un
+projet}\end{center}
+
+\begin{boxscenario}{Dossier e-RECETTES. Une réception trop tôt}
+\textbf{Constatation.} Le marché de 640\,000\,000~FCFA a été attribué à
+NUMÉRIKA~SARL en mars~2024. e-RECETTES est en service depuis le
+2~janvier~2025. Le procès-verbal de réception, signé le 15~janvier~2025,
+mentionne 47 anomalies ouvertes, dont 9 bloquantes. Le cahier des charges
+ne prévoit ni contrôle des annulations, ni numérotation continue des
+quittances. Il n'existe pas de schéma directeur.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Les déficiences constatées aux
+Chapitres~\ref{chap:exploitation} et~\ref{chap:applications} étaient
+inscrites dans le projet~: ce qui n'est pas demandé au cahier des
+charges n'est pas livré, et ce qui est reçu avec des anomalies
+bloquantes est payé sans être conforme.
+\end{boxscenario}
+
+\begin{boxalert}
+\textbf{Violation typique.} Prononcer la réception d'un système pour
+respecter le calendrier budgétaire, avec des anomalies bloquantes
+ouvertes.
+
+\smallskip
+\textbf{Règle~:} une réception avec réserves exige un plan de levée daté
+et une retenue sur paiement~; une réception sans réserve d'un système
+défaillant engage la responsabilité de celui qui la signe.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Les prestataires et l'hébergement externe}
+\label{sec:c13-prestataires}
+% ============================================================================
+
+\begin{tableaucours}{L{3.4cm}L{8.8cm}}{%
+    \tableauHeader{Clause} &
+    \tableauHeader{Ce que l'auditeur vérifie}
+}
+Propriété des données & Les données appartiennent à l'administration, qui
+peut les obtenir à tout moment dans un format exploitable \\
+Réversibilité & Les conditions de reprise du service par l'administration
+ou un autre prestataire sont écrites \\
+Accès du prestataire & Ses accès en production sont nominatifs, limités,
+journalisés, et ouverts sur demande \\
+Niveaux de service & Disponibilité, délais de correction, pénalités \\
+Localisation & Lieu d'hébergement connu et compatible avec les obligations
+légales \\
+Droit d'audit & L'administration et ses contrôleurs peuvent auditer le
+prestataire \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~13.3. Les clauses à vérifier dans un
+contrat de prestation informatique}\end{center}
+
+\begin{boxscenario}{Dossier e-RECETTES. Le contrat de NUMÉRIKA}
+\textbf{Constatation.} Le contrat ne contient ni clause de propriété des
+données, ni clause de réversibilité, ni droit d'audit. Les données sont
+hébergées hors du pays. Le prestataire dispose d'un compte
+d'administration permanent en production (Chapitre~\ref{chap:exploitation}).
+
+\medskip
+\textbf{Analyse} (confiance élevée). La recette des finances dépend
+entièrement de NUMÉRIKA pour accéder à ses propres données. Le décret
+n°~2013/287 oblige les responsables de l'entité auditée à présenter les
+pièces~; s'ils ne peuvent pas les obtenir de leur prestataire, c'est
+l'entité qui est en défaut.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Les données personnelles}
+\label{sec:c13-donnees}
+% ============================================================================
+
+Les systèmes financiers publics traitent des données personnelles~: agents
+(paie), contribuables, usagers, fournisseurs personnes physiques. La loi
+n°~2024/017 du 23~décembre~2024 encadre ces traitements au Cameroun. Le
+cours n'en cite pas les articles~; l'auditeur les lit avant de s'y
+référer. Il vérifie au moins que les traitements sont recensés, que
+l'accès aux données est limité aux personnes qui en ont besoin, et que
+les transferts vers un hébergeur, en particulier hors du pays, sont
+encadrés.
+
+\begin{boxinfo}
+\textbf{Les extractions de l'auditeur sont aussi des données
+personnelles.} Le fichier de paie de la CAPNO, avec ses 4\,312 noms et
+comptes bancaires, doit être protégé par le vérificateur avec le même
+soin qu'il l'exige de l'entité (Chapitre~\ref{chap:normes}).
+\end{boxinfo}
+
+\begin{boxlecture}{Gouvernance et projet e-RECETTES}
+\textbf{Constatation.} Sur huit contrôles attendus (schéma directeur,
+cahier des charges complet, comité de suivi, réception sans anomalie
+bloquante, propriété des données, réversibilité, accès du prestataire
+encadré, droit d'audit), un seul fonctionne~: un comité de suivi s'est
+réuni trois fois pendant le projet.
+
+\textbf{Analyse} (confiance élevée). La cause première des déficiences
+d'e-RECETTES est dans la gouvernance du projet.
+
+\medskip
+\hfill\conformite{1}{8}{0}
+\end{boxlecture}
+
+\begin{boxmetier}{Vérificateur}
+Pour tout système acquis par marché, demandez le cahier des charges et le
+procès-verbal de réception. Comparez les contrôles demandés aux contrôles
+livrés~: l'écart explique souvent les déficiences.
+\end{boxmetier}
+
+\begin{boxmetier}{Inspecteur}
+Une réception signée avec des anomalies bloquantes ouvertes est un fait
+précis, daté et signé. Elle mérite une question écrite à son signataire.
+\end{boxmetier}
+
+\begin{boxmetier}{Contrôleur financier}
+Avant de viser le paiement d'un solde de marché informatique, demandez le
+procès-verbal de réception et la liste des réserves levées.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{La gouvernance reste à l'administration}~: schéma
+          directeur, propriétaires, comité, budget, compétences.
+    \item \textbf{Le projet porte les contrôles}~: ce qui n'est pas au
+          cahier des charges n'est pas livré.
+    \item \textbf{La réception engage}~; des anomalies bloquantes ouvertes
+          imposent réserves, plan et retenue.
+    \item \textbf{Six clauses de contrat}~: données, réversibilité, accès,
+          niveaux de service, localisation, droit d'audit.
+    \item \textbf{Les données personnelles} des systèmes financiers sont
+          encadrées par la loi n°~2024/017, y compris chez l'auditeur.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.1. Gouvernance ou gestion~? \niveaubase}]
+Classez~: (a) adopter un schéma directeur~; (b) faire les sauvegardes~;
+(c) décider d'externaliser l'hébergement~; (d) attribuer un profil.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.2. Un cahier des charges \niveaumoyen}]
+Rédigez les six exigences de contrôle interne que le cahier des charges
+d'e-RECETTES aurait dû contenir, à partir des
+Chapitres~\ref{chap:acces} à~\ref{chap:applications}.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.3. Le contrat \niveaumoyen}]
+Rédigez la recommandation sur le contrat de NUMÉRIKA, avec les clauses à
+ajouter par avenant et l'ordre de priorité.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~13.4. Les causes \niveauexpert}]
+Reliez chaque déficience d'e-RECETTES relevée aux Chapitres~\ref{chap:exploitation}
+et~\ref{chap:applications} à une défaillance du projet ou du contrat, et
+dites quelle recommandation de gouvernance les traiterait toutes.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Toutes les pièces sont en place. Le
+Chapitre~\ref{chap:cas-integrateur} les réunit dans une mission
+complète, conduite en équipe en deux heures.
+\end{boxinfo}

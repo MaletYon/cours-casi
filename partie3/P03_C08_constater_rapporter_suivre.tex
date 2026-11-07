@@ -1,0 +1,737 @@
+% ============================================================================
+% Fichier  : partie3/P03_C08_constater_rapporter_suivre.tex
+% Titre    : Mesurer, Conclure, Rapporter, Suivre
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.2 -- novembre 2026 (réécriture étoffée, alignée sur INF3226
+%            C11 et C12, A0 et A1)
+% ============================================================================
+% Sources : A1 (hal-05701270) : mu, U, H, cas limites, quadrant, divergence ;
+% A0 (hal-05701007) : non-conformité connue / inconnue, axiomes 5 et 6 ;
+% Shannon (1948), Kullback et Leibler (1951), Cover et Thomas (2006).
+% Faits MINÉQUIR (répondants, mars 2026, 20 réponses par domaine) :
+%   D1 Accès 11/3/6 (0,55 ; 0,30 ; 1,41) conformité opaque ;
+%   D2 Fournisseurs 6/12/2 (0,30 ; 0,10 ; 1,30) non-conformité claire ;
+%   D3 Circuit du mandat 15/3/2 (0,75 ; 0,10 ; 1,05) conformité claire ;
+%   D4 Exploitation 8/4/8 (0,40 ; 0,40 ; 1,52) non-conformité opaque.
+% Audit de suivi de novembre 2026, D1 : 17/2/1 (0,85 ; 0,05 ; 0,75) ;
+%   D_KL = 0,346 bit (0,247 avec lissage de Laplace).
+% Rapport provisoire 17/04/2026 ; réponse DAF 30/04/2026 ; définitif
+% 15/05/2026 ; recommandations R-01 à R-06 (LAB-10).
+% ============================================================================
+
+\chapter[Mesurer, conclure, rapporter, suivre]{Mesurer, Conclure, Rapporter, Suivre}
+\label{chap:constater}
+\chaptermark{Conclure, rapporter, suivre}
+
+\epigraph{%
+    « On ne lit jamais l'entropie sans l'incertitude,\\
+    ni l'incertitude sans la conformité. »%
+}{Règle du cours, d'après A1}
+
+\niveauChapitre{Intermédiaire}{Chapitre~\ref{chap:preuve}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Calculer et interpréter les trois mesures $\mu$, $U$ et $H$ d'un
+          domaine, et en connaître les cas limites.
+    \item Décomposer l'entropie en part d'ignorance et part de désaccord.
+    \item Situer un domaine dans le quadrant conformité~$\times$~incertitude
+          et en déduire l'action.
+    \item Appliquer la règle de décision du cours~: $U$ d'abord, $\mu$
+          ensuite, $H$ pour contrôler.
+    \item Rédiger une observation en sept éléments, et la relier au constat
+          en cinq éléments.
+    \item Conduire la procédure contradictoire et rédiger le rapport.
+    \item Suivre les recommandations et comparer deux cycles par la
+          divergence de Kullback-Leibler.
+    \item Préserver la preuve quand le constat peut fonder une suite.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Les cotes \OUI{}, \NON{} et \NEK{} sont des résultats de travail. Pour
+conclure, il faut les lire ensemble, domaine par domaine, sans confondre ce
+que l'on sait et ce que l'on ignore. L'article A1 donne pour cela trois
+mesures et un quadrant~\cite{minka2026nek}~; l'article A0, la distinction
+entre non-conformité connue et non-conformité
+inconnue~\cite{minka2026auditologie}. Ce chapitre les applique au dossier
+MINÉQUIR, puis suit le rapport jusqu'au plan d'action et au cycle suivant.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Trois mesures (section~\ref{sec:c08-mesures}) et la décomposition de
+          l'entropie (section~\ref{sec:c08-decomp}).
+    \item Le quadrant et la règle de décision (sections~\ref{sec:c08-quadrant}
+          et~\ref{sec:c08-regle}).
+    \item Le constat et l'observation (section~\ref{sec:c08-constat}).
+    \item Le rapport et la procédure contradictoire
+          (sections~\ref{sec:c08-rapport} et~\ref{sec:c08-contradictoire}).
+    \item Suivre les recommandations et comparer les cycles
+          (sections~\ref{sec:c08-suivi} et~\ref{sec:c08-cycles}).
+    \item Quand le constat devient une affaire (section~\ref{sec:c08-suites}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Trois mesures}
+\label{sec:c08-mesures}
+% ============================================================================
+
+\subsection{Les définitions}
+
+Pour un ensemble de réponses (une question posée à plusieurs répondants, ou
+toutes les questions d'un domaine), on note $p(\OUI)$, $p(\NON)$ et
+$p(\NEK)$ les parts de chaque réponse.
+
+\begin{boxdef}
+\termecle{Taux de conformité}\index{taux de conformité}~: $\mu = p(\OUI)$.
+
+\medskip
+\termecle{Taux d'incertitude}\index{taux d'incertitude}~: $U = p(\NEK)$.
+
+\medskip
+\termecle{Entropie}\index{entropie}~: dispersion des réponses, en bits,
+\[
+    H = -\sum_{m \in \{\OUI, \NON, \NEK\}} p(m) \log_2 p(m),
+    \qquad 0 \leq H \leq \log_2 3 \approx 1{,}585,
+\]
+avec la convention $0 \log_2 0 = 0$.
+\end{boxdef}
+{\small\itshape Définitions de l'article A1~\cite{minka2026nek}~;
+l'entropie est celle de Shannon~\cite{shannon1948}.}
+
+\medskip
+
+L'entropie est nulle quand tous répondent la même chose, maximale quand les
+trois réponses sont également fréquentes. Au niveau d'un domaine, on agrège
+les réponses de toutes ses questions avant de calculer~: les mesures se
+recalculent toujours à partir des réponses, jamais comme moyenne des
+mesures du niveau inférieur.
+
+\subsection{Quatre cas limites}
+
+\begin{tableaucours}{L{4.6cm}cccL{3.4cm}}{%
+    \tableauHeader{Situation} &
+    \tableauHeader{$\mu$} & \tableauHeader{$U$} & \tableauHeader{$H$} &
+    \tableauHeader{Lecture}
+}
+Tous répondent \OUI{} & 1 & 0 & 0 & Conformité certaine \\
+Tous répondent \NON{} & 0 & 0 & 0 & Non-conformité certaine \\
+Tous répondent \NEK{} & 0 & 1 & 0 & \textbf{Ignorance unanime} \\
+Réponses également réparties & $1/3$ & $1/3$ & 1,585 & Dispersion maximale \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.1. Les cas limites des trois
+mesures (d'après~\cite{minka2026nek})}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Conclure «~certitude~» parce que l'entropie est
+nulle.
+
+\smallskip
+\textbf{Règle~:} une entropie nulle signifie seulement que tous ont donné la
+même réponse. Si cette réponse est \NEK{}, personne ne sait rien~: $H = 0$ et
+$U = 1$. On ne lit jamais $H$ sans $U$ ni $\mu$.
+\end{boxalert}
+
+\subsection{Les quatre domaines du MINÉQUIR}
+
+En mars~2026, la vérificatrice a posé cinq questions par domaine aux quatre
+interlocuteurs du Chapitre~\ref{chap:preuve}, soit vingt réponses par
+domaine.
+
+\begin{tableaucours}{L{3.6cm}cccccc}{%
+    \tableauHeader{Domaine} &
+    \tableauHeader{\OUI{}} & \tableauHeader{\NON{}} & \tableauHeader{\NEK{}} &
+    \tableauHeader{$\mu$} & \tableauHeader{$U$} & \tableauHeader{$H$}
+}
+D1 Accès & 11 & 3 & 6 & 0,55 & 0,30 & 1,41 \\
+D2 Fichier des fournisseurs & 6 & 12 & 2 & 0,30 & 0,10 & 1,30 \\
+D3 Circuit du mandat & 15 & 3 & 2 & 0,75 & 0,10 & 1,05 \\
+D4 Exploitation & 8 & 4 & 8 & 0,40 & 0,40 & 1,52 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.2. Les trois mesures des quatre
+domaines (réponses des répondants, mars~2026)}\end{center}
+
+\begin{boxoutils}{Calculer les trois mesures}
+Dans un tableur, avec les effectifs en B2 (\OUI{}), C2 (\NON{}), D2
+(\NEK{})~:
+\begin{lstlisting}
+E2 (mu) : =B2/SOMME(B2:D2)
+F2 (U)  : =D2/SOMME(B2:D2)
+G2 (H)  : =-SOMME(SI(B2:D2>0;B2:D2/SOMME(B2:D2)*LOG(B2:D2/SOMME(B2:D2);2);0))
+\end{lstlisting}
+La dernière formule se valide comme formule matricielle dans les tableurs
+qui l'exigent.
+\end{boxoutils}
+
+\separateur
+
+% ============================================================================
+\section{Décomposer l'entropie}
+\label{sec:c08-decomp}
+% ============================================================================
+
+Une entropie élevée peut venir de deux choses très différentes~: beaucoup de
+répondants ne savent pas (ignorance), ou ceux qui savent ne sont pas
+d'accord (désaccord entre \OUI{} et \NON{}). On ne traite pas l'ignorance
+comme le désaccord.
+
+On regroupe les réponses en deux classes~: \NEK{} (probabilité $U$) et
+«~réponse informée~» (\OUI{} ou \NON{}, probabilité $1 - U$). Dans la seconde
+classe, la part des \OUI{} vaut $\mu / (1 - U)$. La règle de chaînage de
+l'entropie~\cite{shannon1948,cover2006elements} donne, pour $U < 1$~:
+\[
+    H = \underbrace{H_b(U)}_{\text{ignorance}} +
+        \underbrace{(1 - U)\, H_b\!\left(\frac{\mu}{1 - U}\right)}_{\text{désaccord}},
+    \qquad H_b(x) = -x\log_2 x - (1-x)\log_2(1-x).
+\]
+
+\begin{tableaucours}{L{3.6cm}ccccL{2.8cm}}{%
+    \tableauHeader{Domaine} &
+    \tableauHeader{$H$} &
+    \tableauHeader{$H_b(U)$} &
+    \tableauHeader{Désaccord} &
+    \tableauHeader{Part d'ignorance} &
+    \tableauHeader{Lecture}
+}
+D1 Accès & 1,41 & 0,88 & 0,53 & 63~\% & Surtout ignorance \\
+D2 Fournisseurs & 1,30 & 0,47 & 0,83 & 36~\% & Surtout désaccord \\
+D4 Exploitation & 1,52 & 0,97 & 0,55 & 64~\% & Surtout ignorance \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.3. Décomposition de l'entropie de
+trois domaines}\end{center}
+
+\begin{boxlecture}{Deux entropies voisines, deux démarches}
+D1 et D2 ont des entropies proches (1,41 et 1,30), pour des raisons
+opposées.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Dans D1, près des deux tiers de
+l'entropie viennent de l'ignorance~: personne ne sait vraiment qui
+désactive les comptes~; on cherche la preuve. Dans D2, la dispersion vient
+du désaccord~: le DAF croit les RIB contrôlés, le chef de la liquidation
+sait qu'ils ne le sont pas~; on confronte les deux versions à la trace. Le
+même chiffre appelle deux démarches.
+
+\medskip
+\hfill\lecture{0{,}55}{0{,}30}{1{,}41}
+\end{boxlecture}
+
+\separateur
+
+% ============================================================================
+\section{Le quadrant conformité × incertitude}
+\label{sec:c08-quadrant}
+% ============================================================================
+
+L'article A1 propose de lire ensemble la conformité et l'incertitude dans un
+quadrant à quatre régions, chacune appelant une action
+différente~\cite{minka2026nek}. Le cours retient, par convention, un seuil de
+0,5 pour $\mu$ et de 0,20 pour $U$~; chaque mission peut fixer les siens, à
+condition de les écrire dans le programme de travail.
+
+\noindent\begin{minipage}{\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\fill[green!18] (3,0) rectangle (6,2);
+\fill[red!15] (0,0) rectangle (3,2);
+\fill[orange!25] (3,2) rectangle (6,5);
+\fill[orange!15] (0,2) rectangle (3,5);
+\draw[thick, color=CouleurPrimaire] (0,0) rectangle (6,5);
+\draw[dashed, color=CouleurPrimaire] (3,0) -- (3,5);
+\draw[dashed, color=CouleurPrimaire] (0,2) -- (6,2);
+\node[align=center, font=\footnotesize\bfseries] at (1.5,0.45) {Non-conformité claire};
+\node[align=center, font=\footnotesize\bfseries] at (4.5,0.45) {Conformité claire};
+\node[align=center, font=\footnotesize\bfseries] at (1.5,4.6) {Non-conformité opaque};
+\node[align=center, font=\footnotesize\bfseries] at (4.5,4.6) {Conformité opaque};
+\foreach \x/\y/\t in {3.3/3.0/D1, 1.8/1.0/D2, 4.5/1.0/D3, 2.4/4.0/D4}
+    \fill[CouleurAccent] (\x,\y) circle (2.5pt) node[above right, font=\scriptsize\bfseries] {\t};
+\node[font=\scriptsize] at (3,-0.3) {0,5};
+\node[font=\scriptsize] at (-0.35,2) {0,20};
+\node[font=\small] at (3,-0.8) {Taux de conformité $\mu$};
+\node[font=\small, rotate=90] at (-0.9,2.5) {Taux d'incertitude $U$};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~8.1. Le quadrant diagnostique et les
+quatre domaines du MINÉQUIR (d'après~\cite{minka2026nek}~; seuils du cours~;
+échelle verticale $U \times 10$)}\end{center}
+\end{minipage}
+
+\medskip
+
+\begin{tableaucours}{L{3.4cm}L{4.0cm}L{4.8cm}}{%
+    \tableauHeader{Région} &
+    \tableauHeader{Situation} &
+    \tableauHeader{Action}
+}
+Conformité claire & On s'accorde, avec assurance, sur la conformité &
+Validation courante \\
+Non-conformité claire & On s'accorde, avec assurance, sur la
+non-conformité & Correctifs \\
+\textbf{Conformité opaque} & Des \OUI{} nombreux, mais une part importante
+de \NEK{} & \textbf{Alerte prioritaire}~: rechercher la preuve avant toute
+conclusion \\
+Non-conformité opaque & Des \NON{} nombreux et une part importante de
+\NEK{} & Rechercher la preuve et engager des premiers correctifs \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.4. Les quatre régions et leurs
+actions (d'après~\cite{minka2026nek})}\end{center}
+
+La conformité opaque est la région la plus dangereuse~: une grille binaire
+la confond avec la conformité claire. C'est le domaine D1 du MINÉQUIR, celui
+du double paiement. L'article A0 dit la même chose dans son
+vocabulaire~: la \emph{non-conformité connue} appelle des correctifs~; la
+\emph{non-conformité inconnue}, que cachent les régions opaques, appelle
+d'abord des investigations~\cite{minka2026auditologie}.
+
+\separateur
+
+% ============================================================================
+\section{La règle de décision du cours}
+\label{sec:c08-regle}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Conclure sur un domaine.}
+\begin{enumerate}
+    \item \textbf{$U$ d'abord.} Si $U \geq 0{,}20$, le domaine est opaque~:
+          aucune conclusion de conformité n'est possible. L'auditeur
+          recherche la preuve, ou conclut \emph{sur l'opacité elle-même}.
+    \item \textbf{$\mu$ ensuite.} Si $U < 0{,}20$, le domaine est clair~:
+          conforme si $\mu \geq 0{,}5$, non conforme sinon.
+    \item \textbf{$H$ pour contrôler.} Une entropie élevée avec $U$ faible
+          signale un désaccord~: le domaine n'est pas homogène~; on le
+          décompose avant de conclure (Chapitre~\ref{chap:preparer}).
+    \item \textbf{Les cotes de l'auditeur prévalent.} Les mesures des
+          répondants orientent~; la conclusion repose sur les contrôles
+          cotés par l'auditeur, preuve à l'appui (Chapitre~\ref{chap:preuve}).
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxlecture}{Les quatre domaines du MINÉQUIR}
+\textbf{Analyse} (confiance moyenne).
+\begin{itemize}
+    \item \emph{D1}~: conformité opaque~; alerte prioritaire. Les tests
+          (Chapitre~\ref{chap:acces}) établiront un seul contrôle sur six
+          conforme~: l'opacité cachait une non-conformité.
+    \item \emph{D2}~: non-conformité claire~; correctifs immédiats sur les
+          RIB.
+    \item \emph{D3}~: conformité claire selon les répondants~; mais
+          l'auditeur a coté \NON{} le blocage des doublons (règle~4)~: la
+          conclusion suit les cotes.
+    \item \emph{D4}~: non-conformité opaque~; investigations et premiers
+          correctifs.
+\end{itemize}
+\end{boxlecture}
+
+\begin{boxalert}
+\textbf{Violation typique.} Moyenner les quatre domaines pour donner une
+note globale («~le circuit est conforme à 50~\%~»).
+
+\smallskip
+\textbf{Règle~:} une moyenne efface les régions du quadrant. Le rapport
+présente chaque domaine dans sa région.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Le constat en cinq éléments}
+\label{sec:c08-constat}
+% ============================================================================
+
+\subsection{Le constat}
+
+\begin{tableaucours}{L{2.6cm}L{4.4cm}L{5.2cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Question} &
+    \tableauHeader{Règle de rédaction}
+}
+Condition & Qu'a-t-on constaté~? & Un fait vérifiable, chiffré, daté, avec
+sa source et sa cote \\
+Critère & Que fallait-il~? & La règle citée exactement, avec sa force
+(Chapitre~\ref{chap:normes}) \\
+Cause & Pourquoi l'écart~? & Ce qui, dans le dispositif, l'explique~; la
+cause appelle la recommandation \\
+Effet & Qu'est-ce que cela produit ou permet~? & Le risque réalisé ou
+possible, chiffré quand on le peut \\
+Recommandation & Que faire~? & Une action, un responsable, une échéance \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.5. Les cinq éléments d'un
+constat}\end{center}
+
+\subsection{L'observation en sept éléments}
+
+La méthode du cours d'audit de l'auteur développe le constat en une
+\termecle{observation}\index{observation} en sept éléments. Les deux
+éléments ajoutés sont indispensables à l'opposabilité (axiome~6
+d'A0~\cite{minka2026auditologie})~: la trace du contradictoire, et une
+conclusion explicite qui sépare la position de l'auditeur de son analyse.
+
+\begin{tableaucours}{L{5.0cm}L{6.0cm}}{%
+    \tableauHeader{Constat en cinq éléments} &
+    \tableauHeader{Observation en sept éléments}
+}
+Critère & 1. Norme \\
+Condition & 2. Constatation (avec la cote) \\
+Effet & 3. Risques \\
+(absent) & 4. Contradictoire \\
+Cause & 5. Analyse (avec un niveau de confiance) \\
+(absent) & 6. Conclusion \\
+Recommandation & 7. Recommandations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.6. Du constat à
+l'observation}\end{center}
+
+\begin{boxobjet}{D1.1.2 · Observation}
+\textbf{1. Norme~:} le compte d'un agent est désactivé à la date d'effet de
+sa mutation (bonne pratique~: COSO~2013, principe~11~; aucune règle
+interne).
+
+\textbf{2. Constatation~:} au 23~mars~2026, 9 des 31 agents mutés ou partis
+en 2025 ont un compte actif, dont \texttt{mbarga.j}, qui cumule LIQ, ORD et
+FRS (extractions et empreintes au dossier). Cote \NON{}.
+
+\textbf{3. Risques~:} un compte resté actif a servi, les 27 et
+28~décembre~2025, à modifier un RIB et à émettre seul un mandat de
+187\,450\,000~FCFA.
+
+\textbf{4. Contradictoire~:} le 30~avril~2026, la DAF indique que les
+mutations ne lui sont pas notifiées par les ressources humaines.
+
+\textbf{5. Analyse} (confiance élevée)~: la cause est l'absence de flux
+entre le fichier du personnel et la cellule informatique, et l'absence de
+procédure~; non la négligence d'un agent.
+
+\textbf{6. Conclusion~:} le contrôle D1.1.2 n'est pas efficace~;
+déficience majeure du domaine D1 (Chapitre~\ref{chap:eval-sci}).
+
+\textbf{7. Recommandations~:} désactiver les 9 comptes~; organiser la
+notification écrite des mutations par la DRH~; imposer dans SIDÉPENSE
+l'incompatibilité LIQ~/ ORD.
+\end{boxobjet}
+
+\begin{boxalert}
+\textbf{Violation typique.} Écrire dans les risques~: «~M.~MBARGA a détourné
+187\,450\,000~FCFA~».
+
+\smallskip
+\textbf{Règle~:} l'observation dit ce que la preuve établit~: un compte, pas
+une personne. L'imputation relève d'une autre procédure.
+\end{boxalert}
+
+\subsection{Écrire une recommandation}
+
+\begin{tableaucours}{L{5.6cm}L{6.6cm}}{%
+    \tableauHeader{Mal écrite} &
+    \tableauHeader{Bien écrite}
+}
+Renforcer la sécurité des accès & Organiser la notification écrite des
+mutations de la DRH vers la cellule, avant le 31~juillet~2026 (responsable~:
+DRH) \\
+Désactiver les comptes inutiles & Désactiver sous 48~heures les 9 comptes
+identifiés (annexe~C), puis revoir chaque semestre les comptes actifs
+(responsable~: DAF) \\
+Sanctionner M.~MBARGA & (Hors du rôle de l'auditeur~: la sanction relève
+de l'autorité compétente, après enquête.) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.7. Écrire une
+recommandation}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Le rapport}
+\label{sec:c08-rapport}
+% ============================================================================
+
+\begin{enumerate}
+    \item \textbf{Synthèse}~: l'objectif, la conclusion sur l'efficacité du
+          contrôle interne, les domaines dans leur région du quadrant, les
+          déficiences majeures, en une page.
+    \item \textbf{Mandat et étendue}~: fondement, périmètre, période,
+          travaux, seuils de décision, et \termecle{limitations
+          d'étendue}\index{limitation d'étendue} (les \NEK{} restants, avec
+          les diligences faites).
+    \item \textbf{Mesures par domaine}~: $\mu$, $U$, $H$ et région.
+    \item \textbf{Observations}, classées par domaine puis par gravité.
+    \item \textbf{Tableau des déficiences} et leur classement.
+    \item \textbf{Réponses de l'entité} et position de l'auditeur.
+    \item \textbf{Annexes}~: matrice des risques et des contrôles,
+          décomposition, liste des pièces et de leurs empreintes.
+\end{enumerate}
+
+Un \NEK{} qui reste n'est pas caché~: la restitution impartiale l'exige, et
+la conclusion ne peut pas porter sur ce qui n'a pas pu être établi.
+
+\separateur
+
+% ============================================================================
+\section{La procédure contradictoire}
+\label{sec:c08-contradictoire}
+% ============================================================================
+
+\subsection{Pourquoi le contradictoire}
+
+Le rapport provisoire est adressé à l'entité, qui répond par écrit dans un
+délai fixé. Le contradictoire n'est pas une politesse~: il réduit
+l'incertitude. L'audité connaît des faits que l'auditeur ignore~; sa
+réponse peut lever un \NEK{}, corriger une cause, ou révéler une pièce. Il
+est aussi la condition de l'opposabilité~: une conclusion que l'audité n'a
+pas pu discuter se défend mal devant le CDBF ou la Chambre des Comptes.
+
+\begin{tableaucours}{L{4.4cm}L{4.0cm}L{3.8cm}}{%
+    \tableauHeader{Réponse de la DAF (30 avril 2026)} &
+    \tableauHeader{Position de la vérificatrice} &
+    \tableauHeader{Effet sur le rapport}
+}
+«~Les mutations ne nous ont pas été notifiées par les ressources
+humaines.~» & Exact~; c'est la cause relevée~; ne change pas la condition
+& Observation maintenue, cause précisée \\
+«~Les 9 comptes ont été désactivés le 20~avril.~» & Pièce fournie
+(journal) & Mention au rapport~; R-01 mise en œuvre \\
+«~La séparation a toujours été respectée en pratique.~» & Contredit par
+le mandat 2025-09342 (journal) & Observation maintenue \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.8. Le contradictoire du dossier
+MINÉQUIR}\end{center}
+
+\subsection{Maintenir, modifier, retirer}
+
+Pour chaque réponse, l'auditeur décide, et motive~: il \emph{maintient}
+l'observation, la \emph{modifie} au vu d'une pièce nouvelle, ou la
+\emph{retire}. Une déclaration sans pièce ne fait jamais changer une cote
+\NON{}~; elle peut, au mieux, transformer une cause.
+
+\begin{boxprocedure}
+\textbf{Fiche de contradictoire}, une par observation~: date d'envoi du
+rapport provisoire~; réponse reçue (date, signataire, texte)~; pièces
+nouvelles~; position motivée~; modification apportée au rapport définitif.
+\end{boxprocedure}
+
+\separateur
+
+% ============================================================================
+\section{Suivre les recommandations}
+\label{sec:c08-suivi}
+% ============================================================================
+
+\begin{tableaucours}{cL{5.0cm}L{2.6cm}L{2.0cm}L{1.8cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Recommandation} &
+    \tableauHeader{Responsable} &
+    \tableauHeader{Échéance} &
+    \tableauHeader{Statut}
+}
+R-01 & Désactiver les 9 comptes & Cellule informatique & 20/04/2026 &
+Fait \\
+R-02 & Imposer l'incompatibilité LIQ / ORD dans SIDÉPENSE & Cellule,
+éditeur & 30/06/2026 & En cours \\
+R-03 & Double validation des RIB & DAF, cellule & 30/06/2026 & En cours
+\\
+R-04 & Bloquer les doublons (fournisseur, montant, facture normalisée) &
+Cellule, éditeur & 30/06/2026 & En cours \\
+R-05 & Notification des mutations par les ressources humaines & DRH &
+31/07/2026 & Non commencé \\
+R-06 & Revue des mandats de fin de gestion & DAF, contrôle financier &
+31/12/2026 & Non commencé \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~8.9. Plan d'action du MINÉQUIR
+(situation au 15~mai~2026)}\end{center}
+
+Le suivi vérifie la mise en œuvre par une preuve, pas par une
+déclaration~: pour R-02, la vérificatrice demandera une tentative, en
+environnement de test, d'attribuer LIQ et ORD au même compte.
+
+\begin{boxinfo}
+\textbf{L'audit modifie ce qu'il observe.} L'article A0 énonce une
+proposition de \emph{réflexivité}~: l'acte d'audit fait partie de la
+trajectoire du système audité~\cite{minka2026auditologie}. Le plan d'action
+change le système~; le cycle suivant n'audite donc pas le même objet. C'est
+pourquoi on compare des distributions, et non des taux isolés.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Comparer deux cycles}
+\label{sec:c08-cycles}
+% ============================================================================
+
+\subsection{Pourquoi le taux de conformité ne suffit pas}
+
+Le taux de conformité seul peut rester stable alors que l'état de
+connaissance change~: des \NEK{} deviennent des \NON{}, l'entité sait
+désormais ce qu'elle ignorait. Il faut comparer les \emph{distributions} de
+réponses. C'est la conséquence de l'\emph{individuation temporelle}
+(axiome~5)~: les conclusions d'une mission ne se testent que sur plusieurs
+cycles~\cite{minka2026auditologie}.
+
+\begin{boxdef}
+\termecle{Divergence de Kullback-Leibler}\index{divergence de
+Kullback-Leibler}~: pour deux distributions $p$ (nouveau cycle) et $q$
+(cycle précédent) sur $\{\OUI, \NON, \NEK\}$~\cite{kullback1951,minka2026nek},
+\[
+    D_{\mathrm{KL}}(p \,\|\, q) = \sum_{m} p(m) \log_2 \frac{p(m)}{q(m)}.
+\]
+Elle est positive ou nulle, nulle si et seulement si les deux distributions
+sont identiques~; elle n'est pas symétrique (on mesure toujours le nouveau
+cycle par rapport à l'ancien)~; elle s'exprime en bits.
+\end{boxdef}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Le domaine D1 en novembre 2026}
+\textbf{Faits.} En mars~2026, D1 donnait 11~\OUI{}, 3~\NON{}, 6~\NEK{}. À
+l'audit de suivi de novembre~2026, après R-01 à R-03, les mêmes questions
+posées aux mêmes fonctions donnent 17~\OUI{}, 2~\NON{}, 1~\NEK{}.
+
+\medskip
+\textbf{Calcul.} $\mu$ passe de 0,55 à 0,85, $U$ de 0,30 à 0,05, $H$ de 1,41
+à 0,75~bit. La divergence vaut
+\[
+    0{,}85\log_2\frac{0{,}85}{0{,}55} + 0{,}10\log_2\frac{0{,}10}{0{,}15} +
+    0{,}05\log_2\frac{0{,}05}{0{,}30} \approx 0{,}534 - 0{,}058 - 0{,}129
+    \approx 0{,}35~\text{bit}.
+\]
+
+\textbf{Analyse} (confiance moyenne). D1 est passé de la conformité opaque
+à la conformité claire. La vérificatrice confirmera par ses propres tests
+(revue des comptes actifs, essai de cumul en environnement de test) avant
+de conclure.
+\end{boxscenario}
+
+\subsection{Le lissage}
+
+Si une réponse est absente au premier cycle et présente au second, un terme
+de la divergence devient infini~: ce n'est pas que le changement soit
+infini, c'est que le premier échantillon, petit, n'a rien observé. On
+ajoute alors une unité fictive à chaque réponse des deux cycles (lissage de
+Laplace). La divergence de D1 devient 0,25~bit. On applique le même lissage
+à toutes les comparaisons d'une mission, et on l'écrit dans le programme.
+
+\begin{boxoutils}{Calculer la divergence (Python)}
+\begin{lstlisting}[language=Python]
+from math import log2
+def dkl(nouveau, ancien, lissage=0):
+    a = [x + lissage for x in nouveau]
+    b = [x + lissage for x in ancien]
+    p = [x / sum(a) for x in a]
+    q = [x / sum(b) for x in b]
+    return sum(pi * log2(pi / qi) for pi, qi in zip(p, q) if pi > 0)
+
+print(round(dkl([17, 2, 1], [11, 3, 6]), 3))     # 0.346
+print(round(dkl([17, 2, 1], [11, 3, 6], 1), 3))  # 0.247 (lissée)
+\end{lstlisting}
+\end{boxoutils}
+
+\separateur
+
+% ============================================================================
+\section{Quand le constat devient une affaire}
+\label{sec:c08-suites}
+% ============================================================================
+
+Une observation peut fonder une suite~: saisine du CDBF, que le CONSUPE peut
+engager (décret n°~2013/287, art.~3 et~5)~; transmission à la Chambre des
+Comptes~; plainte pénale. L'auditeur n'instruit pas ces procédures, mais il
+les rend possibles ou impossibles par la qualité de sa preuve.
+
+\begin{itemize}
+    \item \textbf{Geler la preuve}~: conserver les extractions originales,
+          leurs empreintes et les procès-verbaux~; travailler sur des copies.
+    \item \textbf{Ne pas alerter}~: ne pas interroger la personne soupçonnée
+          sur les faits avant que l'autorité ait décidé de la suite.
+    \item \textbf{Demander la conservation} des journaux au-delà de leur
+          durée habituelle.
+    \item \textbf{Séparer}~: le rapport traite du contrôle interne~; une note
+          distincte, adressée à la hiérarchie, présente les faits
+          susceptibles de poursuite.
+\end{itemize}
+
+\begin{boxmetier}{Vérificateur}
+Présentez dans la synthèse les domaines par région du quadrant, et non par
+une note globale. Une «~conformité opaque~» écrite en toutes lettres
+protège votre rapport mieux qu'un taux flatteur.
+\end{boxmetier}
+
+\begin{boxmetier}{Juge des comptes}
+Une limitation d'étendue écrite au rapport dit ce que l'auditeur n'a pas pu
+établir~; elle désigne les pièces que l'instruction peut exiger.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Refaites chaque année les mêmes questions aux mêmes fonctions, et calculez
+la divergence entre les cycles~: c'est la mesure la plus honnête de
+l'effet de vos recommandations.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Trois mesures}~: $\mu$ (conformité), $U$ (incertitude), $H$
+          (entropie, au plus $\log_2 3$)~; jamais l'une sans les autres.
+    \item \textbf{L'entropie se décompose} en ignorance et désaccord~; chacun
+          appelle sa démarche.
+    \item \textbf{Le quadrant} sépare quatre régions~; la conformité opaque
+          est la plus dangereuse.
+    \item \textbf{La règle de décision}~: $U$ d'abord, $\mu$ ensuite, $H$
+          pour contrôler~; les cotes de l'auditeur prévalent.
+    \item \textbf{Sept éléments}~: l'observation ajoute au constat le
+          contradictoire et la conclusion, pour l'opposabilité.
+    \item \textbf{Le contradictoire réduit l'incertitude}~; une déclaration
+          sans pièce ne fait pas changer un \NON{}.
+    \item \textbf{Comparer les cycles} par la divergence de Kullback-Leibler,
+          avec le même lissage partout.
+    \item \textbf{Préserver la suite}~: geler la preuve, ne pas alerter,
+          séparer rapport et note de faits.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.1. Calculer et situer \niveaubase}]
+Calculez $\mu$, $U$ et $H$ pour (a) 18~\OUI{}, 1~\NON{}, 1~\NEK{}~; (b)
+0~\OUI{}, 0~\NON{}, 20~\NEK{}~; (c) 10~\OUI{}, 8~\NON{}, 2~\NEK{}. Situez
+chacun dans le quadrant et dites l'action.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.2. Ignorance ou désaccord~? \niveaumoyen}]
+Décomposez l'entropie du domaine D3 (15~\OUI{}, 3~\NON{}, 2~\NEK{}) et
+dites quelle démarche elle appelle. Expliquez pourquoi la conclusion du
+domaine reste \NON{} sur le blocage des doublons.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.3. L'observation \niveaumoyen}]
+Rédigez l'observation en sept éléments sur le contrôle «~seconde validation
+des modifications de RIB~» (domaine D2), à partir des faits du prologue et
+de la réponse de la DAF~: «~les RIB sont modifiés sur demande écrite du
+fournisseur~» (aucune demande n'est produite pour BATIRURAL).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~8.4. Deux cycles \niveauexpert}]
+À l'audit de suivi, D4 donne 8~\OUI{}, 10~\NON{}, 2~\NEK{} (contre 8, 4, 8
+en mars). (a) Le taux de conformité a-t-il changé~? (b) Calculez la
+divergence. (c) Dites si l'exploitation s'est améliorée, et rédigez la
+phrase du rapport de suivi.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} La méthode est complète, du mandat au cycle suivant. La
+Partie~IV l'applique domaine par domaine, en commençant par celui dont tout
+dépend~: les accès (Chapitre~\ref{chap:acces}).
+\end{boxinfo}

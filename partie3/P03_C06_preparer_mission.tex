@@ -1,0 +1,784 @@
+% ============================================================================
+% Fichier  : partie3/P03_C06_preparer_mission.tex
+% Titre    : La Mission : Principes, Préparation et Décomposition
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.2 -- novembre 2026 (réécriture étoffée, alignée sur INF3226
+%            C07 à C09, A0 et A1)
+% ============================================================================
+% Sources : ISO 19011:2018 (principes) ; ISSAI 4000 via le manuel IDI ;
+% A0 « Vers l'auditologie » (hal-05701007) : axiomes 1, 2, 5, 6, proposition
+% de décomposition hiérarchique, gabarit canonique ; A1 (hal-05701270).
+% Miller (1956) ; Simon (1962).
+% Faits MINÉQUIR (LAB-01) : ordre de mission du 16/03/2026 ; équipe
+% NGO BIYONG (chef de mission) + ESSAMA ; 4 domaines D1 Accès, D2 Fichier
+% des fournisseurs, D3 Circuit du mandat, D4 Exploitation ; cotation des
+% risques R1-R8 inchangée (R1 et R3 à 9) ; contrôle D1.1.2 = désactivation
+% à la date d'effet (2 critères).
+% ============================================================================
+
+\chapter[La mission : principes, préparation, décomposition]{La Mission : Principes, Préparation et Décomposition}
+\label{chap:preparer}
+\chaptermark{Préparer la mission}
+
+\epigraph{%
+    « Une mission se gagne avant le terrain. »%
+}{Adage des vérificateurs}
+
+\niveauChapitre{Intermédiaire}{Chapitres~\ref{chap:eval-sci}
+et~\ref{chap:normes}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Énoncer les principes de l'audit et les relier aux axiomes de
+          l'auditologie.
+    \item Décrire le cycle d'une mission en cinq phases, avec les entrées et
+          les sorties de chacune.
+    \item Rédiger un ordre de mission et des termes de référence qui fixent
+          l'objectif, le périmètre, la période et les critères.
+    \item Organiser la demande de pièces en trois strates, et décider si une
+          pièce absente vaut \NON{} ou \NEK{}.
+    \item Conduire une prise de connaissance bornée, par couches du système
+          d'information.
+    \item Hiérarchiser les zones d'audit en croisant le risque et la
+          connaissance que l'on en a.
+    \item Décomposer le domaine audité selon le gabarit canonique à huit
+          niveaux, et rédiger une fiche d'assertion par contrôle.
+    \item Établir le programme de travail.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Une mission sur un système d'information dispose de peu de temps et d'un
+objet immense~: des milliers d'opérations, des dizaines de profils, des
+journaux de plusieurs gigaoctets. Tout tester est impossible, et ce que
+l'on ne regarde pas reste inconnu. La préparation décide donc de ce que la
+mission saura, et de ce qu'elle ignorera. Elle se juge à une question~:
+\emph{le programme de travail porte-t-il sur les zones où le risque est
+élevé et la connaissance faible~?}
+
+Ce chapitre suit la méthode du cours d'audit des systèmes d'information de
+l'auteur, qui est l'instanciation, pour le praticien, du programme de
+recherche de l'auditologie~\cite{minka2026auditologie}. Il en reprend les
+trois outils de préparation~: le cycle de la mission, l'évaluation croisée
+du risque et de la connaissance, et le gabarit canonique de décomposition.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item Les principes de l'audit (section~\ref{sec:c06-principes}).
+    \item Le cycle de la mission (section~\ref{sec:c06-cycle}).
+    \item L'ordre de mission et les termes de référence
+          (section~\ref{sec:c06-ordre}).
+    \item Les pièces à demander (section~\ref{sec:c06-pieces}).
+    \item La prise de connaissance (section~\ref{sec:c06-connaissance}).
+    \item Hiérarchiser~: risque et connaissance
+          (section~\ref{sec:c06-risques}).
+    \item Décomposer~: le gabarit canonique et la fiche d'assertion
+          (section~\ref{sec:c06-decomposer}).
+    \item Le programme de travail (section~\ref{sec:c06-programme}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Les principes de l'audit}
+\label{sec:c06-principes}
+% ============================================================================
+
+La norme ISO~19011 énonce sept principes de l'audit~\cite{iso19011_2018}~;
+les normes de l'INTOSAI et de l'IIA en portent l'équivalent. Ils ne sont
+pas des vœux~: chacun commande une pratique de la mission.
+
+\begin{tableaucours}{L{3.4cm}L{4.6cm}L{4.2cm}}{%
+    \tableauHeader{Principe} &
+    \tableauHeader{Ce qu'il impose} &
+    \tableauHeader{Dans une mission SI}
+}
+Intégrité & Agir honnêtement, avec diligence & Ne jamais modifier une
+donnée de l'entité \\
+Restitution impartiale & Rapporter fidèlement, y compris les difficultés
+& Écrire les \NEK{} restants au rapport \\
+Conscience professionnelle & Exercer le soin et le jugement requis &
+Vérifier l'intégrité de chaque extraction \\
+Confidentialité & Protéger l'information obtenue & Protéger les fichiers
+de paie et de fournisseurs \\
+Indépendance & Fonder l'objectivité des conclusions & Ne pas auditer un
+système que l'on a conçu \\
+Approche fondée sur la preuve & Conclure sur des preuves vérifiables &
+Partir du système, pas des classeurs \\
+Approche par les risques & Porter l'effort là où il compte & Croiser
+risque et connaissance (section~\ref{sec:c06-risques}) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.1. Les sept principes de l'audit
+(d'après ISO~19011:2018)}\end{center}
+
+\begin{boxinfo}
+\textbf{Des principes aux axiomes.} L'article \emph{Vers l'auditologie}
+montre que plusieurs de ces principes se déduisent d'axiomes plus
+fondamentaux~\cite{minka2026auditologie}. L'approche fondée sur la preuve
+découle de l'\emph{observabilité partielle} (axiome~1)~: l'auditeur ne voit
+qu'une partie du système, il doit donc dire sur quoi il s'appuie.
+L'indépendance n'est pas un axiome, mais une conséquence de
+l'\emph{interaction stratégique} (axiome~4) et de l'\emph{opposabilité}
+(axiome~6)~: une conclusion qu'un tiers peut contester doit venir de
+quelqu'un qui n'a pas intérêt au résultat.
+\end{boxinfo}
+
+\subsection{Les principes en conflit}
+
+Les principes se heurtent parfois. La confidentialité demande de limiter la
+diffusion d'une extraction~; la restitution impartiale demande d'en
+montrer les résultats. La règle du cours est de ne jamais sacrifier
+l'opposabilité~: on peut anonymiser une liste d'agents dans le rapport, à
+condition de conserver au dossier la liste nominative et son empreinte.
+
+\separateur
+
+% ============================================================================
+\section{Le cycle de la mission}
+\label{sec:c06-cycle}
+% ============================================================================
+
+\subsection{Cinq phases}
+
+\begin{center}
+\begin{tikzpicture}[
+    ph/.style = {draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        text width=2.1cm, minimum height=0.9cm, align=center,
+        font=\scriptsize\bfseries\color{CouleurPrimaire}},
+    arrow/.style = {-{Stealth[length=4pt]}, thick, color=CouleurSecondaire}
+]
+\foreach \t [count=\i] in {Préparer, Planifier, Exécuter, Conclure, Suivre}
+    \node[ph] (p\i) at (2.55*\i, 0) {\t};
+\foreach \i [evaluate=\i as \j using int(\i+1)] in {1,2,3,4}
+    \draw[arrow] (p\i) -- (p\j);
+\draw[arrow, dashed] (p5.south) -- ++(0,-0.55) -| (p1.south)
+    node[pos=0.25, below, font=\scriptsize\itshape, color=CouleurSecondaire]
+    {le cycle suivant part de l'état laissé par le précédent};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.2em}
+\begin{center}{\small\itshape Figure~6.1. Le cycle de la mission}\end{center}
+
+La flèche de retour n'est pas un ornement. L'auditologie pose
+l'\emph{individuation temporelle} (axiome~5)~: le système audité évolue,
+et son état à la mission suivante dépend de la mission
+précédente~\cite{minka2026auditologie}. Le suivi n'est donc pas une
+formalité~: il est la première phase du cycle suivant
+(Chapitre~\ref{chap:constater}).
+
+\subsection{Entrées et sorties de chaque phase}
+
+\begin{tableaucours}{L{2.2cm}L{4.6cm}L{5.4cm}}{%
+    \tableauHeader{Phase} &
+    \tableauHeader{Entrées} &
+    \tableauHeader{Sorties}
+}
+Préparer & Mandat, rapports antérieurs, textes & Ordre de mission, termes
+de référence, demande de pièces \\
+Planifier & Prise de connaissance, cotation des risques & Décomposition,
+fiches d'assertion, programme de travail \\
+Exécuter & Programme, pièces, accès au système & Feuilles de test, cotes
+\OUI{}, \NON{}, \NEK{}, preuves et empreintes \\
+Conclure & Cotes et preuves & Mesures par domaine, observations, rapport
+provisoire, contradictoire, rapport définitif \\
+Suivre & Plan d'action & Tableau de suivi, comparaison des cycles \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.2. Entrées et sorties des cinq
+phases}\end{center}
+
+\subsection{L'équipe et la supervision}
+
+Une mission du CONSUPE compte au moins un chef de mission et un
+vérificateur. Le chef de mission répond du programme, de la cohérence des
+cotes et du rapport~; il vise chaque feuille de test. La supervision n'est
+pas une relecture finale~: elle a lieu pendant l'exécution, quand une cote
+peut encore être reprise. Au MINÉQUIR, Mme~NGO~BIYONG revoit chaque soir
+les feuilles de M.~ESSAMA.
+
+\separateur
+
+% ============================================================================
+\section{L'ordre de mission et les termes de référence}
+\label{sec:c06-ordre}
+% ============================================================================
+
+\subsection{L'ordre de mission}
+
+L'ordre de mission est la première pièce du dossier. Il fonde le droit
+d'accès du vérificateur (décret n°~2013/287, art.~2, al.~4) et fixe ce que
+la mission doit démontrer.
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Ordre de mission du 16 mars 2026 (MINÉQUIR)}
+}
+Fondement & Décret n°~2013/287, art.~2, al.~3 (contrôle des SI) et
+al.~4 \\
+Objectif & Évaluer le contrôle interne du circuit de la dépense de la DAF
+dans SIDÉPENSE, et la régularité des paiements de l'exercice \\
+Périmètre & DAF du MINÉQUIR~; application SIDÉPENSE~; poste comptable
+pour la seule étape du paiement \\
+Période & Exercice 2025 \\
+Durée & Quatre semaines, du 16~mars au 10~avril~2026 \\
+Équipe & Mme~NGO~BIYONG (chef de mission), M.~ESSAMA (vérificateur) \\
+Livrables & Rapport provisoire, contradictoire, rapport définitif \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.3. Les rubriques d'un ordre de
+mission}\end{center}
+
+\subsection{Les termes de référence : quatre questions}
+
+Les termes de référence précisent l'ordre de mission. Ils répondent à
+quatre questions, et à elles seules.
+
+\begin{enumerate}
+    \item \textbf{Que doit-on démontrer~?} L'objectif, écrit comme une
+          question fermée~: «~Le contrôle interne du circuit de la dépense
+          dans SIDÉPENSE est-il efficace pour l'exercice 2025~?~»
+    \item \textbf{Sur quoi~?} Le périmètre~: entités, applications,
+          processus inclus, et ce qui est exclu (ici, la paie et la recette).
+    \item \textbf{Par rapport à quoi~?} Les critères et leur source
+          (Chapitre~\ref{chap:normes}).
+    \item \textbf{Avec quelle assurance~?} Raisonnable ou limitée
+          (Chapitre~\ref{chap:audit-public}), et les seuils de décision que
+          la mission retiendra (Chapitre~\ref{chap:constater}).
+\end{enumerate}
+
+\begin{boxalert}
+\textbf{Violation typique.} Un ordre de mission qui dit «~contrôler le
+système informatique de la DAF~», sans objectif, sans période et sans
+périmètre.
+
+\smallskip
+\textbf{Règle~:} un objectif s'écrit comme une question à laquelle le
+rapport répondra par oui ou par non~; le périmètre dit ce qui est exclu
+autant que ce qui est inclus.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Les pièces à demander}
+\label{sec:c06-pieces}
+% ============================================================================
+
+\subsection{Trois strates}
+
+La demande de pièces part dès le premier jour, par écrit, avec un délai.
+Elle s'organise en trois strates, de la plus générale à la plus probante.
+
+\begin{tableaucours}{L{2.8cm}L{4.8cm}L{4.6cm}}{%
+    \tableauHeader{Strate} &
+    \tableauHeader{Contenu} &
+    \tableauHeader{Au MINÉQUIR}
+}
+1. Gouvernance & Organigramme, décisions, schéma directeur, politiques &
+Organigramme de la DAF, décision de création de la cellule \\
+2. Fonctionnement & Procédures, manuels, contrats, comptes rendus &
+Procédures du circuit, contrat de maintenance de SIDÉPENSE \\
+3. Traces & Extractions, journaux, paramètres, faites devant l'auditeur &
+Comptes et profils, mandats 2025, journal des opérations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.4. Les trois strates de
+pièces}\end{center}
+
+\begin{tableaucours}{cL{6.2cm}L{3.0cm}L{2.2cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Pièce} &
+    \tableauHeader{Destinataire} &
+    \tableauHeader{Délai}
+}
+1 & Liste des utilisateurs de SIDÉPENSE et de leurs profils, extraite
+devant la vérificatrice & Cellule informatique & J+2 \\
+2 & Liste des mutations et départs de 2025 & Ressources humaines & J+3 \\
+3 & Extraction des mandats 2025 et du journal des opérations & Cellule
+informatique & J+5 \\
+4 & Journal des modifications du fichier des fournisseurs & Cellule
+informatique & J+5 \\
+5 & Procédures écrites du circuit et de la gestion des comptes & DAF &
+J+3 \\
+6 & Dernier rapport d'audit de sécurité de l'ANTIC (date, périmètre, plan
+d'action) & Cellule informatique & J+5 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.5. Demande de pièces de la mission
+MINÉQUIR}\end{center}
+
+\subsection{Une pièce absente : NON ou NEK~?}
+
+Une pièce qui ne vient pas n'a pas toujours le même sens. Le cours
+applique une règle simple, cohérente avec l'instrument de l'article
+A1~\cite{minka2026nek}.
+
+\begin{itemize}
+    \item \textbf{\NON{}}~: la pièce devait exister (une règle l'impose), et
+          l'entité confirme par écrit qu'elle n'existe pas. L'absence est
+          une constatation.
+    \item \textbf{\NEK{}}~: la pièce peut exister ailleurs, ou n'a pas
+          encore été produite malgré la relance. On ne sait pas~; on le dit,
+          avec les diligences faites.
+\end{itemize}
+Un \NEK{} qui reste à la fin de la mission devient une \emph{limitation
+d'étendue}, écrite au rapport (Chapitre~\ref{chap:constater}).
+
+\separateur
+
+% ============================================================================
+\section{La prise de connaissance}
+\label{sec:c06-connaissance}
+% ============================================================================
+
+\subsection{Une prise de connaissance bornée}
+
+La prise de connaissance n'a pas pour but de tout comprendre, mais de
+savoir assez pour formuler des hypothèses de risque. L'article A0 rappelle
+que l'auditeur est un agent cognitivement limité
+(axiome~2)~\cite{minka2026auditologie}~: une prise de connaissance sans
+borne produit un dossier que personne ne relit. Le cours la limite à deux
+jours sur quatre semaines, et la conduit par couches.
+
+\subsection{Lire le système d'information en couches}
+
+\begin{tableaucours}{L{2.8cm}L{4.8cm}L{4.6cm}}{%
+    \tableauHeader{Couche} &
+    \tableauHeader{Question} &
+    \tableauHeader{Au MINÉQUIR}
+}
+Organisation & Qui décide, qui exécute, qui contrôle~? & DAF propriétaire,
+cellule exécutante, contrôle financier \\
+Processus & Quelles étapes, dans quel ordre~? & Engagement, liquidation,
+ordonnancement, paiement \\
+Applications & Quelles applications portent les étapes~? & SIDÉPENSE,
+logiciel du poste comptable \\
+Données & Quelles données de référence conditionnent tout~? & Fichier des
+fournisseurs, table des profils \\
+Infrastructure & Où tourne le système, qui l'administre~? & Serveur de la
+cellule, sauvegardes locales \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.6. Les couches du système
+d'information}\end{center}
+
+\subsection{La cartographie des applications et des flux}
+
+\begin{tableaucours}{L{2.8cm}L{3.2cm}L{3.0cm}L{3.2cm}}{%
+    \tableauHeader{Application} &
+    \tableauHeader{Fonction} &
+    \tableauHeader{Propriétaire} &
+    \tableauHeader{Flux sortant}
+}
+SIDÉPENSE & Engagement, liquidation, ordonnancement, fournisseurs & DAF
+& Mandats vers le poste comptable (fichier quotidien) \\
+Logiciel du poste comptable & Paiement, comptabilité & Poste comptable &
+Ordres de virement vers les banques \\
+Fichier du personnel & Mutations, départs & Direction des ressources
+humaines & Aucun vers SIDÉPENSE (constat) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.7. Cartographie des applications
+du périmètre}\end{center}
+
+La dernière ligne est déjà un résultat~: aucun flux ne relie le fichier du
+personnel à SIDÉPENSE. Les mutations ne sont connues de la cellule
+informatique que si quelqu'un pense à les lui signaler. La cartographie a
+désigné un risque avant tout test.
+
+\subsection{Conduire un entretien de prise de connaissance}
+
+\begin{boxprocedure}
+\textbf{Entretien de prise de connaissance}~:
+\begin{itemize}
+    \item préparer une liste de questions ouvertes, par couche~;
+    \item être deux~: l'un interroge, l'autre note~;
+    \item demander, pour chaque affirmation, la pièce qui la montre~;
+    \item relire le compte rendu à l'interlocuteur et le faire valider~;
+    \item noter à part ce qui est déclaré sans pièce~: ce sont les futurs
+          \NEK{} à lever.
+\end{itemize}
+\end{boxprocedure}
+
+\separateur
+
+% ============================================================================
+\section{Hiérarchiser : risque et connaissance}
+\label{sec:c06-risques}
+% ============================================================================
+
+\subsection{La cotation du risque}
+
+Pour chaque risque de la matrice (Chapitre~\ref{chap:eval-sci}), on cote
+de 1 (faible) à 3 (élevé) le \termecle{risque inhérent}\index{risque
+inhérent} (gravité et probabilité de l'anomalie si aucun contrôle
+n'existait) et le \termecle{risque lié au contrôle}\index{risque lié au
+contrôle} (probabilité que le contrôle interne, tel qu'on le connaît, ne
+l'empêche ni ne la détecte). Leur produit, de 1 à 9, est la priorité.
+
+\begin{tableaucours}{L{5.4cm}ccc}{%
+    \tableauHeader{Risque} &
+    \tableauHeader{Inhérent} &
+    \tableauHeader{Contrôle} &
+    \tableauHeader{Priorité}
+}
+R1. Un agent parti agit encore & 3 & 3 & 9 \\
+R2. Un agent émet seul un mandat & 3 & 2 & 6 \\
+R3. Le bénéficiaire est changé & 3 & 3 & 9 \\
+R4. Une facture est payée deux fois & 3 & 2 & 6 \\
+R5. Le mandat n'est pas justifié & 2 & 1 & 2 \\
+R6. Une opération ne laisse pas de trace & 2 & 1 & 2 \\
+R7. Une anomalie de fin de gestion passe & 2 & 3 & 6 \\
+R8. Les traces disparaissent & 2 & 2 & 4 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.8. Cotation préliminaire des
+risques du circuit de la dépense (convention du cours)}\end{center}
+
+\subsection{Le risque et la connaissance}
+
+La cotation du risque ne suffit pas. L'auditologie ajoute une seconde
+dimension~: ce que l'on \emph{sait} de chaque zone. Une zone à risque élevé
+que l'on connaît bien (un audit récent l'a testée) appelle moins d'effort
+qu'une zone à risque moyen dont on ignore tout. C'est la distinction d'A0
+entre non-conformité \emph{connue} et non-conformité
+\emph{inconnue}~\cite{minka2026auditologie}~: la seconde est la plus
+dangereuse, parce qu'elle ne se voit pas.
+
+\begin{tableaucours}{L{3.0cm}L{4.4cm}L{4.8cm}}{%
+    \tableauHeader{} &
+    \tableauHeader{Connaissance élevée} &
+    \tableauHeader{Connaissance faible}
+}
+\textbf{Risque élevé} & Tester ce qui a changé depuis le dernier audit &
+\textbf{Priorité absolue}~: tests étendus, preuves de strate~3 \\
+\textbf{Risque faible} & Cheminement ou revue analytique & Prise de
+connaissance complémentaire, puis décider \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.9. Croiser le risque et la
+connaissance}\end{center}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Où regarder d'abord}
+\textbf{Constatation.} R1 (agents partis) et R3 (RIB) sont cotés 9. Aucun
+audit n'a jamais porté sur SIDÉPENSE~; l'inspection de janvier n'a examiné
+que des dossiers papier.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Les deux risques sont à la fois
+élevés et inconnus~: ce sont les zones de priorité absolue. La
+vérificatrice leur consacre la première semaine, puis les trois risques
+cotés~6. Elle ne teste R5 et R6 que par un cheminement~: leur priorité ne
+justifie pas un échantillon.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Décomposer : le gabarit canonique et la fiche d'assertion}
+\label{sec:c06-decomposer}
+% ============================================================================
+
+\subsection{Pourquoi décomposer}
+
+Un auditeur ne peut pas examiner «~les accès~» d'un bloc. George Miller a
+montré que la mémoire de travail ne retient qu'environ sept éléments à la
+fois, plus ou moins deux~\cite{miller1956}~; Herbert Simon, que les
+systèmes complexes sont hiérarchiques et presque
+décomposables~\cite{simon1962complexity}. L'article A0 en tire une
+proposition~: tout instrument qui couvre un espace d'audit non trivial doit
+être organisé en une décomposition hiérarchique dont chaque niveau respecte
+cette borne~\cite{minka2026auditologie}.
+
+\begin{boxdef}
+\termecle{Espace d'audit}\index{espace d'audit}~: ensemble des objets sur
+lesquels porte une mission (processus, contrôles, données, traces), tel que
+le délimite l'ordre de mission.
+
+\medskip
+\termecle{Décomposition}\index{décomposition}~: découpage hiérarchique de
+l'espace d'audit en niveaux emboîtés, chaque élément d'un niveau se divisant
+en éléments du niveau inférieur.
+\end{boxdef}
+
+La décomposition apporte quatre choses~: la \textbf{couverture} (on sait ce
+qui a été audité et ce qui ne l'a pas été), la \textbf{traçabilité} (chaque
+conclusion remonte à une trace, ce qui la rend opposable, axiome~6), la
+\textbf{localisation de l'incertitude} (les \NEK{} se situent à un endroit
+précis) et la \textbf{répartition du travail}.
+
+\subsection{Le gabarit canonique à huit niveaux}
+
+Le programme de l'auditologie propose un \termecle{gabarit
+canonique}\index{gabarit canonique} de décomposition à huit
+niveaux~\cite{minka2026auditologie}. Les quatre premiers disent \emph{ce
+qui est audité}~; les quatre derniers, \emph{comment on le vérifie}. Le
+contrôle fait la charnière~: c'est l'objet sur lequel l'auditeur se
+prononce.
+
+\begin{center}
+\begin{tikzpicture}[
+    niv/.style = {draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        minimum width=2.9cm, minimum height=0.58cm, align=center,
+        font=\footnotesize\bfseries\color{CouleurPrimaire}},
+    note/.style = {font=\scriptsize\itshape\color{CouleurSecondaire}, anchor=west, text width=7.2cm},
+    fleche/.style = {-{Stealth[length=4pt]}, thick, color=CouleurSecondaire}
+]
+\foreach \t/\q [count=\i] in {
+    1. Domaine/D1 Accès à SIDÉPENSE,
+    2. Sous-domaine/D1.1 Cycle de vie des comptes,
+    3. Processus/Mutation ou départ d'un agent,
+    4. Activité/Retrait des accès,
+    5. Contrôle/D1.1.2 Désactivation à la date d'effet,
+    6. Test/Rapprocher mutations et comptes actifs,
+    7. Preuve/Extraction des comptes et son empreinte,
+    8. Trace/Champ « date de désactivation » et journal} {
+    \node[niv] (n\i) at (0, -0.78*\i) {\t};
+    \node[note] at (1.6, -0.78*\i) {\q};
+}
+\foreach \i [evaluate=\i as \j using int(\i+1)] in {1,...,7}
+    \draw[fleche] (n\i) -- (n\j);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.2em}
+\begin{center}{\small\itshape Figure~6.2. Le gabarit canonique appliqué au
+contrôle des agents partis (d'après~\cite{minka2026auditologie})}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Mettre dans la même liste «~une politique
+d'accès existe~» (un document) et «~le journal est activé~» (une trace),
+au même niveau que «~les accès~» (un domaine).
+
+\smallskip
+\textbf{Règle~:} chaque élément se place à un seul niveau, celui de sa
+nature. Un mélange de niveaux rend la couverture invérifiable.
+\end{boxalert}
+
+\subsection{Preuve et trace : deux choses différentes}
+
+La \emph{trace} existe dans le système, que l'auditeur passe ou non~: une
+entrée de journal, un champ de date. La \emph{preuve} est ce que l'auditeur
+en tire et conserve~: l'extraction horodatée, son empreinte, la requête
+qui l'a produite. Une trace non extraite n'est pas une preuve~; une preuve
+qui ne renvoie à aucune trace (une capture d'écran sans contexte) est
+fragile.
+
+\subsection{La décomposition de la mission MINÉQUIR}
+
+\begin{center}
+\begin{tikzpicture}[
+    niv/.style = {draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        text width=2.9cm, minimum height=0.8cm, align=center,
+        font=\scriptsize\bfseries\color{CouleurPrimaire}},
+    arrow/.style = {-{Stealth[length=4pt]}, thick, color=CouleurSecondaire}
+]
+\node[niv, text width=6cm] (obj) at (5.1,0) {Objectif~: le contrôle interne
+du circuit de la dépense est-il efficace~?};
+\node[niv] (d1) at (0,-1.6) {D1 Accès};
+\node[niv] (d2) at (3.4,-1.6) {D2 Fichier des fournisseurs};
+\node[niv] (d3) at (6.8,-1.6) {D3 Circuit du mandat};
+\node[niv] (d4) at (10.2,-1.6) {D4 Exploitation};
+\foreach \d in {d1,d2,d3,d4} \draw[arrow] (obj.south) -- (\d.north);
+\node[niv, font=\tiny] at (0,-3.0) {Contrôles 1, 2};
+\node[niv, font=\tiny] at (3.4,-3.0) {Contrôle 3};
+\node[niv, font=\tiny] at (6.8,-3.0) {Contrôles 4, 5, 7};
+\node[niv, font=\tiny] at (10.2,-3.0) {Contrôles 6, 8};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~6.3. Les quatre domaines de la
+mission MINÉQUIR et les huit contrôles du prologue}\end{center}
+
+\subsection{La fiche d'assertion}
+
+Le gabarit dit \emph{où} se trouve un contrôle. La \termecle{fiche
+d'assertion}\index{fiche d'assertion} dit \emph{ce que l'auditeur affirme}
+à son sujet, et ce qui arrive si l'affirmation est fausse.
+
+\begin{tableaucours}{L{2.4cm}L{5.0cm}L{4.8cm}}{%
+    \tableauHeader{Attribut} &
+    \tableauHeader{Rôle} &
+    \tableauHeader{Forme}
+}
+Objectif & Ce que le contrôle doit garantir & À l'infinitif~: « S'assurer
+que… » \\
+Critère & La condition vérifiable qui définit la conformité & Au présent~:
+une condition unique, observable \\
+Question & La question posée pour coter le contrôle & Interrogative~;
+réponse \OUI{}, \NON{} ou \NEK{} \\
+Risque & L'état de non-conformité si la réponse est \NON{} & L'antithèse
+du critère \\
+Conséquence & L'effet sur l'entité si le risque se réalise & Financier,
+opérationnel, juridique \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.10. Les attributs de la fiche
+d'assertion}\end{center}
+
+\begin{boxobjet}{D1.1.2 · Désactivation à la date d'effet}
+\textbf{Position~:} D1 Accès $\rightarrow$ D1.1 Cycle de vie des comptes
+$\rightarrow$ mutation ou départ $\rightarrow$ retrait des accès
+$\rightarrow$ contrôle D1.1.2.
+
+\textbf{Objectif~:} s'assurer qu'aucun agent muté ou parti ne peut agir
+dans SIDÉPENSE.
+
+\textbf{Critère~1~:} le compte est désactivé au plus tard à la date d'effet
+de la mutation. \textbf{Question~1~:} chaque compte d'agent muté en 2025
+a-t-il été désactivé au plus tard à la date d'effet~?
+
+\textbf{Critère~2~:} la DRH notifie par écrit chaque mutation à la cellule
+informatique. \textbf{Question~2~:} chaque mutation de 2025 a-t-elle fait
+l'objet d'une notification écrite~?
+
+\textbf{Test~:} rapprocher la liste des 31 mutations et départs de 2025 de
+la liste des comptes actifs au 23~mars~2026~; demander les notifications.
+
+\textbf{Preuve et trace~:} extractions et empreintes~; champ de date de
+désactivation~; notifications.
+
+\textbf{Risque~:} un compte resté actif est utilisé par son ancien
+titulaire ou par un tiers.
+
+\textbf{Conséquence~:} paiement indu, impossibilité d'imputer une
+opération à une personne, suites devant le CDBF.
+\end{boxobjet}
+
+\subsection{De la fiche à la cotation}
+
+Chaque critère reçoit sa propre question et sa propre cote. La cote du
+contrôle s'en déduit par une règle de composition~: un seul critère
+\NON{} suffit pour que le contrôle soit \NON{}~; à défaut, un seul critère
+\NEK{} donne \NEK{}~; le contrôle n'est \OUI{} que si tous ses critères le
+sont.
+
+\begin{tableaucours}{L{3.4cm}L{3.4cm}cL{3.8cm}}{%
+    \tableauHeader{Critère 1 (désactivé)} &
+    \tableauHeader{Critère 2 (notifié)} &
+    \tableauHeader{Cote D1.1.2} &
+    \tableauHeader{Lecture}
+}
+\OUI{} & \OUI{} & \OUI{} & Contrôle conforme \\
+\OUI{} & \NON{} & \NON{} & Désactivé par chance, sans procédure \\
+\NEK{} & \OUI{} & \NEK{} & Notifié, mais désactivation non établie \\
+\NON{} & \NEK{} & \NON{} & Un défaut établi suffit \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~6.11. Composer les cotes de deux
+critères}\end{center}
+
+\subsection{Les règles de qualité}
+
+\begin{itemize}
+    \item \textbf{Atomicité}~: l'objectif, le critère et la question ne
+          contiennent ni «~et~» ni «~ou~»~; toute assertion composée est
+          scindée.
+    \item \textbf{Exhaustivité}~: les éléments d'un niveau couvrent
+          entièrement l'élément du niveau supérieur.
+    \item \textbf{Non-redondance}~: un contrôle n'appartient qu'à un
+          domaine, sinon il est compté deux fois.
+    \item \textbf{Borne cognitive}~: au plus sept à neuf éléments sous un
+          même parent~; au-delà, on ajoute un niveau.
+\end{itemize}
+
+\separateur
+
+% ============================================================================
+\section{Le programme de travail}
+\label{sec:c06-programme}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Le programme de travail}, une ligne par contrôle~:
+\begin{itemize}
+    \item le code et l'intitulé du contrôle (position dans le gabarit)~;
+    \item le risque couvert, sa priorité et la connaissance que l'on en a~;
+    \item la fiche d'assertion (critères, questions)~;
+    \item le test prévu (cheminement, échantillon, essai, analyse de toute
+          la population) et sa taille (Chapitre~\ref{chap:preuve})~;
+    \item les pièces à demander, par strate~;
+    \item les seuils de décision retenus (Chapitre~\ref{chap:constater})~;
+    \item le membre de l'équipe et la date prévue.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Vérificateur}
+Gardez la trace de chaque relance. Une pièce non remise à l'échéance,
+malgré relance écrite, devient soit un \NON{} (si elle devait exister),
+soit une limitation d'étendue à mentionner au rapport.
+\end{boxmetier}
+
+\begin{boxmetier}{Inspecteur}
+Même pour une inspection courte, écrivez l'objectif et le périmètre en
+tête de votre note de mission~: ils déterminent la portée de votre
+conclusion (Chapitre~\ref{chap:prologue}).
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Votre plan d'audit annuel est une cotation des risques et des
+connaissances à l'échelle de l'entité~: les applications financières, et
+leurs jointures, doivent y figurer, avec la date du dernier audit qui les
+a testées.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Sept principes, des axiomes derrière.} La preuve vient de
+          l'observabilité partielle~; l'indépendance, de l'interaction
+          stratégique et de l'opposabilité.
+    \item \textbf{Un cycle en cinq phases}~: préparer, planifier, exécuter,
+          conclure, suivre~; le suivi ouvre le cycle suivant.
+    \item \textbf{Quatre questions de référence}~: quoi démontrer, sur quoi,
+          par rapport à quoi, avec quelle assurance.
+    \item \textbf{Trois strates de pièces}~; une pièce absente est \NON{} si
+          elle devait exister, \NEK{} sinon.
+    \item \textbf{Risque et connaissance.} La priorité absolue va aux zones
+          à risque élevé que l'on connaît mal.
+    \item \textbf{Le gabarit canonique}~: huit niveaux, du domaine à la
+          trace~; une fiche d'assertion par contrôle, une cote par critère.
+    \item \textbf{Un programme ligne par ligne}, écrit avant le terrain.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.1. Un ordre de mission \niveaubase}]
+Rédigez l'ordre de mission et les termes de référence d'une vérification
+de la paie de la CAPNO (Garoua) pour l'exercice 2025, en répondant aux
+quatre questions de la section~\ref{sec:c06-ordre}.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.2. Risque et connaissance \niveaumoyen}]
+Pour la paie de la CAPNO, cotez au moins six risques, indiquez pour chacun
+la connaissance dont vous disposez (élevée ou faible) et placez-les dans le
+Tableau~6.9. Dites lesquels vous testerez par analyse de toute la
+population, et lesquels par cheminement.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.3. Une fiche d'assertion \niveaumoyen}]
+Rédigez la fiche d'assertion du contrôle «~seconde validation de toute
+modification de RIB~» (domaine D2), avec sa position dans le gabarit, deux
+critères atomiques, leurs questions, le test, la preuve, la trace, le
+risque et la conséquence. Donnez la cote du contrôle si le premier critère
+est \OUI{} et le second \NEK{}.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~6.4. Décomposer e-RECETTES \niveauexpert}]
+Décomposez l'objectif «~le système e-RECETTES garantit-il l'exhaustivité
+des recettes enregistrées~?~» selon le gabarit canonique jusqu'au niveau
+du contrôle, pour au moins trois sous-domaines. Vérifiez les quatre règles
+de qualité et signalez une violation que vous avez dû corriger.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Le programme dit quoi tester, et où se trouve chaque
+contrôle. Le Chapitre~\ref{chap:preuve} dit comment répondre à chaque
+question~: avec quelle preuve, et que faire quand on ne sait pas.
+\end{boxinfo}

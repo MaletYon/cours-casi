@@ -1,0 +1,669 @@
+% ============================================================================
+% Fichier  : partie1/P01_C03_evaluer_controle_interne.tex
+% Titre    : Évaluer le Système de Contrôle Interne
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Chapitre central du cours (décision de l'auteur, 07/11/2026).
+% Sources : COSO 2013 (IFACI), chap. 3, §§ 138-140 (déficience, déficience
+% majeure) ; INF3226 C03 (tailles d'échantillon, NON / NEK) ; décret
+% n° 2013/287, art. 28.
+% Faits MINÉQUIR établis ici (à garder) :
+%  - contrôle 5 du P00 : pièces du poste comptable reçues le 2 avril 2026,
+%    le contrôle des pièces jointes a fonctionné -> OUI ; lecture finale
+%    3 OUI, 5 NON, 0 NEK ;
+%  - 31 mutations ou départs en 2025 ; 9 comptes encore actifs au 23/03/2026 ;
+%  - déficiences : A (accès et séparation, contrôles 1 et 2) majeure ;
+%    B (fichier des fournisseurs et doublons, contrôles 3 et 4) ;
+%    C (revue de fin de gestion, contrôle 7).
+% ============================================================================
+
+\chapter{Évaluer le Système de Contrôle Interne}
+\label{chap:eval-sci}
+\chaptermark{Évaluer le contrôle interne}
+
+\epigraph{%
+    « Un contrôle mal conçu est inefficace, même exécuté à la lettre~; un
+    contrôle bien conçu mais non exécuté ne protège de rien. »%
+}{Règle du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitre~\ref{chap:sci}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Conduire l'évaluation d'un système de contrôle interne en cinq
+          étapes~: décrire, questionner, cheminer, évaluer la conception,
+          tester le fonctionnement.
+    \item Construire une matrice des risques et des contrôles pour un
+          circuit financier informatisé.
+    \item Utiliser un questionnaire de contrôle interne, en distinguant la
+          réponse de l'audité de la preuve.
+    \item Réaliser un test de cheminement et en tirer ce qu'il établit, et
+          ce qu'il n'établit pas.
+    \item Dimensionner un test de fonctionnement et coter le contrôle
+          \OUI{}, \NON{} ou \NEK{}.
+    \item Classer les déficiences (déficience, déficience majeure) selon le
+          COSO~2013.
+    \item Formuler une conclusion sur l'efficacité du système de contrôle
+          interne.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Dans le prologue, la vérificatrice a coté huit contrôles. Elle savait
+quels contrôles attendre, comment les tester, et ce que voulait dire un
+\NON{}. Ce chapitre donne cette démarche, pas à pas. Il est le plus
+important du cours~: chaque chapitre de la Partie~IV l'applique à un
+domaine, et le cas intégrateur la reprend en entier.
+
+La question directrice est celle de l'article~28 du décret
+n°~2013/287~: évaluer les structures de contrôle interne. Elle se
+décompose en deux questions plus précises. \emph{Le dispositif est-il
+conçu pour réduire les risques~?} \emph{A-t-il fonctionné pendant toute
+la période~?}
+
+\separateur
+
+% ============================================================================
+\section{La démarche en cinq étapes}
+\label{sec:c03-demarche}
+% ============================================================================
+
+\begin{tableaucours}{cL{2.6cm}L{4.8cm}L{4.4cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Étape} &
+    \tableauHeader{Question} &
+    \tableauHeader{Production}
+}
+1 & Décrire & Comment le circuit fonctionne-t-il, et où sont les
+risques~? & Narratif, diagramme, matrice des risques et des contrôles \\
+2 & Questionner & Quels contrôles l'entité dit-elle exercer~? &
+Questionnaire de contrôle interne rempli \\
+3 & Cheminer & Le circuit fonctionne-t-il comme on me l'a décrit~? &
+Fiche de test de cheminement \\
+4 & Évaluer la conception & Ces contrôles, s'ils fonctionnent,
+réduisent-ils les risques~? & Cotation de la conception \\
+5 & Tester le fonctionnement & Ont-ils fonctionné toute la période~? &
+Feuilles de test, cotation finale \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.1. Les cinq étapes de l'évaluation
+du contrôle interne}\end{center}
+
+Les étapes s'enchaînent, et chacune peut arrêter la suivante. Un contrôle
+dont la conception est défaillante n'a pas à être testé dans son
+fonctionnement~: il est déjà une déficience. Un contrôle que l'entité ne
+déclare pas, mais que la matrice des risques exige, est un \NON{} dès
+l'étape~2. Les étapes~6 et~7, classer les déficiences et conclure, sont
+traitées aux sections~\ref{sec:c03-deficiences} et~\ref{sec:c03-conclure}.
+
+\separateur
+
+% ============================================================================
+\section{Décrire le système}
+\label{sec:c03-decrire}
+% ============================================================================
+
+\subsection{Le narratif et le diagramme}
+
+L'auditeur commence par décrire le circuit, avec les mots de l'entité~:
+qui fait quoi, dans quel ordre, avec quel écran, et quelle trace reste.
+Le narratif s'accompagne d'un diagramme, qui fait apparaître les étapes,
+les acteurs et les points de contrôle.
+
+\begin{center}
+\begin{tikzpicture}[
+    etape/.style = {draw=CouleurBordDef, fill=CouleurDef, rounded corners=3pt,
+        text width=2.5cm, minimum height=0.9cm, align=center,
+        font=\scriptsize\bfseries\color{CouleurPrimaire}},
+    ctrl/.style = {draw=CouleurAccent, fill=CouleurAccent!15, circle,
+        inner sep=1pt, font=\scriptsize\bfseries},
+    arrow/.style = {-{Stealth[length=4pt]}, thick, color=CouleurSecondaire}
+]
+\node[etape] (e) at (0,0) {Engagement\\(ENG)};
+\node[etape] (l) at (3.4,0) {Liquidation\\(LIQ)};
+\node[etape] (o) at (6.8,0) {Ordonnancement\\(ORD)};
+\node[etape] (p) at (10.2,0) {Paiement\\(poste comptable)};
+\node[etape, text width=3.4cm] (f) at (5.1,-2.0) {Fichier des fournisseurs\\(FRS)};
+\draw[arrow] (e) -- (l);
+\draw[arrow] (l) -- (o);
+\draw[arrow] (o) -- (p);
+\draw[arrow, dashed] (f) -- (l);
+\draw[arrow, dashed] (f) -- (o);
+\node[ctrl] at (1.7,0.75) {C1};
+\node[ctrl] at (5.1,0.75) {C2};
+\node[ctrl] at (8.5,0.75) {C3};
+\node[ctrl] at (7.4,-2.0) {C4};
+\end{tikzpicture}
+\end{center}
+\vspace{-0.4em}
+\begin{center}{\small\itshape Figure~3.1. Le circuit de la dépense dans
+SIDÉPENSE et ses points de contrôle (C1 contrôle du crédit~; C2 contrôle
+de la liquidation~; C3 contrôle des doublons et des pièces~; C4 contrôle
+des modifications de RIB)}\end{center}
+
+\subsection{La matrice des risques et des contrôles}
+
+La description aboutit à une \termecle{matrice des risques et des
+contrôles}\index{matrice des risques et des contrôles}~: pour chaque
+risque du circuit, le ou les contrôles qui doivent le couvrir. C'est la
+liste de ce que l'auditeur s'attend à trouver, établie \emph{avant}
+d'interroger l'entité, à partir des textes, des référentiels et de son
+expérience.
+
+\begin{tableaucours}{L{4.0cm}L{4.6cm}L{1.6cm}L{1.8cm}}{%
+    \tableauHeader{Risque} &
+    \tableauHeader{Contrôle attendu} &
+    \tableauHeader{Type} &
+    \tableauHeader{Principe}
+}
+R1. Un agent parti agit encore & Désactivation du compte à la date de la
+mutation & Préventif & 11 \\
+R2. Un agent émet seul un mandat & Profils LIQ et ORD jamais réunis &
+Préventif & 10, 11 \\
+R3. Le bénéficiaire est changé & Seconde validation de tout RIB modifié &
+Préventif & 10 \\
+R4. Une facture est payée deux fois & Blocage des doublons dans
+l'application & Préventif & 10 \\
+R5. Le mandat n'est pas justifié & Vérification des pièces jointes par le
+poste comptable & Préventif & 10 \\
+R6. Une opération ne laisse pas de trace & Journalisation des opérations
+sensibles & Détectif & 13 \\
+R7. Une anomalie de fin de gestion passe & Revue des mandats émis hors
+heures et des RIB modifiés & Détectif & 16 \\
+R8. Les traces disparaissent & Conservation protégée des journaux &
+Détectif & 13 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.2. Matrice des risques et des
+contrôles du circuit de la dépense (MINÉQUIR)}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Construire la liste des contrôles à partir de
+ce que l'entité déclare faire. On ne trouve alors que des contrôles qui
+existent~; ceux qui manquent n'apparaissent jamais.
+
+\smallskip
+\textbf{Règle~:} la matrice part des risques, pas des contrôles déclarés.
+Un risque sans contrôle en face est déjà une constatation.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Questionner : le questionnaire de contrôle interne}
+\label{sec:c03-qci}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Questionnaire de contrôle interne}\index{questionnaire de contrôle
+interne} (\sigle{QCI})~: liste de questions fermées, tirée de la matrice des
+risques et des contrôles, qui demande à l'entité si chaque contrôle attendu
+existe, qui l'exerce, à quelle fréquence, et quelle trace il laisse.
+\end{boxdef}
+
+Une question bien formée appelle une réponse vérifiable. «~Les droits
+sont-ils bien gérés~?~» n'appelle qu'un «~oui~». «~Qui désactive le compte
+d'un agent muté, dans quel délai, et sur quelle pièce~?~» appelle une
+réponse que l'on peut tester.
+
+\begin{tableaucours}{cL{5.4cm}L{3.0cm}L{3.2cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Question} &
+    \tableauHeader{Réponse déclarée} &
+    \tableauHeader{Pièce demandée}
+}
+1 & Qui informe la cellule informatique d'une mutation, et sous quel
+délai~? & «~Le service du personnel, en principe~» & Procédure, exemples
+de notifications \\
+2 & Qui désactive le compte, et quelle trace reste~? & «~La cellule, dès
+qu'elle est informée~» & Journal des désactivations 2025 \\
+3 & Les profils LIQ et ORD peuvent-ils être réunis sur un compte~? &
+«~Non~» & Matrice des profils \\
+4 & Qui peut modifier un RIB, et avec quelle validation~? & «~Le service
+de la liquidation~» & Liste des détenteurs du profil FRS, journal des
+modifications \\
+5 & L'application bloque-t-elle les doublons~? & «~Oui, le numéro de
+facture est unique~» & Paramétrage, essai \\
+6 & Une revue des mandats de fin de gestion est-elle faite~? & «~Le DAF
+suit les gros montants~» & Comptes rendus de revue \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.3. Extrait du QCI sur le circuit
+de la dépense, rempli par la DAF et la cellule informatique}\end{center}
+
+\begin{boxinfo}
+\textbf{Une réponse au QCI est une déclaration, pas une preuve.} Elle dit
+ce que l'entité croit faire. Le cheminement et les tests disent ce qu'elle
+fait. La réponse à la question~5 en est l'exemple~: le numéro de facture
+est bien unique, mais le suffixe «~bis~» suffit à en faire un autre
+numéro. Le contrôle déclaré existe~; il ne couvre pas le risque.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Cheminer : le test de cheminement}
+\label{sec:c03-cheminement}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Test de cheminement}\index{test de cheminement}
+(\textit{walkthrough})~: suivi d'une opération réelle, du début à la fin
+du circuit, en examinant à chaque étape l'écran utilisé, la trace produite
+et le contrôle exercé. Il établit que l'auditeur a compris le circuit et
+que les contrôles existent tels qu'ils sont décrits~; il n'établit pas
+qu'ils ont fonctionné pendant toute la période.
+\end{boxdef}
+
+Mme~NGO~BIYONG choisit le mandat 2025-08817, le premier paiement du
+décompte n°~3, et le suit dans SIDÉPENSE, assise à côté de l'agent qui
+l'a traité.
+
+\begin{tableaucours}{L{2.4cm}L{5.4cm}L{4.4cm}}{%
+    \tableauHeader{Étape} &
+    \tableauHeader{Ce que la vérificatrice observe} &
+    \tableauHeader{Trace obtenue}
+}
+Engagement & Le crédit est contrôlé~: un essai à un montant supérieur est
+refusé & Capture de l'écran de refus \\
+Liquidation & L'agent joint la facture et le PV de réception, puis valide
+& Historique du mandat \\
+Ordonnancement & Un autre agent valide~; l'application ne vérifie pas
+qu'il est différent du liquidateur & Historique (deux noms différents,
+par choix et non par contrainte) \\
+Transmission & Le mandat part au poste comptable avec ses pièces
+scannées & Bordereau électronique \\
+Paiement & Le poste comptable vérifie les pièces, puis paie & Visa
+électronique, relevé \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.4. Test de cheminement du mandat
+2025-08817}\end{center}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Ce que montre le cheminement}
+\textbf{Constatation.} Sur le mandat 2025-08817, liquidation et
+ordonnancement ont été faits par deux agents différents. L'application
+n'empêche pas qu'un même agent fasse les deux.
+
+\medskip
+\textbf{Analyse} (confiance élevée). La séparation a été respectée sur ce
+mandat, mais par habitude, pas par contrainte. Un cheminement réussi ne
+prouve donc pas que le contrôle existe~: il montre ici que la séparation
+dépend de la bonne volonté des agents. C'est un défaut de
+\emph{conception}, que le cheminement suffit à établir.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Évaluer la conception, tester le fonctionnement}
+\label{sec:c03-tester}
+% ============================================================================
+
+\subsection{Deux questions distinctes}
+
+\begin{tableaucours}{L{3.0cm}L{4.8cm}L{4.4cm}}{%
+    \tableauHeader{Évaluation} &
+    \tableauHeader{Question} &
+    \tableauHeader{Comment}
+}
+Conception & Le contrôle, s'il fonctionne, réduit-il le risque~? &
+Lecture de la procédure, du paramétrage, cheminement \\
+Fonctionnement & Le contrôle a-t-il fonctionné comme prévu pendant toute
+la période~? & Test d'un échantillon d'exécutions et de leurs traces,
+ou test du paramétrage \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.5. Conception et fonctionnement
+d'un contrôle}\end{center}
+
+\subsection{Combien d'exécutions tester~?}
+
+Le fonctionnement d'un contrôle manuel se teste sur un échantillon dont la
+taille dépend de la fréquence du contrôle. Le cours retient les ordres de
+grandeur du Tableau~3.6~; ce sont des conventions de travail, que la
+méthodologie de chaque institution peut fixer autrement.
+
+\begin{tableaucours}{L{3.6cm}L{3.2cm}L{5.4cm}}{%
+    \tableauHeader{Fréquence du contrôle} &
+    \tableauHeader{Exécutions par an} &
+    \tableauHeader{Échantillon indicatif}
+}
+Annuelle & 1 & 1 \\
+Trimestrielle & 4 & 2 \\
+Mensuelle & 12 & 2 à 5 \\
+Hebdomadaire & 52 & 5 à 15 \\
+Quotidienne & environ 250 & 20 à 40 \\
+Plusieurs fois par jour & plus de 250 & 25 à 60 \\
+Automatisée & & Un essai qui doit passer et un qui doit être bloqué, si
+les contrôles généraux sont efficaces \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.6. Tailles d'échantillon
+indicatives (convention du cours)}\end{center}
+
+\subsection{Coter}
+
+\begin{itemize}
+    \item \textbf{\OUI{}}~: le contrôle est bien conçu et a fonctionné sur
+          tout l'échantillon (ou l'essai automatisé a donné le résultat
+          attendu).
+    \item \textbf{\NON{}}~: la conception est défaillante, ou une
+          exécution au moins a manqué, ou la trace que le contrôle devait
+          produire n'existe pas.
+    \item \textbf{\NEK{}}~: malgré des diligences normales, l'auditeur ne
+          peut pas conclure~: pièce non remise, sources contradictoires
+          qu'il ne peut pas départager. Il écrit les diligences faites et
+          relance.
+\end{itemize}
+
+\begin{boxobjet}{C-ACC-01 · Comptes des agents mutés}
+\textbf{Objectif.} Aucun agent muté ou parti ne peut agir dans
+SIDÉPENSE.
+
+\textbf{Risque couvert.} R1~: un compte resté actif est utilisé par son
+ancien titulaire ou par un tiers.
+
+\textbf{Critère.} Le compte est désactivé au plus tard à la date d'effet
+de la mutation (procédure à écrire~; à défaut, principe~11 du COSO).
+
+\textbf{Test de conception.} Existe-t-il une notification du service du
+personnel à la cellule informatique~? Réponse~: non, aucune procédure
+écrite.
+
+\textbf{Test de fonctionnement.} Rapprocher la liste des 31 mutations et
+départs de 2025 de la liste des comptes actifs au 23~mars~2026.
+
+\textbf{Résultat.} 9 comptes sur 31 sont encore actifs, dont
+\texttt{mbarga.j}.
+
+\textbf{Cote.} \NON{} (conception et fonctionnement défaillants).
+\end{boxobjet}
+
+\begin{boxalert}
+\textbf{Violation typique.} Coter \NEK{} un contrôle dont la procédure
+exige un procès-verbal, alors que l'entité a confirmé qu'il n'en existe
+aucun.
+
+\smallskip
+\textbf{Règle~:} l'absence d'une trace exigée par le critère est un \NON{}
+établi. \NEK{} est réservé au cas où l'auditeur ne peut pas savoir.
+\end{boxalert}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Le contrôle 5 est levé}
+\textbf{Constatation.} Le 2~avril~2026, le poste comptable remet les
+visas électroniques des mandats 2025-08817 et 2025-09342. Les deux
+portent la vérification des pièces jointes~; les pièces étaient
+complètes et lisibles.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le contrôle des pièces a fonctionné
+tel qu'il est conçu~: il vérifie la présence et la lisibilité des pièces,
+pas leur unicité. Le contrôle~5 passe de \NEK{} à \OUI{}. Le double
+paiement relève d'un autre contrôle, le blocage des doublons (contrôle~4),
+coté \NON{}.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Classer les déficiences}
+\label{sec:c03-deficiences}
+% ============================================================================
+
+\subsection{Deux niveaux}
+
+Le COSO~2013 distingue deux niveaux de déficience~\cite{coso2013icfr}.
+
+\begin{boxdef}
+\termecle{Déficience du contrôle interne}\index{déficience}~: insuffisance
+d'une ou plusieurs composantes ou d'un ou plusieurs principes, qui réduit
+la probabilité que l'entité atteigne ses objectifs.
+
+\medskip
+\termecle{Déficience majeure}\index{déficience majeure}~: déficience, ou
+combinaison de déficiences, qui réduit \emph{fortement} cette probabilité.
+\end{boxdef}
+{\small\itshape Définitions reformulées d'après le COSO~2013, §~138.}
+
+\medskip
+
+Deux règles du COSO (§§~139 et~140) commandent la conclusion. Lorsqu'une
+déficience majeure existe, l'entité ne peut pas conclure que son système
+de contrôle interne est efficace. Et une déficience majeure d'une
+composante, ou d'un principe, ne peut pas être compensée par le bon
+fonctionnement d'une autre composante, ou d'autres principes.
+
+\subsection{Une grille de classement}
+
+Pour décider si une déficience est majeure, le cours retient quatre
+questions. Elles ne remplacent pas le jugement~; elles l'obligent à
+s'expliquer.
+
+\begin{tableaucours}{cL{6.4cm}L{5.4cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Question} &
+    \tableauHeader{Penche vers «~majeure~» si…}
+}
+1 & Quelle perte, ou quelle irrégularité, la déficience rend-elle
+possible~? & Elle porte sur des montants importants ou sur tout le
+circuit \\
+2 & Avec quelle probabilité~? & Rien n'empêche qu'elle se produise, ou
+elle s'est déjà produite \\
+3 & Un contrôle compensatoire la couvre-t-il, et est-il prouvé~? & Aucun,
+ou il n'est pas prouvé \\
+4 & Ouvre-t-elle une possibilité de fraude~? & Oui, en particulier par
+contournement de la séparation des tâches \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.7. Grille de classement des
+déficiences (convention du cours)}\end{center}
+
+\subsection{Les déficiences du MINÉQUIR}
+
+Les cinq \NON{} de la matrice ne font pas cinq déficiences~: plusieurs
+contrôles manquants peuvent relever d'une même cause. La vérificatrice
+les regroupe en trois déficiences.
+
+\begin{tableaucours}{cL{4.6cm}L{1.8cm}L{1.8cm}L{3.0cm}}{%
+    \tableauHeader{} &
+    \tableauHeader{Déficience} &
+    \tableauHeader{Contrôles} &
+    \tableauHeader{Principes} &
+    \tableauHeader{Classement}
+}
+A & Les accès ne sont pas maîtrisés~: comptes des partants actifs,
+séparation LIQ / ORD non imposée & 1, 2 & 10, 11 & Majeure (questions 1
+à 4) \\
+B & Le fichier des fournisseurs n'est pas protégé et les doublons ne sont
+pas bloqués & 3, 4 & 10 & Déficience \\
+C & Aucune revue des opérations de fin de gestion & 7 & 16 & Déficience \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.8. Classement des déficiences du
+circuit de la dépense}\end{center}
+
+\begin{boxinfo}
+\textbf{Pourquoi B n'est pas majeure à elle seule.} Si les accès étaient
+maîtrisés, une modification de RIB et un mandat en double exigeraient
+deux personnes différentes, et la collusion resterait nécessaire. C'est
+la déficience~A qui rend B dangereuse. Le classement dit cette relation~:
+la combinaison A et B est majeure, et c'est elle qui a permis le double
+paiement.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Conclure sur l'efficacité du système}
+\label{sec:c03-conclure}
+% ============================================================================
+
+\subsection{La lecture de conformité}
+
+\begin{boxlecture}{Circuit de la dépense, après les tests}
+\textbf{Constatation.} Sur huit contrôles attendus, trois existent et
+fonctionnent (contrôles~5, 6 et~8), cinq manquent ou n'ont pas fonctionné.
+Aucun contrôle ne reste à établir.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Les contrôles qui fonctionnent sont
+la vérification des pièces et deux contrôles de détection. La déficience
+majeure~A porte sur les accès, dont dépendent tous les autres contrôles.
+
+\medskip
+\hfill\conformite{3}{8}{0}
+\end{boxlecture}
+
+\subsection{Une échelle simple}
+
+Pour situer un domaine et suivre son évolution d'une mission à l'autre,
+le cours propose une échelle à cinq niveaux. C'est une convention
+pédagogique, pas une norme~: elle aide à dire où l'on en est, elle ne
+remplace pas la conclusion.
+
+\begin{tableaucours}{cL{2.6cm}L{9.2cm}}{%
+    \tableauHeader{Niveau} &
+    \tableauHeader{Nom} &
+    \tableauHeader{Description}
+}
+0 & Inexistant & Le risque n'est pas identifié~; aucun contrôle \\
+1 & Informel & Des contrôles existent, par habitude, sans procédure ni
+trace \\
+2 & Défini & Les contrôles sont écrits, mais leur exécution n'est pas
+prouvée \\
+3 & Appliqué & Les contrôles sont écrits, exécutés et tracés~; les tests
+de fonctionnement sont concluants \\
+4 & Piloté & Les contrôles sont surveillés, les déficiences suivies et
+corrigées \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~3.9. Échelle de maturité du
+contrôle interne (convention du cours)}\end{center}
+
+Le circuit de la dépense du MINÉQUIR est au niveau~1~: la séparation des
+tâches existe par habitude (cheminement), sans être imposée ni écrite.
+
+\subsection{Formuler la conclusion}
+
+La conclusion porte sur un objectif, une période et un périmètre, et dit
+sur quoi elle repose. Celle de Mme~NGO~BIYONG s'écrit ainsi~:
+
+\begin{quote}\itshape
+Sur la base des travaux décrits au rapport (matrice des risques et des
+contrôles, questionnaire, test de cheminement, tests de fonctionnement
+sur l'exercice 2025), le système de contrôle interne du circuit de la
+dépense de la DAF du MINÉQUIR n'est pas efficace~: il présente une
+déficience majeure dans la maîtrise des accès à SIDÉPENSE, qui a permis
+un double paiement de 187\,450\,000~FCFA.
+\end{quote}
+
+\begin{boxprocedure}
+\textbf{Le dossier d'évaluation d'un circuit} contient, dans cet ordre~:
+\begin{enumerate}
+    \item le narratif et le diagramme, validés par l'entité~;
+    \item la matrice des risques et des contrôles, datée~;
+    \item le QCI rempli, avec le nom et la fonction de chaque répondant~;
+    \item la fiche du test de cheminement et ses traces~;
+    \item une feuille de test par contrôle~: conception, échantillon,
+          résultat, cote, pièces~;
+    \item le tableau de classement des déficiences, avec la réponse aux
+          quatre questions pour chaque déficience majeure~;
+    \item la conclusion, et la référence des pièces sur lesquelles elle
+          repose.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxmetier}{Vérificateur}
+L'article~28 du décret n°~2013/287 vous charge d'évaluer les structures
+de contrôle interne. Joignez à votre rapport la matrice des risques et des
+contrôles~: elle montre que votre conclusion repose sur une liste établie
+à l'avance, et non sur ce que l'entité a bien voulu montrer.
+\end{boxmetier}
+
+\begin{boxmetier}{Inspecteur}
+Une inspection déclenchée par une alerte peut sauter l'étape du QCI, mais
+pas celle du cheminement~: suivez au moins une opération réelle dans
+l'application avant de conclure sur un circuit.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Votre évaluation annuelle du contrôle interne sera relue par le CONSUPE.
+Tenez une matrice des risques et des contrôles par circuit, et mettez-la
+à jour à chaque changement d'application~: c'est votre meilleure défense
+devant un vérificateur.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Cinq étapes.} Décrire, questionner, cheminer, évaluer la
+          conception, tester le fonctionnement~; puis classer et conclure.
+    \item \textbf{La matrice part des risques}, pas des contrôles déclarés.
+    \item \textbf{Le QCI recueille des déclarations}~; le cheminement et les
+          tests produisent des preuves.
+    \item \textbf{Conception d'abord.} Un contrôle mal conçu est une
+          déficience, sans test de fonctionnement.
+    \item \textbf{Trois cotes.} \OUI{}, \NON{}, \NEK{}~; l'absence d'une
+          trace exigée est un \NON{}.
+    \item \textbf{Deux niveaux de déficience.} Une déficience majeure
+          interdit de conclure à l'efficacité, et ne se compense pas.
+    \item \textbf{Une conclusion située.} Un objectif, une période, un
+          périmètre, et les travaux sur lesquels elle repose.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.1. Formuler des questions \niveaubase}]
+Réécrivez les questions suivantes du QCI pour qu'elles appellent une
+réponse vérifiable~: (a) «~Les sauvegardes sont-elles faites~?~»~; (b)
+«~Les mots de passe sont-ils sûrs~?~»~; (c) «~Le fichier de paie est-il
+contrôlé~?~».
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.2. Dimensionner et coter \niveaubase}]
+Le chef de la liquidation signe chaque soir la liste des mandats du jour.
+\begin{enumerate}[(a)]
+    \item Combien de listes testez-vous pour l'exercice 2025~?
+    \item Sur l'échantillon, deux listes ne sont pas signées. Quelle
+          cote~?
+    \item Les listes de novembre n'ont pas été retrouvées, et le service
+          affirme qu'elles ont été signées. Quelle cote pour novembre, et
+          que faites-vous~?
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.3. Une matrice pour la paie \niveaumoyen}]
+Construisez la matrice des risques et des contrôles du circuit de la paie
+de la CAPNO (entrée d'un agent, modification d'un élément de solde,
+départ, calcul, virement), avec au moins six risques, le contrôle attendu
+pour chacun, son type et le principe du COSO correspondant.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~3.4. Classer et conclure \niveauexpert}]
+À la CAPNO, l'auditeur interne relève~: (1) 37 agents payés ne figurent
+pas au fichier du personnel~; (2) le profil qui crée un agent peut aussi
+valider la paie~; (3) aucun rapprochement entre la paie et le fichier du
+personnel n'est fait~; (4) les sauvegardes ne sont pas testées.
+\begin{enumerate}[(a)]
+    \item Regroupez ces constats en déficiences, et classez chacune à
+          l'aide du Tableau~3.7.
+    \item Rédigez la conclusion sur l'efficacité du contrôle interne de la
+          paie.
+    \item Dites ce qui changerait votre classement.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} La Partie~I a donné l'objet et la méthode~:
+évaluer le contrôle interne d'un système d'information. Reste à savoir au
+nom de quoi l'on évalue. Le Chapitre~\ref{chap:institutions} présente les
+institutions qui contrôlent les systèmes d'information publics au
+Cameroun, et leurs compétences.
+\end{boxinfo}

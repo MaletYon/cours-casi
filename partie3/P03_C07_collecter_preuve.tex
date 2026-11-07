@@ -1,0 +1,578 @@
+% ============================================================================
+% Fichier  : partie3/P03_C07_collecter_preuve.tex
+% Titre    : Collecter la Preuve : OUI, NON, NEK
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.2 -- novembre 2026 (réécriture étoffée, alignée sur INF3226
+%            C10, A0 et A1)
+% ============================================================================
+% Sources : A0 (hal-05701007), proposition de modalité d'ignorance explicite ;
+% A1 (hal-05701270), instrument OUI/NON/NEK, mesures, indice rho ; GUID 5100 ;
+% manuel IDI (documentation).
+% Faits MINÉQUIR établis ici : domaine D1 Accès, 5 questions x 4 répondants
+% (DAF EBOUMBOU, chef de la cellule ATANGANA, chef de la liquidation
+% NDZIE, contrôleur financier MOUKOURI) ; grille binaire de l'audit interne
+% 2025 : 17 OUI / 20 ; instrument trichotomique en mars 2026 : 11 OUI, 3 NON,
+% 6 NEK -> mu 0,55, U 0,30, H 1,41 ; rho = 0,30.
+% Faits CAPNO (LAB-05) : paie de décembre 2025, 4 312 lignes, net total
+% 1 293 418 500 FCFA ; première extraction 4 309 lignes (3 manquantes,
+% 1 905 000 FCFA) ; extraction refaite le 6 mai 2026.
+% ============================================================================
+
+\chapter[Collecter la preuve : OUI, NON, NEK]{Collecter la Preuve : OUI, NON, NEK}
+\label{chap:preuve}
+\chaptermark{Collecter la preuve}
+
+\epigraph{%
+    « Une grille qui interdit de répondre \emph{je ne sais pas}\\
+    ne supprime pas l'ignorance~: elle la déguise en certitude. »%
+}{Principe de l'auditologie}
+
+\niveauChapitre{Intermédiaire}{Chapitre~\ref{chap:preparer}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Utiliser l'instrument \OUI{}~/ \NON{}~/ \NEK{} auprès des
+          répondants et pour coter les contrôles, et justifier la modalité
+          \NEK{} à partir des axiomes de l'auditologie.
+    \item Mesurer le biais d'une grille binaire par l'indice $\rho$.
+    \item Classer les preuves selon leur fiabilité et pratiquer la
+          corroboration.
+    \item Conduire un entretien d'audit qui produit des réponses cotables.
+    \item Calculer la taille d'un échantillon par attributs et en tirer une
+          conclusion.
+    \item Obtenir une extraction dont on garantit l'origine, l'exhaustivité,
+          l'exactitude et l'intégrité.
+    \item Tenir des papiers de travail qu'un tiers peut relire et refaire.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Dans le prologue, tout reposait sur deux fichiers et sur huit cotes. Si la
+DAF avait pu dire «~ce fichier n'est pas le nôtre~», ou si la vérificatrice
+avait coté \OUI{} ce qu'elle ne savait pas, le constat tombait. Ce chapitre
+apprend à répondre à chaque question de la fiche d'assertion avec une
+preuve qui tient, et à dire honnêtement ce que l'on ne sait pas. Il repose
+sur l'instrument de réponse construit par l'article A1~\cite{minka2026nek},
+à partir des axiomes de l'article A0~\cite{minka2026auditologie}.
+
+\medskip
+\textbf{Plan du chapitre.}
+\begin{enumerate}
+    \item L'instrument \OUI{}~/ \NON{}~/ \NEK{} (section~\ref{sec:c07-instrument}).
+    \item Le biais du choix forcé (section~\ref{sec:c07-biais}).
+    \item Les preuves et leur fiabilité (section~\ref{sec:c07-preuves}).
+    \item Les entretiens (section~\ref{sec:c07-entretiens}).
+    \item Tester et échantillonner (sections~\ref{sec:c07-techniques}
+          et~\ref{sec:c07-echantillon}).
+    \item Obtenir une extraction (section~\ref{sec:c07-extraction}).
+    \item Les papiers de travail (section~\ref{sec:c07-papiers}).
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{L'instrument OUI / NON / NEK}
+\label{sec:c07-instrument}
+% ============================================================================
+
+\subsection{Pourquoi une troisième réponse}
+
+L'article \emph{Vers l'auditologie} établit, à partir de quatre de ses
+axiomes, que tout instrument de réponse d'audit valide doit comporter une
+modalité explicite de connaissance insuffisante~\cite{minka2026auditologie}.
+Le raisonnement est simple.
+\begin{itemize}
+    \item \textbf{Observabilité partielle} (axiome~1)~: l'auditeur ne voit
+          qu'une partie des états du système~; certaines questions n'ont
+          pas de réponse établie au moment où il les pose.
+    \item \textbf{Cognition limitée} (axiome~2)~: les répondants, comme
+          l'auditeur, ne savent pas tout de ce qu'ils gèrent.
+    \item \textbf{Mesurabilité} (axiome~3)~: l'incertitude peut se mesurer,
+          à condition d'être enregistrée.
+    \item \textbf{Interaction stratégique} (axiome~4)~: un répondant a
+          parfois intérêt à répondre \OUI{} quand il ne sait pas.
+\end{itemize}
+Une grille qui n'admet que \OUI{} et \NON{} oblige donc à transformer
+l'ignorance en une réponse fausse. L'article A1 construit l'instrument qui
+l'évite~\cite{minka2026nek}.
+
+\begin{boxdef}
+\termecle{Espace de réponse trichotomique}\index{espace de réponse
+trichotomique}~: ensemble $\Omega = \{\OUI, \NON, \NEK\}$ des réponses
+admises à une question d'audit.
+\begin{itemize}
+    \item \OUI{}~: le critère est satisfait, et une preuve l'établit.
+    \item \NON{}~: le critère n'est pas satisfait, et une preuve l'établit.
+    \item \NEK{} (\textit{Not Enough Knowledge})~: l'information disponible
+          ne permet pas de conclure, malgré des diligences normales.
+\end{itemize}
+\end{boxdef}
+
+\subsection{Deux usages}
+
+\begin{enumerate}
+    \item \textbf{Auprès des répondants}~: une même question est posée à
+          plusieurs interlocuteurs. Pour chaque question, ou chaque domaine,
+          on obtient une distribution de réponses, dont l'article A1 tire
+          trois mesures~: $\mu$, la part des \OUI{}~; $U$, la part des
+          \NEK{}~; $H$, l'entropie~\cite{minka2026nek}. Le
+          Chapitre~\ref{chap:constater} apprend à les lire.
+    \item \textbf{Par l'auditeur}~: après ses tests, l'auditeur cote chaque
+          contrôle \OUI{}, \NON{} ou \NEK{}, preuve à l'appui. C'est la cote
+          qui entre dans le rapport.
+\end{enumerate}
+Les deux usages se répondent~: une question où les répondants divergent
+appelle des tests~; les tests permettent ensuite de coter avec preuve.
+
+\subsection{NEK n'est pas « non applicable »}
+
+\begin{boxalert}
+\textbf{Violation typique.} Coter \NEK{} un contrôle qui ne s'applique pas au
+périmètre (par exemple, la validation des annulations de recettes dans un
+service qui n'encaisse rien).
+
+\smallskip
+\textbf{Règle~:} un contrôle sans objet est \emph{non applicable}~: il sort
+de la décomposition, avec la raison écrite. \NEK{} est réservé à un contrôle
+applicable dont on ne peut pas établir l'état. Les confondre fausse le taux
+d'incertitude~$U$.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Le biais du choix forcé}
+\label{sec:c07-biais}
+% ============================================================================
+
+Une grille binaire force le répondant qui ne sait pas à choisir. Il choisit
+le plus souvent la réponse attendue, ou la plus confortable~: le \OUI{}.
+La grille binaire \emph{surestime} donc la conformité. L'article A1 mesure
+cette surestimation par un indice de réduction du biais~\cite{minka2026nek}~:
+\[
+    \rho = \hat{\mu}^{B} - \mu^{T},
+\]
+où $\hat{\mu}^{B}$ est la part des \OUI{} obtenue avec l'instrument binaire, et
+$\mu^{T}$ celle obtenue avec l'instrument trichotomique, sur les mêmes
+questions et les mêmes répondants.
+
+\begin{boxlecture}{Domaine D1, binaire puis trichotomique}
+En 2025, l'audit interne du MINÉQUIR avait posé cinq questions sur les accès
+à SIDÉPENSE à quatre interlocuteurs (le DAF, le chef de la cellule
+informatique, le chef de la liquidation, le contrôleur financier), avec une
+grille \OUI{}~/ \NON{}~: 17 \OUI{} sur 20 réponses. En mars~2026, la
+vérificatrice pose les mêmes questions aux mêmes personnes avec
+l'instrument trichotomique~: 11 \OUI{}, 3 \NON{}, 6 \NEK{}.
+
+\medskip
+\textbf{Constatation.} $\hat{\mu}^{B} = 17/20 = 0{,}85$~; $\mu^{T} = 11/20 =
+0{,}55$~; $\rho = 0{,}30$.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). La grille binaire surestimait la
+conformité de trente points~: six réponses \OUI{} de 2025 étaient en
+réalité des «~je ne sais pas~». C'est ainsi que l'audit interne avait pu
+écrire que «~la gestion des accès est satisfaisante~», quelques mois avant
+le double paiement.
+
+\medskip
+\hfill\lecture{0{,}55}{0{,}30}{1{,}41}
+\end{boxlecture}
+
+\begin{boxinfo}
+\textbf{Ce que $\rho$ ne dit pas.} L'indice mesure l'écart entre deux
+instruments, pas la conformité réelle. Seuls les tests de l'auditeur disent
+si les contrôles fonctionnent~: au Chapitre~\ref{chap:acces}, un seul des
+six contrôles d'accès sera coté \OUI{}.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Les preuves et leur fiabilité}
+\label{sec:c07-preuves}
+% ============================================================================
+
+\subsection{Suffisante et appropriée}
+
+\begin{boxdef}
+\termecle{Preuve d'audit}\index{preuve d'audit}~: information sur laquelle
+l'auditeur fonde sa cote et ses conclusions. Elle doit être
+\emph{suffisante} (en quantité, au regard du risque) et \emph{appropriée}
+(pertinente pour le critère, et fiable).
+\end{boxdef}
+
+\subsection{Une hiérarchie de fiabilité}
+
+\begin{tableaucours}{cL{4.2cm}L{4.4cm}L{2.8cm}}{%
+    \tableauHeader{Rang} &
+    \tableauHeader{Source} &
+    \tableauHeader{Exemple} &
+    \tableauHeader{Fiabilité}
+}
+1 & Trace du système, extraite par l'auditeur & Matrice des profils
+extraite devant la vérificatrice & La plus élevée \\
+2 & Document externe & Relevé bancaire, visa du poste comptable & Élevée \\
+3 & Document interne approuvé & Note de service signée & Moyenne \\
+4 & Observation directe & La vérificatrice voit un agent liquider &
+Ponctuelle \\
+5 & Déclaration orale & « Les comptes sont désactivés dès qu'on nous
+informe » & La plus faible \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.1. Fiabilité des preuves selon leur
+source}\end{center}
+
+Une déclaration orale ne suffit jamais à coter \OUI{}~: elle oriente la
+recherche de la preuve. Quand l'auditeur ne dispose que d'une déclaration,
+la cote est \NEK{}, et la question devient «~où est la preuve~?~».
+
+\subsection{La corroboration}
+
+Deux preuves indépendantes qui concordent valent plus que la plus fiable
+des deux prise seule. Pour les contrôles importants, l'auditeur cherche une
+seconde source~: la liste des mutations de la DRH (rang~3) recoupée avec
+les dates de désactivation dans SIDÉPENSE (rang~1). Si deux sources se
+contredisent sans qu'on puisse les départager, la cote est \NEK{}, et
+l'écart devient lui-même un objet d'investigation.
+
+\separateur
+
+% ============================================================================
+\section{Les entretiens}
+\label{sec:c07-entretiens}
+% ============================================================================
+
+L'entretien d'audit, à la différence de l'entretien de prise de
+connaissance (Chapitre~\ref{chap:preparer}), recueille des réponses
+cotables. Ses questions sont celles des fiches d'assertion, classées par
+interlocuteur.
+
+\begin{boxprocedure}
+\textbf{Règles de l'entretien d'audit}~:
+\begin{enumerate}
+    \item un répondant à la fois, pour éviter qu'un chef ne réponde pour son
+          équipe~;
+    \item lire la question de la fiche telle quelle, sans la reformuler en
+          suggérant la réponse~;
+    \item annoncer que \NEK{} est une réponse admise et utile~;
+    \item noter la réponse, son auteur, la date, et la pièce invoquée~;
+    \item demander la pièce séance tenante, ou fixer un délai écrit~;
+    \item faire relire et signer le compte rendu.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxalert}
+\textbf{Violation typique.} Demander au DAF «~vous désactivez bien les
+comptes des agents mutés, n'est-ce pas~?~».
+
+\smallskip
+\textbf{Règle~:} une question qui suggère la réponse produit un \OUI{} sans
+valeur. On demande «~qui désactive, quand, sur quelle pièce~?~», et l'on
+admet «~je ne sais pas~».
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Les techniques de test}
+\label{sec:c07-techniques}
+% ============================================================================
+
+\begin{tableaucours}{L{2.6cm}L{4.4cm}L{5.2cm}}{%
+    \tableauHeader{Technique} &
+    \tableauHeader{Ce qu'elle établit} &
+    \tableauHeader{Exemple}
+}
+Entretien & Ce que l'entité déclare & Le chef de la cellule décrit la
+gestion des comptes \\
+Observation & Ce qui se passe, au moment où l'on regarde & Assister à une
+désactivation de compte \\
+Inspection & Ce que contient un document ou un enregistrement & Lire la
+matrice des profils \\
+Ré-exécution & Que le contrôle produit le résultat attendu & Tenter de
+saisir un mandat en double dans un environnement de test \\
+Analyse de données & Ce que dit toute la population & Rechercher les
+doublons parmi 9\,611 mandats \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.2. Les techniques de
+test}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Faire une ré-exécution dans l'application de
+production («~pour voir si le doublon passe~»).
+
+\smallskip
+\textbf{Règle~:} l'auditeur ne crée, ne modifie ni ne supprime jamais une
+donnée de production. Les essais se font dans un environnement de test, ou
+par observation d'une opération réelle.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Échantillonner dans le système}
+\label{sec:c07-echantillon}
+% ============================================================================
+
+\subsection{Population et échantillon}
+
+\begin{boxdef}
+\termecle{Population}\index{population}~: ensemble des opérations sur
+lesquelles porte la conclusion. Dans un SI, elle se prend dans le système,
+après rapprochement de ses totaux (Chapitre~\ref{chap:prologue}).
+
+\medskip
+\termecle{Échantillon}\index{échantillon}~: partie de la population
+examinée en détail. Il est \emph{aléatoire} quand chaque opération a la même
+chance d'être tirée, \emph{raisonné} quand l'auditeur choisit les opérations
+selon un critère (montant élevé, opération hors heures).
+\end{boxdef}
+
+L'échantillon aléatoire permet d'étendre la conclusion à la population~;
+l'échantillon raisonné va droit aux anomalies probables, mais ne permet pas
+cette extension. L'auditeur dit toujours lequel il a utilisé.
+
+\subsection{L'échantillonnage par attributs, démontré}
+
+On teste un attribut (le contrôle a-t-il été exécuté~?) sur $n$ opérations
+tirées au hasard. On veut pouvoir dire, avec une confiance $c$, que le taux
+réel d'écart ne dépasse pas un taux toléré $t$, si l'on ne trouve aucun
+écart.
+
+Si le taux réel d'écart était exactement $t$, la probabilité de ne trouver
+aucun écart sur $n$ tirages indépendants serait $(1 - t)^n$. Pour que ce
+résultat soit peu probable, au plus $1 - c$, il faut~:
+\[
+    (1 - t)^n \leq 1 - c
+    \quad\Longleftrightarrow\quad
+    n \geq \frac{\ln(1 - c)}{\ln(1 - t)}.
+\]
+
+\begin{tableaucours}{L{3.0cm}L{3.0cm}L{3.0cm}L{3.0cm}}{%
+    \tableauHeader{Confiance $c$} &
+    \tableauHeader{Taux toléré $t$} &
+    \tableauHeader{Calcul} &
+    \tableauHeader{Taille $n$}
+}
+95~\% & 5~\% & $\ln 0{,}05 / \ln 0{,}95 \approx 58{,}4$ & 59 \\
+90~\% & 5~\% & $\ln 0{,}10 / \ln 0{,}95 \approx 44{,}9$ & 45 \\
+95~\% & 10~\% & $\ln 0{,}05 / \ln 0{,}90 \approx 28{,}4$ & 29 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.3. Tailles d'échantillon par
+attributs, sans écart attendu}\end{center}
+
+\subsection{Conclure sur l'échantillon}
+
+\begin{itemize}
+    \item \textbf{Aucun écart}~: avec une confiance $c$, le taux d'écart ne
+          dépasse pas $t$~; le contrôle est coté \OUI{} pour la période.
+    \item \textbf{Un écart ou plus}~: la conclusion par attributs tombe~; le
+          contrôle est \NON{}, et l'on examine chaque écart (cause, montant).
+    \item \textbf{Des éléments introuvables}~: s'ils sont nombreux, la cote
+          est \NEK{}, et l'on écrit les diligences faites.
+\end{itemize}
+
+\begin{boxoutils}{Tirer un échantillon aléatoire dans un tableur}
+Dans la feuille des mandats, ajouter une colonne~:
+\begin{lstlisting}
+H2 : =ALEA()
+\end{lstlisting}
+Copier la colonne et la coller en valeurs (pour figer le tirage), trier sur
+H, retenir les $n$ premières lignes. Conserver la feuille triée~: elle
+prouve le caractère aléatoire du tirage.
+\end{boxoutils}
+
+\subsection{Tester toute la population}
+
+Quand la donnée est fiable, il est souvent plus probant de tester
+\emph{toute} la population par une analyse~: doublons, trous de
+numérotation, opérations hors heures, montants juste sous un seuil
+(Chapitre~\ref{chap:donnees-fraude}). L'analyse désigne des opérations~;
+chacune est ensuite examinée pièce par pièce.
+
+\separateur
+
+% ============================================================================
+\section{Obtenir une extraction}
+\label{sec:c07-extraction}
+% ============================================================================
+
+\subsection{Quatre garanties}
+
+\begin{tableaucours}{L{2.8cm}L{4.4cm}L{5.0cm}}{%
+    \tableauHeader{Garantie} &
+    \tableauHeader{Question} &
+    \tableauHeader{Comment l'obtenir}
+}
+Origine & Le fichier vient-il bien de l'application~? & Assister à
+l'extraction, ou la faire faire sous ses yeux \\
+Exhaustivité & Toutes les opérations y sont-elles~? & Requête écrite~;
+nombre de lignes et totaux rapprochés d'une source indépendante \\
+Exactitude & Les valeurs sont-elles celles de l'application~? & Comparer
+quelques lignes à l'écran \\
+Intégrité & Le fichier n'a-t-il pas changé depuis~? & Empreinte SHA-256
+calculée à la remise, contresignée \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~7.4. Les quatre garanties d'une
+extraction}\end{center}
+
+\subsection{L'empreinte et les totaux de contrôle}
+
+\begin{boxdef}
+\termecle{Empreinte}\index{empreinte} (\textit{hash})~: suite de caractères
+calculée à partir du contenu d'un fichier par une fonction de hachage
+(SHA-256). Le moindre changement du fichier change l'empreinte.
+
+\medskip
+\termecle{Totaux de contrôle}\index{totaux de contrôle}~: nombre de lignes
+et sommes, rapprochés d'une source que l'auditeur n'a pas obtenue de la même
+personne (relevé bancaire, compte administratif, état du poste comptable).
+\end{boxdef}
+
+L'empreinte prouve que le fichier n'a pas changé~; elle ne prouve pas qu'il
+était complet. Il faut les deux.
+
+\begin{boxoutils}{Calculer et vérifier une empreinte}
+Sous Windows, dans l'invite de commandes~:
+\begin{lstlisting}
+certutil -hashfile paie_2025-12.csv SHA256
+\end{lstlisting}
+Sous Linux (bureau d'analyse de NDAP SUKULU)~:
+\begin{lstlisting}
+sha256sum paie_2025-12.csv
+sha256sum -c MANIFESTE_SHA256.txt
+\end{lstlisting}
+\end{boxoutils}
+
+\begin{boxscenario}{Dossier CAPNO. Trois lignes de moins}
+\textbf{Constatation.} La première extraction de la paie de décembre~2025,
+remise sur une clé, compte 4\,309 lignes. L'ordre de virement transmis à la
+banque porte sur 1\,293\,418\,500~FCFA pour 4\,312 bénéficiaires. Il manque
+trois lignes, pour un total de 1\,905\,000~FCFA.
+
+\medskip
+\textbf{Analyse} (confiance élevée). L'extraction n'était pas exhaustive.
+M.~HAMADOU la fait refaire devant lui le 6~mai~2026~: 4\,312 lignes, totaux
+égaux à l'ordre de virement. Les trois lignes absentes deviennent les
+premières à examiner~: pourquoi manquaient-elles~?
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Les papiers de travail}
+\label{sec:c07-papiers}
+% ============================================================================
+
+Le manuel de l'IDI le rappelle~: la documentation doit permettre à un
+auditeur expérimenté, sans lien avec la mission, de comprendre les travaux,
+les preuves et les conclusions~\cite{idi2021conformite}. C'est aussi la
+traduction pratique de l'axiome d'\emph{opposabilité}~: une conclusion qui
+ne peut pas être refaite ne peut pas être défendue~\cite{minka2026auditologie}.
+
+\begin{boxprocedure}
+\textbf{Feuille de test}, une par contrôle testé~:
+\begin{enumerate}
+    \item référence (position dans le gabarit, ligne du programme)~;
+    \item fiche d'assertion (critères et questions)~;
+    \item population (source, nombre, totaux, empreinte du fichier)~;
+    \item échantillon (méthode, confiance, taux toléré, taille, liste)~;
+    \item résultat élément par élément, avec la pièce examinée~;
+    \item cote de chaque critère et cote du contrôle, avec la
+          constatation~; pour un \NEK{}, les diligences et la relance~;
+    \item auteur, date, et visa du chef de mission.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxinfo}
+\textbf{Conserver.} Les extractions sont des données personnelles (paie) ou
+sensibles (fournisseurs). Elles sont conservées sur un support protégé, avec
+leur empreinte, aussi longtemps que les suites possibles l'exigent, puis
+détruites selon les règles de l'institution.
+\end{boxinfo}
+
+\begin{boxmetier}{Vérificateur}
+Annoncez \NEK{} dès le premier entretien~: «~si vous ne savez pas,
+dites-le~; c'est une réponse utile~». Vous obtiendrez moins de \OUI{}, et
+davantage de vérité.
+\end{boxmetier}
+
+\begin{boxmetier}{Juge des comptes}
+Une pièce électronique produite à l'instance vaut si l'on peut en établir
+l'origine et l'intégrité. Demandez le procès-verbal de remise et
+l'empreinte~; leur absence affaiblit la pièce.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Remplacez vos grilles \OUI{}~/ \NON{} par l'instrument à trois réponses, et
+mesurez $\rho$ sur vos propres questionnaires~: vous saurez de combien vos
+évaluations passées surestimaient la conformité.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Trois réponses, fondées en théorie.} \OUI{}, \NON{}, \NEK{}~;
+          la modalité \NEK{} découle des axiomes~1 à~4 d'A0.
+    \item \textbf{NEK n'est pas « non applicable ».} Un contrôle sans objet
+          sort de la décomposition.
+    \item \textbf{La grille binaire surestime}~; $\rho$ mesure de combien
+          (0,30 sur les accès du MINÉQUIR).
+    \item \textbf{Une hiérarchie de preuves}~; une déclaration seule donne
+          \NEK{}~; deux sources indépendantes valent mieux qu'une.
+    \item \textbf{L'entretien ne suggère pas}~; il admet «~je ne sais pas~».
+    \item \textbf{$n \ge \ln(1-c) / \ln(1-t)$}~: 59 tirages pour 95~\% de
+          confiance et 5~\% d'écart toléré.
+    \item \textbf{Empreinte et totaux}~: intégrité et exhaustivité d'une
+          extraction.
+    \item \textbf{Un tiers doit pouvoir refaire}~: c'est l'opposabilité.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.1. Coter avec la bonne preuve \niveaubase}]
+Pour chaque situation, donnez la cote et le rang de la preuve
+(Tableau~7.1)~: (a) le DAF affirme que les profils sont revus chaque
+semestre~; (b) la matrice extraite devant vous montre cinq comptes LIQ +
+ORD~; (c) une note signée prévoit la désactivation sous 48~heures, mais le
+journal n'a pas encore été remis~; (d) la DRH et la cellule donnent deux
+dates de désactivation différentes pour le même agent.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.2. L'indice $\rho$ \niveaubase}]
+Sur le domaine D4 (exploitation), la grille binaire de 2025 donnait 14
+\OUI{} sur 20~; l'instrument trichotomique donne 8 \OUI{}, 4 \NON{}, 8
+\NEK{}. Calculez $\hat{\mu}^{B}$, $\mu^{T}$ et $\rho$, et dites ce que cela
+signifie.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.3. Dimensionner \niveaumoyen}]
+Vous voulez conclure, avec 95~\% de confiance, que le visa du contrôle
+financier manque sur moins de 3~\% des mandats de 2025. (a) Combien de
+mandats tirez-vous~? (b) Vous trouvez un mandat sans visa~: que
+concluez-vous~? (c) Que proposez-vous plutôt, puisque l'extraction des
+9\,611 mandats est disponible~?
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~7.4. Trois lignes \niveauexpert}]
+Les trois lignes absentes de la première extraction de la CAPNO
+correspondent à trois agents créés le 28~novembre~2025 par le même compte.
+Dites ce que cela suggère, ce que vous ne pouvez pas encore affirmer, les
+trois pièces que vous demandez, et la cote provisoire du contrôle
+«~l'extraction remise est exhaustive~».
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Les réponses sont recueillies, les contrôles cotés,
+les preuves conservées. Le Chapitre~\ref{chap:constater} apprend à lire
+ces réponses par trois mesures, à conclure, à rapporter et à suivre.
+\end{boxinfo}

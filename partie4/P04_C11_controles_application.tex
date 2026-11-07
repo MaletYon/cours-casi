@@ -1,0 +1,300 @@
+% ============================================================================
+% Fichier  : partie4/P04_C11_controles_application.tex
+% Titre    : Contrôles d'Application de la Dépense et de la Recette
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : INF3226 C18 (applications et données, resserré) ; GUID 5100
+% (gestion des contrôles d'applications) ; COSO principe 10.
+% Faits établis ici (LAB-09) :
+%  MINÉQUIR, 9 611 mandats 2025 : liquidation > engagement : 0 ;
+%   212 mandats > 50 000 000 FCFA, dont 4 sans visa du contrôle financier ;
+%   doublons même fournisseur + même montant : 3 paires (P00) ; avec le
+%   numéro de facture normalisé en plus : 1 paire (BATIRURAL) ; avec le
+%   numéro brut : 0 (c'est pourquoi le contrôle de SIDÉPENSE n'a rien vu).
+%  e-RECETTES 2025 : quittances Q-000001 à Q-018640 ; 37 numéros absents ;
+%   112 annulations, dont 61 par le même agent (FOMEKONG).
+% ============================================================================
+
+\chapter{Contrôles d'Application de la Dépense et de la Recette}
+\label{chap:applications}
+\chaptermark{Contrôles d'application}
+
+\epigraph{%
+    « L'application fait ce qu'on lui a dit~; l'auditeur vérifie ce qu'on
+    lui a dit. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitres~\ref{chap:eval-sci}
+et~\ref{chap:acces}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Classer les contrôles d'application~: saisie, traitement,
+          interface, sortie.
+    \item Identifier les contrôles d'application attendus sur la chaîne de
+          la dépense et sur celle de la recette.
+    \item Tester un contrôle automatique, en sachant à quelle condition un
+          essai unique suffit.
+    \item Tester un contrôle par l'analyse de toute la population quand
+          l'essai n'est pas possible.
+    \item Coter les contrôles d'application et en tirer une conclusion.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Une fois les contrôles généraux évalués, l'auditeur sait s'il peut se
+fier aux contrôles intégrés à l'application. Ce chapitre les passe en
+revue sur la dépense (SIDÉPENSE) et sur la recette (e-RECETTES), et
+montre comment les tester sans jamais toucher à la production.
+
+\separateur
+
+% ============================================================================
+\section{Quatre familles de contrôles d'application}
+\label{sec:c11-familles}
+% ============================================================================
+
+\begin{tableaucours}{L{2.4cm}L{4.6cm}L{5.2cm}}{%
+    \tableauHeader{Famille} &
+    \tableauHeader{Objectif} &
+    \tableauHeader{Exemples}
+}
+Saisie & Seules des données valides entrent & Champs obligatoires,
+formats, listes de valeurs, doublons, plafonds \\
+Traitement & Les calculs et les enchaînements sont justes & Montant
+liquidé au plus égal à l'engagement, calcul des pénalités \\
+Interface & Les données transmises arrivent toutes, et intactes &
+Totaux de contrôle entre SIDÉPENSE et le poste comptable \\
+Sortie & Les états sont complets et ne vont qu'aux destinataires prévus
+& Numérotation continue des quittances, états signés \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.1. Les quatre familles de contrôles
+d'application}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Sur la chaîne de la dépense}
+\label{sec:c11-depense}
+% ============================================================================
+
+\begin{tableaucours}{L{4.0cm}L{2.0cm}L{6.2cm}}{%
+    \tableauHeader{Contrôle attendu} &
+    \tableauHeader{Famille} &
+    \tableauHeader{Ce qu'il empêche}
+}
+Engagement au plus égal au crédit disponible & Saisie & Le dépassement
+de crédit \\
+Liquidation au plus égale à l'engagement & Traitement & Le paiement d'un
+montant non engagé \\
+Blocage des doublons (fournisseur, montant, facture normalisée) & Saisie
+& Le double paiement \\
+Visa du contrôle financier au-delà d'un seuil & Traitement & Le paiement
+d'un mandat important sans visa \\
+Imputation cohérente avec la nature de la dépense & Saisie & Les
+imputations de complaisance \\
+Totaux de contrôle de la transmission au poste comptable & Interface &
+La perte ou l'ajout d'un mandat en cours de route \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.2. Les contrôles d'application de
+la dépense}\end{center}
+
+\begin{boxdef}
+\termecle{Normalisation}\index{normalisation}~: transformation d'une
+donnée avant comparaison (suppression des espaces, des tirets, des
+suffixes comme «~bis~», passage en majuscules), pour que deux valeurs
+qui désignent la même chose soient reconnues comme égales. Un contrôle de
+doublon sans normalisation se contourne par une lettre.
+\end{boxdef}
+
+\separateur
+
+% ============================================================================
+\section{Sur la chaîne de la recette}
+\label{sec:c11-recette}
+% ============================================================================
+
+\begin{tableaucours}{L{4.4cm}L{2.0cm}L{5.8cm}}{%
+    \tableauHeader{Contrôle attendu} &
+    \tableauHeader{Famille} &
+    \tableauHeader{Ce qu'il empêche}
+}
+Numérotation continue et automatique des quittances & Sortie & Une
+recette encaissée sans quittance enregistrée \\
+Annulation d'une quittance sur motif et validation d'un second agent &
+Traitement & L'annulation de complaisance \\
+Rapprochement quotidien des encaissements et des versements & Interface &
+Une recette non reversée \\
+Calcul automatique des pénalités selon le taux en vigueur & Traitement &
+Les remises non autorisées \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~11.3. Les contrôles d'application de
+la recette}\end{center}
+
+\begin{boxscenario}{Dossier e-RECETTES. Trous et annulations}
+\textbf{Constatation.} En 2025, les quittances vont de Q-000001 à
+Q-018640~; 37 numéros n'existent pas dans la base. Sur 112 annulations,
+61 ont été faites par le même agent, M.~FOMEKONG, sans validation d'un
+second agent~: e-RECETTES ne l'exige pas.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Les 37 numéros absents peuvent
+correspondre à des quittances émises puis supprimées, ce que la
+numérotation continue devait empêcher. La concentration des annulations
+sur un agent n'est pas une preuve de fraude, mais un indice qui justifie
+l'examen pièce par pièce des 61 annulations
+(Chapitre~\ref{chap:donnees-fraude}).
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Tester un contrôle automatique}
+\label{sec:c11-tester}
+% ============================================================================
+
+\subsection{L'essai, si les contrôles généraux tiennent}
+
+Un contrôle automatique fait la même chose à chaque opération. Si les
+contrôles généraux sont efficaces (le programme et le paramètre n'ont pas
+changé pendant la période), un essai qui doit passer et un essai qui doit
+être bloqué suffisent, en environnement de test, avec un paramétrage
+identique à la production.
+
+\subsection{L'analyse de la population, sinon}
+
+Si les contrôles généraux ne tiennent pas, ou s'il n'existe pas
+d'environnement de test, on teste le contrôle par son \emph{résultat}~:
+on cherche, dans toute la population, les opérations que le contrôle
+aurait dû bloquer. Zéro opération trouvée sur toute l'année est une preuve
+forte de fonctionnement~; une seule suffit à coter \NON{}.
+
+\begin{boxoutils}{Tester deux contrôles de SIDÉPENSE par la population}
+Feuille des 9\,611 mandats~: D montant liquidé, E montant engagé, F
+montant, G visa (\texttt{OUI} ou vide).
+\begin{lstlisting}
+Liquidation > engagement :
+H2 : =SI(D2>E2;"ECART";"")
+Mandats > 50 M sans visa :
+I2 : =SI(ET(F2>50000000;G2<>"OUI");"SANS VISA";"")
+\end{lstlisting}
+\end{boxoutils}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Deux contrôles par leur résultat}
+\textbf{Constatation.} Aucun des 9\,611 mandats n'a une liquidation
+supérieure à l'engagement. Sur les 212 mandats de plus de
+50\,000\,000~FCFA, 4 n'ont pas de visa du contrôle financier.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Le contrôle de la liquidation a
+fonctionné toute l'année (\OUI{}), mais la confiance reste moyenne~: les
+accès n'étant pas maîtrisés, un compte ADM aurait pu le désactiver puis
+le réactiver. Le contrôle du visa n'est pas bloquant (\NON{})~: les 4
+mandats sont à examiner un par un.
+\end{boxscenario}
+
+\begin{boxobjet}{C-APP-03 · Blocage des doublons}
+\textbf{Objectif.} Une même facture n'est payée qu'une fois.
+
+\textbf{Critère.} SIDÉPENSE refuse un mandat de même fournisseur, même
+montant et même facture normalisée qu'un mandat existant.
+
+\textbf{Test de conception.} Le contrôle porte sur le numéro de facture
+brut, sans normalisation.
+
+\textbf{Test de fonctionnement.} Analyse des 9\,611 mandats~: avec le
+numéro brut, aucune paire~; avec le numéro normalisé, une paire, celle du
+prologue (les deux autres paires de même fournisseur et même montant ont
+des factures différentes, justifiées par des livraisons distinctes).
+
+\textbf{Cote.} \NON{}.
+\end{boxobjet}
+
+\begin{boxlecture}{Contrôles d'application de SIDÉPENSE}
+\textbf{Constatation.} Sur six contrôles attendus (Tableau~11.2), trois
+fonctionnent~: crédit, liquidation, transmission~; trois non~: doublons,
+visa, imputation (non bloquante).
+
+\textbf{Analyse} (confiance moyenne). Les contrôles qui fonctionnent
+restent fragiles tant que la déficience majeure des accès n'est pas
+corrigée.
+
+\medskip
+\hfill\conformite{3}{6}{0}
+\end{boxlecture}
+
+\begin{boxmetier}{Vérificateur}
+Avant tout essai, demandez s'il existe un environnement de test dont le
+paramétrage est identique à la production. S'il n'en existe pas, testez
+par la population~: c'est plus long, mais c'est sans risque pour
+l'entité.
+\end{boxmetier}
+
+\begin{boxmetier}{Contrôleur financier}
+Si votre visa n'est pas bloquant dans l'application, chaque mandat qui
+passe sans lui est un mandat que vous n'avez pas contrôlé. Demandez que le
+seuil soit paramétré comme contrôle bloquant.
+\end{boxmetier}
+
+\begin{boxmetier}{Juge des comptes}
+Une numérotation de quittances avec des trous est un indice
+d'exhaustivité défaillante des recettes. Demandez l'explication de chaque
+numéro absent.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Quatre familles.} Saisie, traitement, interface, sortie.
+    \item \textbf{Dépense~:} crédit, liquidation, doublons, visa,
+          imputation, transmission.
+    \item \textbf{Recette~:} numérotation continue, annulations validées,
+          rapprochement, pénalités.
+    \item \textbf{Normaliser avant de comparer}~: un doublon se cache
+          derrière une lettre.
+    \item \textbf{Un essai suffit} si les contrôles généraux tiennent~;
+          sinon, tester par la population.
+    \item \textbf{Zéro sur toute la population} est une preuve forte~; un
+          seul cas suffit à coter \NON{}.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.1. Classer \niveaubase}]
+Rattachez à une famille~: (a) champ RIB obligatoire~; (b) total des
+mandats transmis égal au total reçu~; (c) calcul de la pénalité de
+retard~; (d) quittance imprimée avec un numéro.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.2. Normaliser \niveaubase}]
+Écrivez la formule de tableur qui transforme «~F-2025-117 bis~» et
+«~F2025117~» en une même valeur.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.3. Les 37 numéros \niveaumoyen}]
+Décrivez votre démarche pour les 37 numéros de quittance absents
+d'e-RECETTES~: pièces demandées, personnes interrogées, et ce qui ferait
+passer l'indice au constat.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~11.4. Essai ou population \niveauexpert}]
+La DAF vous propose de tester le nouveau blocage des doublons par un essai
+en production, «~avec un mandat fictif qu'on annulera~». Dites pourquoi
+vous refusez, ce que vous proposez, et à quelles conditions vous
+conclurez \OUI{} pour l'année 2026.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} L'analyse de toute la population a montré sa
+puissance. Le Chapitre~\ref{chap:donnees-fraude} en fait un outil à part
+entière, pour la paie et les marchés, et pour la détection de la fraude.
+\end{boxinfo}

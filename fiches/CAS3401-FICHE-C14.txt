@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C14
+Chapitre 14 : Cas intégrateur : la mission e-RECETTES
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. L'objectif de la mission e-RECETTES porte sur :
+      a) L'exhaustivité et la régularité des recettes
+      b) La paie
+      c) Les marchés de travaux
+      d) La sécurité du réseau seule
+
+ 2. Le fondement de la mission est :
+      a) La loi n° 2024/017
+      b) Le décret n° 2013/287, art. 2, al. 3 et 4
+      c) Le contrat NUMÉRIKA
+      d) Une note du DAF
+
+ 3. La période de la mission est :
+      a) L'exercice 2024
+      b) Le seul mois de septembre
+      c) L'exercice 2025
+      d) Dix ans
+
+ 4. Combien d'agents utilisent e-RECETTES ?
+      a) Douze
+      b) Quarante-sept
+      c) Un
+      d) Trois
+
+ 5. Le compte tagne.m réunit les profils :
+      a) ENC, ANN et VAL
+      b) VER seul
+      c) ADM
+      d) ENC seul
+
+ 6. Le compte du prestataire est :
+      a) fomekong.a
+      b) numerika_adm
+      c) mbida.s
+      d) admin
+
+ 7. Les recettes encaissées en 2025 s'élèvent à :
+      a) 2 171 950 000 FCFA
+      b) 640 000 000 FCFA
+      c) 2 184 600 000 FCFA
+      d) 12 650 000 FCFA
+
+ 8. L'écart entre encaissements et versements est de :
+      a) 37 FCFA
+      b) 2 184 600 000 FCFA
+      c) 640 000 000 FCFA
+      d) 12 650 000 FCFA
+
+ 9. La réponse du QCI « l'application numérote » doit être confrontée :
+      a) Aux 37 numéros absents
+      b) Au contrat
+      c) Au budget
+      d) Au PCA
+
+10. La réponse « NUMÉRIKA s'en occupe » sur les sauvegardes est :
+      a) Une preuve
+      b) Une déclaration à confronter au journal
+      c) Un critère
+      d) Une conclusion
+
+11. Combien de temps dure le cas en salle ?
+      a) Quatre heures
+      b) Trente minutes
+      c) Deux heures
+      d) Une journée
+
+12. Combien de temps dure la restitution de chaque équipe ?
+      a) Une heure
+      b) Deux minutes
+      c) Trente minutes
+      d) Cinq à sept minutes
+
+13. La matrice des risques et des contrôles du cas compte au moins :
+      a) 10 lignes
+      b) 2 lignes
+      c) 100 lignes
+      d) 1 ligne
+
+14. Combien de constats chaque équipe rédige-t-elle au minimum ?
+      a) Un
+      b) Deux
+      c) Cinq
+      d) Dix
+
+15. Sur combien de points la restitution est-elle notée ?
+      a) 10
+      b) 100
+      c) 20
+      d) 40
+
+16. Le critère le mieux doté (4 points) comprend :
+      a) Le mandat cité
+      b) La conclusion
+      c) La forme orale
+      d) La matrice, le classement ou les constats
+
+17. Le rapprochement mensuel sans trace se cote :
+      a) NON
+      b) NEK
+      c) OUI
+      d) Sans objet
+
+18. Il ne faut pas écrire :
+      a) « Les annulations sont concentrées sur un compte »
+      b) « M. FOMEKONG détourne des recettes »
+      c) « 37 numéros sont absents »
+      d) « L'audit de l'ANTIC n'a pas eu lieu »
+
+19. Additionner les NON comme autant de déficiences est une erreur : il faut :
+      a) Les ignorer
+      b) Les multiplier
+      c) Les regrouper par cause
+      d) Les transformer en NEK
+
+20. L'effet chiffré le plus direct sur l'objectif d'exhaustivité est :
+      a) Le montant du marché
+      b) Le nombre d'agents
+      c) Le nombre de contribuables
+      d) L'écart de 12 650 000 FCFA
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Chaque équipe joue le rôle d'une équipe de vérification du CONSUPE.
+      Vrai / Faux
+
+22. Une annulation dans e-RECETTES exige la validation d'un second agent.
+      Vrai / Faux
+
+23. Le contrat de NUMÉRIKA contient un droit d'audit.
+      Vrai / Faux
+
+24. L'audit de sécurité de l'ANTIC n'a pas été réalisé.
+      Vrai / Faux
+
+25. Le cas se traite à la maison.
+      Vrai / Faux
+
+26. Les rôles de l'équipe incluent un chef de mission et un rédacteur.
+      Vrai / Faux
+
+27. La conclusion doit porter sur un objectif, une période et un périmètre.
+      Vrai / Faux
+
+28. Il faut conclure sur la sécurité d'ensemble d'e-RECETTES.
+      Vrai / Faux
+
+29. L'écart entre encaissements et versements peut appeler une note de faits distincte.
+      Vrai / Faux
+
+30. Coter OUI la numérotation parce que l'application numérote est correct.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La recette des finances du cas est celle de ______.
+
+32. Le caissier d'e-RECETTES s'appelle M. ______.
+
+33. Le profil qui permet de verser au Trésor est le profil ______.
+
+34. Le nombre de mises en production sans demande écrite est de ______.
+
+35. La dernière phase du cas est la ______.
+
+36. Les constats parlent de comptes, pas de ______.
+
+37. Une déclaration ne vaut pas ______.
+
+38. Les déficiences se regroupent par ______.
+
+39. L'absence d'une trace exigée se cote ______.
+
+40. Le conseil devant lequel l'écart pourrait avoir une suite a pour sigle ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

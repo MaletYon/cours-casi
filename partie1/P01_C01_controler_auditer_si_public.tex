@@ -1,0 +1,416 @@
+% ============================================================================
+% Fichier  : partie1/P01_C01_controler_auditer_si_public.tex
+% Titre    : Contrôler et Auditer un SI Public
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : INF3226 C01 (resserré) ; ISSAI 100 (via le manuel IDI) ;
+% GUID 5100 ; décret n° 2013/287, art. 2. Seuls A0 et A1 (HAL) sont cités
+% comme travaux de l'auteur.
+% ============================================================================
+
+\chapter{Contrôler et Auditer un SI Public}
+\label{chap:audit-public}
+
+\epigraph{%
+    « Auditer, c'est donner à un tiers une assurance sur ce qu'il ne peut
+    pas vérifier lui-même. »%
+}{Principe du cours}
+
+\niveauChapitre{Fondamental}{Prologue. Aucune connaissance informatique
+préalable.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Distinguer contrôle, audit, inspection et vérification, et situer
+          chacun dans l'administration financière camerounaise.
+    \item Expliquer la différence entre assurance raisonnable et assurance
+          limitée.
+    \item Reconnaître les trois types d'audit du secteur public (financier,
+          de conformité, de performance) et ce que chacun demande au
+          système d'information.
+    \item Situer le contrôle des systèmes d'information parmi les cinq
+          contrôles du CONSUPE.
+    \item Cartographier les systèmes d'information des finances publiques et
+          leurs points de contrôle.
+    \item Expliquer ce que l'informatique change à la preuve.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Les auditeurs du PSSFP connaissent déjà le contrôle des finances
+publiques. Ce chapitre ne le leur réapprend pas~: il fixe un vocabulaire
+commun et montre ce qui change quand l'objet du contrôle devient un système
+d'information. La question directrice est simple~: \emph{que faut-il
+regarder, et dans quel ordre, quand la dépense passe par une
+application~?}
+
+\separateur
+
+% ============================================================================
+\section{Contrôler, auditer, inspecter, vérifier}
+\label{sec:c01-notions}
+% ============================================================================
+
+Les mots du contrôle sont employés indifféremment dans les services. Le
+cours les distingue, parce que chacun engage une démarche et une
+responsabilité différentes.
+
+\begin{boxdef}
+\termecle{Contrôle}\index{contrôle}~: dispositif ou action, intégré au
+fonctionnement de l'entité, qui vise à empêcher ou à détecter une anomalie
+(un visa, un rapprochement, un blocage automatique). Il est exercé par les
+services eux-mêmes.
+
+\medskip
+\termecle{Audit}\index{audit}~: examen méthodique, indépendant et
+documenté, qui compare une situation à des critères connus à l'avance et
+qui conduit à une opinion motivée, communiquée à un tiers.
+
+\medskip
+\termecle{Inspection}\index{inspection}~: vérification ponctuelle de la
+régularité d'opérations ou du fonctionnement d'un service, souvent
+déclenchée par un événement, au nom de l'autorité hiérarchique.
+
+\medskip
+\termecle{Vérification}\index{vérification}~: dans la langue du décret
+n°~2013/287, l'activité des vérificateurs du Contrôle Supérieur de l'État,
+conduite sur pièces et sur place~; elle recouvre l'audit externe du
+secteur public.
+\end{boxdef}
+
+La différence tient en deux questions. \textbf{Qui agit~?} Le contrôle est
+exercé par l'entité~; l'audit et la vérification par quelqu'un qui n'a pas
+participé aux opérations. \textbf{Pour qui~?} Le contrôle sert l'entité~;
+l'audit sert un tiers (le Président de la République pour le CONSUPE, le
+juge des comptes, le parlement, un conseil d'administration) qui ne peut
+pas vérifier lui-même.
+
+\subsection{Les éléments d'un audit}
+
+Tout audit, quel que soit son objet, manipule les mêmes cinq éléments. Le
+cours les emploie dans ce sens précis.
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Définition et exemple (dossier MINÉQUIR)}
+}
+Critère & Exigence de référence, connue avant le test~: «~un mandat ne peut
+pas être payé deux fois~» \\
+Preuve & Information vérifiable que l'auditeur obtient et conserve~:
+l'extraction des 9\,611 mandats, son empreinte \\
+Constatation & Comparaison de la preuve au critère~: «~le mandat 2025-09342
+reprend la facture du mandat 2025-08817~» \\
+Conclusion & Résultat de l'ensemble des constatations sur un objectif~:
+«~le contrôle des doublons n'existe pas dans SIDÉPENSE~» \\
+Opinion & Forme que prend la conclusion dans le rapport, avec son niveau
+d'assurance \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.1. Les cinq éléments d'un
+audit}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Choisir le critère après avoir vu les faits~:
+«~les droits de M.~MBARGA étaient excessifs~», sans dire quelle règle les
+limitait.
+
+\smallskip
+\textbf{Règle~:} le critère est écrit avant le test, et cité dans le
+constat. Un constat sans critère est une opinion personnelle.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Assurance raisonnable, assurance limitée}
+\label{sec:c01-assurance}
+% ============================================================================
+
+Aucun auditeur n'examine tout. Il donne donc une assurance, jamais une
+certitude.
+
+\begin{boxdef}
+\termecle{Assurance raisonnable}\index{assurance raisonnable}~: niveau de
+confiance élevé, mais non absolu, obtenu par des travaux étendus. Elle
+s'exprime sous une forme positive~: «~les contrôles examinés fonctionnent
+efficacement~».
+
+\medskip
+\termecle{Assurance limitée}\index{assurance limitée}~: niveau de
+confiance plus faible, obtenu par des travaux réduits. Elle s'exprime sous
+une forme négative~: «~nous n'avons rien relevé qui laisse penser que…~».
+\end{boxdef}
+
+Le choix se fait au moment du mandat, pas à la fin de la mission. Une
+inspection de deux jours ne peut donner qu'une assurance limitée~; si son
+rapport conclut sous une forme positive, il promet plus qu'il n'a vérifié.
+C'est exactement le défaut du rapport de janvier dans le prologue
+(Chapitre~\ref{chap:prologue})~: «~régularité satisfaisante~» sur une
+population incomplète.
+
+\separateur
+
+% ============================================================================
+\section{Trois types d'audit dans le secteur public}
+\label{sec:c01-types}
+% ============================================================================
+
+Les normes de l'INTOSAI distinguent trois types d'audit du secteur
+public~\cite{idi2021conformite}. Chacun interroge le système d'information
+d'une manière différente.
+
+\begin{tableaucours}{L{2.6cm}L{4.6cm}L{5.0cm}}{%
+    \tableauHeader{Type} &
+    \tableauHeader{Question} &
+    \tableauHeader{Ce qu'il demande au SI}
+}
+Audit financier & Les états financiers et les comptes sont-ils fiables~? &
+Les données produites par l'application sont-elles exactes et
+exhaustives~? \\
+Audit de conformité & Les opérations respectent-elles les lois, les
+règlements et les règles internes~? & L'application impose-t-elle les
+règles (séparation des tâches, plafonds, visas)~? \\
+Audit de performance & Les ressources sont-elles employées avec économie,
+efficience et efficacité~? & Le système atteint-il ses objectifs, à quel
+coût, et ses données permettent-elles de le savoir~? \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.2. Les trois types d'audit et le
+système d'information}\end{center}
+
+L'audit des systèmes d'information n'est pas un quatrième type à côté des
+trois autres. Il les sert tous les trois~: on audite un SI pour savoir si
+l'on peut se fier à ses données (financier), s'il fait respecter les règles
+(conformité), ou s'il rend le service attendu (performance). Les lignes
+directrices GUID~5100 de l'INTOSAI le disent ainsi~: un audit des SI peut
+être une mission autonome, de performance ou de conformité, ou une partie
+d'une mission plus large, financière, de conformité ou de
+performance~\cite{intosai2019guid5100}.
+
+\subsection{Les cinq contrôles du CONSUPE}
+
+Le décret n°~2013/287 range le contrôle des systèmes d'information parmi
+les cinq contrôles qu'effectuent les services du Contrôle supérieur de
+l'État~\cite{decret2013287consupe}.
+
+\begin{boxjuris}
+\textbf{\loicam{Décret n°~2013/287}, article~2, alinéa~1}~: \textit{« Les
+services du Contrôle supérieur de l'Etat constituent l'institution
+supérieure de contrôle des finances publiques (ISC) du Cameroun. Ils sont
+chargés de l'audit externe. »}
+
+\medskip
+\textbf{Article~2, alinéa~3}~: \textit{« Dans l'exercice de leurs
+attributions, les services du Contrôle supérieur de l'Etat effectuent~:
+un contrôle de conformité et de régularité~; un contrôle financier~; un
+contrôle de performance~; un contrôle de l'environnement~; un contrôle des
+systèmes d'information. »}
+
+\medskip
+\textbf{Portée pour l'audit.} Le décret reprend les trois types de
+l'INTOSAI (conformité, financier, performance) et leur ajoute deux
+contrôles, dont celui des systèmes d'information. Le vérificateur peut
+donc conduire une mission dont l'objet principal est un SI, ou intégrer un
+volet SI à une mission de régularité ou de performance.
+\end{boxjuris}
+
+\separateur
+
+% ============================================================================
+\section{Les systèmes d'information des finances publiques}
+\label{sec:c01-cartographie}
+% ============================================================================
+
+\subsection{Une chaîne de systèmes}
+
+Les finances publiques reposent sur une chaîne d'applications, de la
+préparation du budget à la reddition des comptes. Le cours ne décrit pas
+les applications réelles de l'État camerounais, qui évoluent et dont le
+détail n'est pas public~: il raisonne sur des fonctions, que l'auditeur
+retrouve sous des noms différents d'une administration à l'autre.
+
+\begin{tableaucours}{L{2.6cm}L{4.8cm}L{4.8cm}}{%
+    \tableauHeader{Fonction} &
+    \tableauHeader{Ce que fait le système} &
+    \tableauHeader{Risque typique}
+}
+Budget & Prépare, vote, notifie et modifie les crédits & Crédits modifiés
+sans acte, virements non autorisés \\
+Dépense & Engage, liquide, ordonnance, transmet au comptable & Double
+paiement, service fait fictif, fractionnement \\
+Recette & Liquide, émet et recouvre les titres de recettes & Titres
+annulés sans motif, recouvrements non reversés \\
+Paie & Calcule et verse la solde & Agents fictifs, éléments de solde
+indus \\
+Trésorerie & Exécute les paiements, tient les comptes de disponibilités
+& Paiement sur un compte bancaire modifié \\
+Comptabilité & Produit les comptes et les états financiers & États qui ne
+correspondent pas aux opérations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.3. Les fonctions des systèmes
+financiers publics et leurs risques}\end{center}
+
+\subsection{Les points de contrôle de la chaîne}
+
+Dans une chaîne de systèmes, les anomalies naissent souvent aux
+\textbf{jointures}~: là où une application transmet des données à une
+autre (de la dépense vers la trésorerie, de la paie vers la comptabilité),
+et là où une donnée de référence est modifiée (un RIB, un barème, un
+plafond). L'auditeur y place ses premiers tests.
+
+\begin{boxscenario}{Dossier MINÉQUIR. Trois jointures}
+\textbf{Constatation.} Dans SIDÉPENSE, trois données conditionnent tous
+les paiements~: le fichier des fournisseurs (et leurs RIB), la table des
+profils d'utilisateurs, et le fichier de transmission des mandats au poste
+comptable.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le double paiement du prologue a
+utilisé deux de ces trois jointures~: un RIB modifié et un profil resté
+actif. Une mission qui teste ces trois points en premier couvre une grande
+part du risque de la chaîne, pour un effort limité.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Ce que l'informatique change à la preuve}
+\label{sec:c01-preuve}
+% ============================================================================
+
+Le contrôle sur pièces repose sur une évidence~: la pièce existe, elle est
+signée, elle est classée. Dans une administration informatisée, chacune de
+ces évidences change de forme.
+
+\begin{tableaucours}{L{3.2cm}L{4.4cm}L{4.6cm}}{%
+    \tableauHeader{Sur papier} &
+    \tableauHeader{Dans le système} &
+    \tableauHeader{Ce que l'auditeur doit vérifier}
+}
+La pièce & Un enregistrement dans une base & Qu'il n'a pas été modifié
+après coup \\
+La signature & Un droit d'accès utilisé & Que le titulaire du compte est
+bien celui qui a agi \\
+Le visa & Un contrôle automatique & Que le paramétrage n'a pas été changé
+\\
+Le classeur & Une extraction & Qu'elle est complète, et qu'il l'a obtenue
+lui-même \\
+L'archive & Une sauvegarde & Qu'elle peut être restaurée \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~1.4. Ce que l'informatique change à
+la preuve}\end{center}
+
+Deux conséquences en découlent. D'abord, la \textbf{population} d'un test
+est dans le système, pas dans les classeurs. Ensuite, une preuve
+électronique ne vaut que si l'auditeur peut en établir l'intégrité~: une
+extraction remise sur une clé, sans empreinte ni rapprochement, est une
+déclaration de l'audité. Le Chapitre~\ref{chap:preuve} donne la manière de
+faire.
+
+\begin{boxinfo}
+\textbf{Une réponse de plus.} Parce que la preuve électronique peut manquer
+ou être incertaine, le cours admet trois réponses pour chaque contrôle
+testé~: \OUI{}, \NON{} et \NEK{} (connaissance insuffisante). Elles
+viennent d'un programme de recherche sur l'audit, l'auditologie, qui
+cherche à mesurer ce que l'auditeur ne sait
+pas~\cite{minka2026auditologie,minka2026nek}. Le cours n'en garde que
+l'essentiel~: dire ce que l'on ne sait pas, plutôt que de le cacher sous un
+\OUI{} ou un \NON{}.
+\end{boxinfo}
+
+\begin{boxmetier}{Vérificateur}
+Avant la mission, demandez la liste des applications qui produisent les
+opérations de votre périmètre, avec, pour chacune, le service
+propriétaire et l'interlocuteur technique. Cette liste est la première
+pièce de votre dossier permanent.
+\end{boxmetier}
+
+\begin{boxmetier}{Juge des comptes}
+Un compte produit par une application n'est fiable que si les contrôles
+de l'application le sont. Lorsque vous relevez une anomalie dans un
+compte, demandez quel contrôle de l'application aurait dû l'empêcher~:
+la réponse oriente l'instruction.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Votre rapport n'est pas lu que par votre direction~: l'article~5 du
+décret n°~2013/287 le fait transmettre au CONSUPE
+(Chapitre~\ref{chap:institutions}). Rédigez vos constats SI comme s'ils
+devaient être repris par un vérificateur.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Contrôler n'est pas auditer.} Le contrôle est exercé par
+          l'entité~; l'audit est un examen indépendant au profit d'un
+          tiers.
+    \item \textbf{Cinq éléments.} Critère, preuve, constatation,
+          conclusion, opinion~; le critère est écrit avant le test.
+    \item \textbf{Une assurance, pas une certitude.} Raisonnable ou limitée,
+          choisie au mandat, et formulée en conséquence.
+    \item \textbf{Trois types d'audit, un même SI.} L'audit des SI sert
+          l'audit financier, de conformité et de performance.
+    \item \textbf{Une compétence écrite.} Le décret n°~2013/287 compte le
+          contrôle des SI parmi les cinq contrôles du CONSUPE.
+    \item \textbf{Les jointures d'abord.} Les données de référence et les
+          transmissions entre applications concentrent le risque.
+    \item \textbf{La preuve change de forme.} Population dans le système,
+          intégrité à établir, trois réponses possibles.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.1. Qui fait quoi~? \niveaubase}]
+Pour chacune des situations suivantes, dites s'il s'agit d'un contrôle,
+d'un audit, d'une inspection ou d'une vérification, et justifiez.
+\begin{enumerate}[(a)]
+    \item Le chef du service de la liquidation vérifie chaque matin la
+          liste des mandats saisis la veille.
+    \item Un vérificateur du CONSUPE examine l'exécution du budget 2025 de
+          la DAF du MINÉQUIR.
+    \item L'inspecteur général du ministère se rend à la DAF après un
+          article de presse.
+    \item SIDÉPENSE refuse un engagement supérieur au crédit disponible.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.2. Les cinq éléments \niveaubase}]
+Dans le dossier CAPNO, le fichier de paie de décembre compte 4\,312
+agents, dont 12 partagent le même compte bancaire avec au moins un autre
+agent. Identifiez, dans cette phrase et dans la suite que vous imaginerez,
+un critère, une preuve, une constatation et une conclusion.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.3. Choisir l'assurance \niveaumoyen}]
+On vous confie trois jours pour examiner la paie de la CAPNO.
+\begin{enumerate}[(a)]
+    \item Quel niveau d'assurance pouvez-vous donner~? Pourquoi~?
+    \item Rédigez la phrase de conclusion correspondante, dans les deux
+          cas~: vous n'avez rien trouvé~; vous avez trouvé 37 agents qui
+          ne figurent pas au fichier du personnel.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~1.4. Cartographier \niveauexpert}]
+Pour le projet e-RECETTES de Bafoussam (dématérialisation des recettes),
+dressez le tableau des fonctions du système, des jointures avec les
+autres systèmes (trésorerie, comptabilité), et du risque principal à
+chaque jointure. Dites quelles trois jointures vous testeriez en premier,
+et pourquoi.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Ce chapitre a posé le vocabulaire et désigné
+l'objet~: les systèmes qui portent les finances publiques. Le
+Chapitre~\ref{chap:sci} présente ce que l'auditeur y cherche avant
+tout~: le système de contrôle interne.
+\end{boxinfo}

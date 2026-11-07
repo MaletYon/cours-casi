@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C06
+Chapitre 6 : La mission : principes, préparation et décomposition
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Combien de principes de l'audit la norme ISO 19011 énonce-t-elle ?
+      a) Sept
+      b) Cinq
+      c) Dix-sept
+      d) Trois
+
+ 2. Selon A0, l'approche fondée sur la preuve découle surtout de l'axiome :
+      a) D'opposabilité
+      b) D'observabilité partielle
+      c) De mesurabilité
+      d) D'individuation temporelle
+
+ 3. Selon A0, l'indépendance est :
+      a) Un axiome
+      b) Un référentiel
+      c) Une conséquence des axiomes 4 et 6
+      d) Une norme ISO
+
+ 4. Les cinq phases de la mission sont :
+      a) Budget, dépense, recette, paie, trésorerie
+      b) Décrire, questionner, cheminer, concevoir, fonctionner
+      c) Accès, changements, exploitation, application, données
+      d) Préparer, planifier, exécuter, conclure, suivre
+
+ 5. La flèche de retour du suivi vers la préparation traduit l'axiome :
+      a) D'individuation temporelle
+      b) De cognition limitée
+      c) D'opposabilité
+      d) D'observabilité partielle
+
+ 6. La phase qui produit la décomposition et les fiches d'assertion est :
+      a) Préparer
+      b) Planifier
+      c) Exécuter
+      d) Conclure
+
+ 7. Les quatre questions des termes de référence sont : quoi démontrer, sur quoi, par rapport à quoi, et :
+      a) Pour combien
+      b) Pour qui
+      c) Avec quelle assurance
+      d) Avec quel budget
+
+ 8. Un objectif d'audit s'écrit comme :
+      a) Un slogan
+      b) Un montant
+      c) Une liste de noms
+      d) Une question fermée à laquelle le rapport répondra
+
+ 9. Les trois strates de pièces sont :
+      a) Gouvernance, fonctionnement, traces
+      b) Budget, dépense, recette
+      c) Papier, numérique, orale
+      d) Interne, externe, mixte
+
+10. Une pièce qui devait exister et dont l'entité confirme par écrit l'absence se cote :
+      a) NEK
+      b) NON
+      c) OUI
+      d) Sans objet
+
+11. Une pièce qui peut exister ailleurs et n'a pas encore été produite se cote :
+      a) OUI
+      b) NON
+      c) NEK
+      d) Sans objet
+
+12. La prise de connaissance a pour but :
+      a) De tout comprendre
+      b) De rédiger le rapport
+      c) De tester les contrôles
+      d) De savoir assez pour formuler des hypothèses de risque
+
+13. Dans la lecture en couches, la couche « données » porte sur :
+      a) Les données de référence qui conditionnent tout
+      b) Les serveurs
+      c) Les comités
+      d) Le budget
+
+14. Selon A0, la non-conformité la plus dangereuse est :
+      a) La non-conformité connue
+      b) La non-conformité inconnue
+      c) La conformité claire
+      d) La non-conformité claire
+
+15. La priorité absolue va aux zones :
+      a) À risque faible bien connues
+      b) À risque faible mal connues
+      c) À risque élevé mal connues
+      d) À risque élevé bien connues
+
+16. Combien de niveaux compte le gabarit canonique ?
+      a) Cinq
+      b) Sept
+      c) Dix
+      d) Huit
+
+17. Le niveau charnière du gabarit, sur lequel l'auditeur se prononce, est :
+      a) Le contrôle
+      b) Le domaine
+      c) La trace
+      d) Le test
+
+18. La borne cognitive de la décomposition vient des travaux de :
+      a) Shannon
+      b) Miller
+      c) Nash
+      d) Lakatos
+
+19. Un critère NON et un critère NEK donnent au contrôle la cote :
+      a) OUI
+      b) NEK
+      c) NON
+      d) Sans objet
+
+20. La règle d'atomicité interdit dans un critère :
+      a) Les chiffres
+      b) Les dates
+      c) Les verbes
+      d) Les connecteurs « et » et « ou »
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La confidentialité permet de détruire la liste nominative d'agents utilisée pour un constat.
+      Vrai / Faux
+
+22. Le suivi est la première phase du cycle suivant.
+      Vrai / Faux
+
+23. Le périmètre dit ce qui est exclu autant que ce qui est inclus.
+      Vrai / Faux
+
+24. Un NEK restant à la fin de la mission devient une limitation d'étendue.
+      Vrai / Faux
+
+25. Une prise de connaissance sans borne est la plus efficace.
+      Vrai / Faux
+
+26. Une zone à risque élevé que l'on connaît bien appelle toujours des tests étendus.
+      Vrai / Faux
+
+27. Les quatre premiers niveaux du gabarit disent ce qui est audité.
+      Vrai / Faux
+
+28. Une trace non extraite est déjà une preuve.
+      Vrai / Faux
+
+29. Un contrôle n'est OUI que si tous ses critères sont OUI.
+      Vrai / Faux
+
+30. Un même contrôle peut appartenir à deux domaines.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. La norme qui énonce les principes de l'audit est ISO ______.
+
+32. Le chef de mission vise chaque feuille de ______.
+
+33. La mission MINÉQUIR porte sur l'exercice ______.
+
+34. La strate la plus probante est celle des ______.
+
+35. Les deux risques cotés 9 au MINÉQUIR sont R1 et ______.
+
+36. Le dernier niveau du gabarit canonique est la ______.
+
+37. Le document qui dit ce que l'auditeur affirme sur un contrôle est la fiche d'______.
+
+38. L'ensemble des objets sur lesquels porte une mission est l'espace d'______.
+
+39. Les systèmes complexes sont presque décomposables, selon Herbert ______.
+
+40. Le contrôle des agents partis porte le code D1.1.______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

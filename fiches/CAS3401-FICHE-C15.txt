@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C15
+Chapitre 15 : Ouvrir sur la recherche : l'auditologie
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. L'auditologie est définie comme :
+      a) Une science appliquée de la réduction de l'incertitude
+      b) Un référentiel d'audit
+      c) Une norme ISO
+      d) Une méthode comptable
+
+ 2. La mission auditologique est un quintuplet noté :
+      a) ⟨D, S, P, A, C⟩
+      b) ⟨S, A, I, G, T⟩
+      c) ⟨µ, U, H, ρ, D⟩
+      d) ⟨O, N, K, E, Y⟩
+
+ 3. Dans la mission auditologique, I désigne :
+      a) L'indépendance
+      b) L'inspection
+      c) Le canal d'information
+      d) L'incertitude
+
+ 4. Dans la mission auditologique, T désigne :
+      a) Le test
+      b) La trace
+      c) Le taux
+      d) La trajectoire temporelle
+
+ 5. L'axiome 1 de A0 est :
+      a) L'observabilité partielle
+      b) L'opposabilité
+      c) La mesurabilité
+      d) L'interaction stratégique
+
+ 6. L'axiome qui fonde la décomposition bornée à sept éléments est :
+      a) L'opposabilité
+      b) La cognition limitée
+      c) L'individuation temporelle
+      d) La mesurabilité
+
+ 7. L'axiome 6 de A0 est :
+      a) La mesurabilité
+      b) L'individuation temporelle
+      c) L'opposabilité
+      d) L'observabilité partielle
+
+ 8. Selon A0, la matérialité est :
+      a) Un axiome
+      b) Un pilier
+      c) Une norme
+      d) Un paramètre dérivé de l'opposabilité
+
+ 9. La proposition de modalité d'ignorance explicite repose sur les axiomes :
+      a) 1 à 4
+      b) 5 et 6
+      c) 2 et 6
+      d) 4 et 6
+
+10. Combien de piliers théoriques A0 retient-il ?
+      a) Trois
+      b) Cinq
+      c) Six
+      d) Huit
+
+11. Le pilier de la théorie de l'information s'appuie notamment sur :
+      a) Bhaskar
+      b) Nash
+      c) Shannon
+      d) Miller
+
+12. Le pilier des systèmes dynamiques s'appuie sur :
+      a) L'entropie
+      b) La théorie des jeux
+      c) L'ontologie
+      d) Les chaînes de Markov
+
+13. La prédiction du pilier 2 est que :
+      a) Conformité et entropie prédisent mieux que la conformité seule
+      b) Les grilles longues sont meilleures
+      c) Les audités ne dissimulent jamais
+      d) La persistance naïve est la meilleure prévision
+
+14. A0 inscrit l'auditologie dans la recherche en :
+      a) Sciences juridiques
+      b) Science du design
+      c) Comptabilité
+      d) Sociologie pure
+
+15. Le falsificationnisme adopté par A0 est celui de :
+      a) Popper naïf
+      b) Kuhn
+      c) Lakatos
+      d) Descartes
+
+16. Dans le programme de Lakatos, ce qui est directement testé est :
+      a) Le noyau dur
+      b) Les axiomes
+      c) Les piliers
+      d) La ceinture protectrice
+
+17. Les articles A0 et A1 sont :
+      a) Des prépublications déposées sur HAL
+      b) Des normes internationales
+      c) Des lois camerounaises
+      d) Des manuels de l'INTOSAI
+
+18. Ce qui reste à valider, ce sont :
+      a) Les lois de 2018
+      b) Les prédictions des cinq piliers sur des missions réelles
+      c) L'entropie de Shannon
+      d) La borne de Miller
+
+19. L'axe qui étudie si les domaines en conformité opaque révèlent plus d'irrégularités ensuite est :
+      a) L'axe 1
+      b) L'axe 8
+      c) L'axe 3
+      d) L'axe 6
+
+20. Un bon sujet de mémoire :
+      a) Parle de l'importance de l'audit
+      b) Est le plus large possible
+      c) Évite les données
+      d) Dit à l'avance quel résultat le réfuterait
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. A0 constate que l'audit des SI manque d'un socle axiomatique.
+      Vrai / Faux
+
+22. L'indépendance est le septième axiome de l'auditologie.
+      Vrai / Faux
+
+23. L'interaction stratégique fonde l'indice rho et l'usage stratégique de NEK.
+      Vrai / Faux
+
+24. La proposition de réflexivité dit que l'audit est une observation externe.
+      Vrai / Faux
+
+25. Chaque pilier engendre une prédiction falsifiable.
+      Vrai / Faux
+
+26. La réfutation d'une prédiction emporte tout le programme.
+      Vrai / Faux
+
+27. L'auditologie se présente comme un référentiel de plus.
+      Vrai / Faux
+
+28. L'entropie de Shannon est établie par des travaux publiés.
+      Vrai / Faux
+
+29. Les missions répétées des auditeurs publics fournissent des données longitudinales.
+      Vrai / Faux
+
+30. Un mémoire peut utiliser des données de paie nominatives sans les anonymiser.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le programme de recherche de l'auteur s'appelle l'______.
+
+32. L'axiome 5 est celui de l'individuation ______.
+
+33. L'article fondateur de l'auditologie est l'article ______.
+
+34. Le cinquième pilier est l'ontologie critique-______.
+
+35. La borne de la mémoire de travail vient des travaux de George ______.
+
+36. Les axiomes et les piliers forment le noyau ______.
+
+37. Les hypothèses testées forment la ceinture ______.
+
+38. Les articles A0 et A1 sont déposés sur ______.
+
+39. L'axe 1 mesure le biais du choix ______.
+
+40. Une hypothèse qui peut être réfutée par des données est dite ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

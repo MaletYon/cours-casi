@@ -1,0 +1,616 @@
+% ============================================================================
+% Fichier  : partie0/P00_paiement_28_decembre.tex
+% Titre    : Prologue -- Le Paiement du 28 Décembre
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Faits du dossier MINÉQUIR à garder identiques dans tout le cours :
+%  - marché n° 0412/M/MINÉQUIR/2025, BATIRURAL SARL (Mbalmayo), pistes rurales ;
+%    décompte n° 3, facture F-2025-117, 187 450 000 FCFA ;
+%  - mandat 2025-08817 (22/12/2025, circuit normal), payé le 24/12 sur le
+%    compte n° 1 (banque A) ;
+%  - 27/12/2025 21 h 52 : RIB modifié par le compte mbarga.j (compte n° 2,
+%    banque B, au nom de « BATIRURAL SERVICES ») ;
+%  - 28/12/2025 23 h 14 : mandat 2025-09342, facture « F-2025-117 bis »,
+%    liquidé et ordonnancé par mbarga.j ; payé le 30/12 ;
+%  - MBARGA, ex-chef du service de la liquidation, muté à Ebolowa le
+%    14/08/2025 ; compte jamais désactivé ;
+%  - janvier 2026 : inspection sur pièces, 40 dossiers papier de décembre,
+%    « régularité satisfaisante » ;
+%  - 16/03/2026 : ordre de mission du CONSUPE (vérificatrice NGO BIYONG) ;
+%    extraction de 9 611 mandats 2025 ; 3 paires de doublons, dont 1 seule
+%    avec RIB différent ;
+%  - lecture des 8 contrôles attendus : 2 OUI, 5 NON, 1 NEK.
+% Personnages : EBOUMBOU (DAF), ATANGANA (chef de la cellule informatique),
+% FOTSO (chef du poste comptable), NGO BIYONG (vérificatrice du CONSUPE).
+% ============================================================================
+
+\chapter[Prologue : Le Paiement du 28 Décembre]{Prologue : Le Paiement du 28 Décembre}
+\label{chap:prologue}
+\chaptermark{Prologue}
+
+\epigraph{%
+    « Le dossier était en ordre~; le système, non. »%
+}{Note de synthèse d'une vérificatrice}
+
+\niveauChapitre{Introductif}{%
+    Aucun prérequis informatique. Il suffit de connaître le circuit de la
+    dépense publique~: engagement, liquidation, ordonnancement, paiement.
+    Ce prologue se lit avant toute définition~: il part d'un contrôle qui
+    n'a rien vu.%
+}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Reconstituer, à partir des pièces et des traces informatiques, la
+          chronologie d'un double paiement (dossier MINÉQUIR).
+    \item Expliquer pourquoi un contrôle sur pièces, bien conduit, peut ne
+          pas voir une irrégularité qui se trouve dans le système.
+    \item Distinguer une constatation, appuyée sur une preuve conservée, de
+          l'analyse que l'on en tire.
+    \item Identifier les contrôles internes qui auraient dû empêcher ou
+          détecter le double paiement, et les coter \OUI{}, \NON{} ou
+          \NEK{}.
+    \item Citer le texte qui donne au Contrôle Supérieur de l'État la
+          compétence du contrôle des systèmes d'information.
+    \item Énoncer les trois réflexes de l'auditeur public face à un système
+          d'information~: le mandat, la preuve, le contradictoire.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Avant de commencer : un contrôle qui n'a rien vu}
+% ============================================================================
+
+Yaoundé, lundi 16~mars~2026. Mme~NGO~BIYONG, vérificatrice au Contrôle
+Supérieur de l'État, reçoit son ordre de mission~: vérifier l'exécution du
+budget 2025 de la Direction des Affaires Financières du ministère de
+l'Équipement rural, le MINÉQUIR\footnote{Le MINÉQUIR, ses agents, ses
+fournisseurs, les dates et les montants de ce dossier sont fictifs. Les
+mécanismes du circuit de la dépense, les contrôles et les textes cités sont
+exacts.}. Dans le dossier permanent, une pièce attire son attention~: le
+rapport d'une inspection conduite en janvier sur les dépenses de décembre.
+Il examine quarante dossiers de paiement et conclut à une «~régularité
+satisfaisante~».
+
+Trois semaines plus tard, la même vérificatrice établit qu'une facture a
+été payée deux fois en décembre, la seconde fois sur un compte bancaire qui
+n'appartient pas au fournisseur. Le montant en jeu est de
+\textbf{187\,450\,000~francs CFA}.
+L'inspection de janvier ne s'était pas trompée sur les dossiers qu'elle a
+examinés~: ils étaient complets et réguliers. Elle n'a simplement jamais vu
+le second paiement, parce qu'il n'avait pas de dossier.
+
+\medskip
+
+Ce prologue reconstitue ce dossier. Il montre ce qu'un contrôle sur pièces
+peut voir et ce qu'il ne peut pas voir, ce que la trace informatique
+révèle, et quels contrôles internes ont manqué. Il en tire les trois
+réflexes qui structurent tout le cours. Les notions y sont nommées~; elles
+sont définies avec précision dans les chapitres suivants.
+
+\begin{boxalert}
+\textbf{Violation typique.} Tirer l'échantillon d'un contrôle dans les
+classeurs de dossiers papier, alors que les paiements sont produits par une
+application~: ce qui n'a pas de dossier ne peut pas être tiré.
+
+\smallskip
+\textbf{Règle~:} la population d'un contrôle est l'ensemble des opérations
+enregistrées dans le système, pas l'ensemble des dossiers rangés.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Ce qui s'est passé}
+\label{sec:pro-chronologie}
+% ============================================================================
+
+\subsection{Le marché et le circuit}
+
+Le MINÉQUIR a passé en 2025 le marché n°~0412/M/MINÉQUIR/2025 avec la
+société BATIRURAL~SARL, de Mbalmayo, pour l'aménagement de pistes rurales.
+Le décompte n°~3 de ce marché, facturé sous le numéro F-2025-117, s'élève
+à 187\,450\,000~FCFA.
+
+Depuis 2024, la dépense du ministère passe par une application, SIDÉPENSE.
+Chaque étape du circuit y est un écran et un profil d'utilisateur~:
+l'engagement réserve le crédit, la liquidation constate le service fait et
+arrête le montant, l'ordonnancement émet le mandat, puis le poste comptable
+reçoit le mandat par voie électronique et paie. Les pièces justificatives
+sont scannées et jointes au mandat~; le dossier papier est classé à la
+Direction des Affaires Financières.
+
+\begin{tableaucours}{L{4.0cm}L{8.2cm}}{%
+    \tableauHeader{Élément} &
+    \tableauHeader{Description}
+}
+Entité & Direction des Affaires Financières (DAF) du MINÉQUIR, Yaoundé \\
+Application & SIDÉPENSE~: engagement, liquidation, ordonnancement,
+transmission des mandats au poste comptable, fichier des fournisseurs \\
+Volume 2025 & 9\,611 mandats \\
+Acteurs & M.~EBOUMBOU, directeur des affaires financières~; M.~ATANGANA,
+chef de la cellule informatique~; M.~FOTSO, chef du poste comptable \\
+Contrôle & Inspection sur pièces (janvier 2026)~; mission du CONSUPE
+(mars 2026), conduite par Mme~NGO~BIYONG \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.1. Le dossier MINÉQUIR}\end{center}
+
+\subsection{Reconstituer avant de juger}
+
+Une vérificatrice ne commence pas par chercher un responsable~: elle
+reconstitue la suite des événements, et rattache chaque événement à une
+pièce. Ce qu'on lui raconte sans pièce reste une déclaration, à vérifier.
+Le Tableau~P.2 donne la chronologie établie par Mme~NGO~BIYONG.
+
+\begin{tableaucours}{L{2.6cm}L{6.4cm}L{3.2cm}}{%
+    \tableauHeader{Date} &
+    \tableauHeader{Événement} &
+    \tableauHeader{Pièce}
+}
+14 août 2025 & M.~MBARGA, chef du service de la liquidation, est muté à
+Ebolowa & Décision de mutation \\
+22 déc. 2025 & Mandat 2025-08817 (décompte n°~3) émis par le circuit
+normal & Mandat, dossier papier complet \\
+24 déc. 2025 & Paiement sur le compte n°~1 de BATIRURAL (banque~A) &
+Relevé du poste comptable \\
+27 déc. 2025, 21~h~52 & Le RIB de BATIRURAL est remplacé, dans le fichier
+des fournisseurs, par un compte n°~2 (banque~B) au nom de «~BATIRURAL
+SERVICES~» & Journal de SIDÉPENSE \\
+28 déc. 2025, 23~h~14 & Mandat 2025-09342, facture «~F-2025-117 bis~»,
+même montant, liquidé et ordonnancé par le compte \texttt{mbarga.j} &
+Journal de SIDÉPENSE, mandat électronique \\
+30 déc. 2025 & Paiement du second mandat sur le compte n°~2 & Relevé du
+poste comptable \\
+Janv. 2026 & Inspection de 40 dossiers papier de décembre~: «~régularité
+satisfaisante~» & Rapport d'inspection \\
+16 mars 2026 & Ordre de mission du CONSUPE & Ordre de mission \\
+23 mars 2026 & Extraction des 9\,611 mandats de 2025 et du journal des
+opérations & Fichiers extraits, empreintes \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.2. Chronologie du double paiement
+(reconstitution de la vérificatrice)}\end{center}
+
+Ce tableau ne contient que des faits. Il ne dit pas encore qui a agi, ni
+pourquoi~: le compte \texttt{mbarga.j} a servi, mais rien n'établit à ce
+stade que M.~MBARGA l'ait utilisé lui-même. Séparer ce qui est établi de ce
+que l'on en déduit est la première discipline de l'auditeur.
+
+\begin{boxdef}
+\termecle{Constatation}\index{constatation} (\textit{finding})~: fait
+vérifiable, établi par l'auditeur et appuyé sur une preuve conservée. Un
+tiers compétent qui refait la même démarche sur les mêmes pièces aboutit au
+même résultat.
+
+\medskip
+\termecle{Analyse}\index{analyse}~: interprétation que l'auditeur tire
+d'une ou plusieurs constatations, au regard d'un critère, avec un niveau de
+confiance déclaré (faible, moyen ou élevé).
+\end{boxdef}
+
+\separateur
+
+% ============================================================================
+\section{Ce que le contrôle sur pièces a vu}
+\label{sec:pro-pieces}
+% ============================================================================
+
+L'inspection de janvier a fait correctement ce qu'elle a fait. Elle a tiré
+quarante dossiers dans les classeurs de décembre, vérifié pour chacun
+l'engagement, le service fait, la facture, le visa et l'imputation. Les
+quarante dossiers étaient complets. Le mandat 2025-08817 en faisait partie.
+
+Son erreur n'est pas dans l'examen, elle est dans la \textbf{population}.
+L'échantillon a été tiré dans les classeurs, c'est-à-dire parmi les
+mandats qui avaient un dossier papier. Le mandat 2025-09342 n'en avait pas~:
+il a été créé directement dans l'application, avec un scan de la facture du
+premier mandat, renommée «~bis~». Aucun tirage dans les classeurs ne
+pouvait le faire sortir.
+
+\begin{boxscenario}{Dossier MINÉQUIR. Deux populations}
+\textbf{Constatation.} Les classeurs de décembre contiennent 1\,184
+dossiers~; l'application enregistre 1\,191 mandats émis en décembre. Sept
+mandats n'ont pas de dossier papier, dont le mandat 2025-09342.
+
+\medskip
+\textbf{Analyse} (confiance élevée). L'inspection a conclu sur la
+population des dossiers rangés, pas sur celle des mandats émis. Sa
+conclusion vaut pour les 1\,184 dossiers~; elle ne dit rien des sept
+autres. Un rapprochement entre les deux populations, fait avant le tirage,
+aurait suffi à les faire apparaître.
+\end{boxscenario}
+
+Cette différence entre deux populations est la première leçon du
+cours~: dès que l'administration s'informatise, le dossier papier n'est
+plus le système, il n'en est qu'une sortie.
+
+\separateur
+
+% ============================================================================
+\section{Ce que la trace informatique révèle}
+\label{sec:pro-trace}
+% ============================================================================
+
+\subsection{L'extraction}
+
+Mme~NGO~BIYONG ne part pas des classeurs, mais de l'application. Elle
+demande par écrit à M.~ATANGANA une extraction de tous les mandats de 2025
+et du journal des opérations, assiste à l'extraction, calcule l'empreinte
+des fichiers et la fait contresigner. Elle vérifie ensuite que le total des
+mandats extraits est égal au total des paiements du compte administratif.
+Le Chapitre~\ref{chap:preuve} détaille ces précautions~: sans elles, une
+extraction n'est qu'un fichier remis par l'audité.
+
+\subsection{Le test des doublons}
+
+Sur les 9\,611 mandats, elle recherche ceux qui portent le même
+fournisseur et le même montant. Le test, fait dans un tableur, renvoie
+trois paires. Deux s'expliquent par des pièces (deux livraisons identiques
+d'un même fournisseur). La troisième est celle de BATIRURAL~: même
+fournisseur, même montant, même numéro de facture au suffixe près, et deux
+comptes bancaires différents.
+
+\begin{boxoutils}{Recherche des doublons dans un tableur}
+Dans la feuille des mandats (colonnes~: B fournisseur, D montant), une
+colonne de clé et une colonne de comptage suffisent~:
+\begin{lstlisting}
+F2 : =B2&"|"&D2
+G2 : =NB.SI($F$2:$F$9612;F2)
+\end{lstlisting}
+Un filtre sur \texttt{G~>~1} affiche les mandats qui partagent le même
+fournisseur et le même montant. Le test ne prouve rien à lui seul~: il
+désigne les mandats à examiner, pièce par pièce.
+\end{boxoutils}
+
+\subsection{Le journal}
+
+Le journal de SIDÉPENSE enregistre, pour chaque opération sensible,
+l'utilisateur, la date, l'heure et l'action. Il permet de reconstituer
+les deux opérations du Tableau~P.3.
+
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+2025-12-27 21:52:07 mbarga.j FOURNISSEUR MODIF_RIB   BATIRURAL  cpte1->cpte2
+2025-12-28 23:09:41 mbarga.j MANDAT      LIQUIDATION 2025-09342 187450000
+2025-12-28 23:14:18 mbarga.j MANDAT      ORDONNANCE  2025-09342 187450000
+2025-12-30 10:02:55 pc.fotso MANDAT      PAIEMENT    2025-09342 cpte2
+\end{lstlisting}
+\vspace{-0.6em}
+\begin{center}{\small\itshape Tableau~P.3. Extrait du journal de SIDÉPENSE
+(fichier extrait le 23~mars~2026, empreinte au dossier)}\end{center}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Ce que dit le journal}
+\textbf{Constatations.}
+\begin{enumerate}[(a)]
+    \item Le compte \texttt{mbarga.j} était actif le 28~décembre~2025,
+          quatre mois après la mutation de son titulaire.
+    \item Le même compte a modifié un RIB, liquidé et ordonnancé le même
+          mandat~; aucune deuxième personne n'est intervenue.
+    \item Les deux opérations ont eu lieu un samedi soir et un dimanche
+          soir, hors des heures de service.
+    \item SIDÉPENSE a accepté un second mandat de même fournisseur, même
+          montant et même numéro de facture au suffixe «~bis~» près.
+\end{enumerate}
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Le double paiement n'est pas une
+erreur de saisie~: la modification du RIB la veille, sur le seul compte
+du fournisseur concerné, et l'heure des opérations désignent une
+manœuvre. L'identité de la personne qui a utilisé le compte n'est pas
+établie~: un compte resté actif peut être utilisé par quelqu'un qui en
+connaît le mot de passe.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Les contrôles internes qui ont manqué}
+\label{sec:pro-controles}
+% ============================================================================
+
+La question de l'auditeur n'est pas seulement «~qui a fait cela~?~», qui
+relève d'autres procédures, mais «~qu'est-ce qui aurait dû l'empêcher, ou
+le détecter, et pourquoi cela n'a-t-il pas fonctionné~?~». C'est la
+question du \termecle{contrôle interne}\index{contrôle interne}~: l'ensemble
+des dispositifs qui donnent une assurance raisonnable que les opérations
+sont régulières, les informations fiables et les biens protégés. Le
+Chapitre~\ref{chap:sci} le définit selon le COSO, et le
+Chapitre~\ref{chap:eval-sci} apprend à l'évaluer.
+
+Mme~NGO~BIYONG dresse la liste des contrôles qu'elle s'attendait à trouver
+sur ce circuit, et cote chacun. Elle répond \OUI{} si le contrôle existe et
+a fonctionné, \NON{} s'il manque ou n'a pas fonctionné, \NEK{}
+(\textit{Not Enough Knowledge}) si elle n'a pas encore de quoi conclure.
+
+\begin{tableaucours}{L{0.7cm}L{6.6cm}L{1.2cm}L{3.6cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Contrôle attendu} &
+    \tableauHeader{Cote} &
+    \tableauHeader{Preuve}
+}
+1 & Les comptes des agents mutés sont désactivés à la date de la mutation
+& \NON{} & Liste des comptes actifs, décision de mutation \\
+2 & Un même profil ne peut pas liquider et ordonnancer & \NON{} & Matrice
+des profils de SIDÉPENSE \\
+3 & Toute modification de RIB exige une seconde validation & \NON{} &
+Journal~: une seule intervention \\
+4 & L'application bloque un mandat de même fournisseur, même montant et
+même facture & \NON{} & Mandat 2025-09342 accepté \\
+5 & Le poste comptable vérifie les pièces jointes avant paiement & \NEK{} &
+Pièces du poste comptable demandées, non reçues \\
+6 & Les opérations sensibles sont journalisées & \OUI{} & Journal
+extrait \\
+7 & Les paiements de fin de gestion font l'objet d'une revue & \NON{} &
+Aucune revue produite \\
+8 & Les journaux sont conservés et protégés & \OUI{} & Journal intact
+depuis 2024 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.4. Les contrôles attendus sur le
+circuit de la dépense}\end{center}
+
+\begin{boxlecture}{Circuit de la dépense, MINÉQUIR}
+\textbf{Constatation.} Sur huit contrôles attendus, deux existent et
+fonctionnent, cinq manquent ou n'ont pas fonctionné, un ne peut pas encore
+être coté.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Les deux contrôles qui fonctionnent
+sont des contrôles de \emph{détection} a posteriori~: ils ont permis de
+reconstituer les faits, pas de les empêcher. Tous les contrôles de
+\emph{prévention} ont manqué. La cote \NEK{} du contrôle~5 n'est pas une
+faiblesse de la mission~: elle dit honnêtement ce qui reste à établir, et
+désigne la prochaine pièce à obtenir.
+
+\medskip
+\hfill\conformite{2}{8}{1}
+\end{boxlecture}
+
+\begin{boxinfo}
+\textbf{Pourquoi \NEK{} et pas \NON{}~?} Si le poste comptable devait
+produire une trace de sa vérification et ne l'a pas produite, la réponse
+est \NON{}~: l'absence d'une trace exigée est une constatation. Ici, la
+vérificatrice n'a pas encore reçu les pièces qu'elle a demandées~: elle ne
+sait pas. Elle l'écrit, et relance.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Qui peut contrôler ce système}
+\label{sec:pro-mandat}
+% ============================================================================
+
+Mme~NGO~BIYONG n'a pas eu à demander la permission d'auditer SIDÉPENSE.
+Le texte organique du Contrôle Supérieur de l'État le lui permet
+expressément.
+
+\begin{boxjuris}
+\textbf{\loicam{Décret n°~2013/287 du 4~septembre~2013} portant
+organisation des services du Contrôle supérieur de l'État, article~2,
+alinéa~3}~\cite{decret2013287consupe}~: \textit{« Dans l'exercice de leurs
+attributions, les services du Contrôle supérieur de l'Etat effectuent~:
+un contrôle de conformité et de régularité~; un contrôle financier~; un
+contrôle de performance~; un contrôle de l'environnement~; un contrôle des
+systèmes d'information. »}
+
+\medskip
+\textbf{Article~2, alinéa~4}~: \textit{« Les contrôles sont effectués par
+les vérificateurs du Contrôle supérieur de l'Etat sur pièces et sur place.
+A cet effet, et nonobstant les contrôles effectués par les autres organes
+de contrôle, les responsables des structures auditées sont tenus de
+présenter les pièces relatives à la période auditée. »}
+
+\medskip
+\textbf{Portée pour l'audit.} Le contrôle des systèmes d'information est
+une compétence écrite du CONSUPE, au même titre que le contrôle de
+régularité. L'obligation de présenter les pièces couvre les pièces
+électroniques~: une extraction, un journal, une matrice des profils sont
+des pièces relatives à la période auditée.
+\end{boxjuris}
+
+Deux autres institutions regardent les systèmes d'information publics,
+chacune sous un angle différent. L'\sigle{ANTIC} conduit les audits de
+sécurité des réseaux et des systèmes d'information prévus par la
+\loicam{loi n°~2010/012}. La Chambre des Comptes de la Cour suprême juge
+les comptes des comptables publics~; elle rencontre les systèmes
+d'information par extension, parce que ces comptes en sont issus. Le
+Chapitre~\ref{chap:institutions} précise qui fait quoi, et comment ces
+interventions s'articulent.
+
+\separateur
+
+% ============================================================================
+\section{Trois réflexes}
+\label{sec:pro-reflexes}
+% ============================================================================
+
+Le dossier MINÉQUIR fait apparaître les trois réflexes que le cours
+installe, chapitre après chapitre.
+
+\begin{enumerate}
+    \item \textbf{Le mandat.} Savoir au nom de quoi l'on contrôle, sur quel
+          périmètre et selon quels critères. C'est l'ordre de mission qui
+          a permis d'exiger l'extraction~; c'est le critère («~un mandat
+          ne peut pas être payé deux fois~») qui a permis de coter
+          (Chapitres~\ref{chap:institutions} et~\ref{chap:preparer}).
+    \item \textbf{La preuve.} Partir du système, pas du classeur~;
+          obtenir la donnée soi-même ou y assister, en garantir
+          l'intégrité, et conserver tout ce qui fonde une cote
+          (Chapitre~\ref{chap:preuve}).
+    \item \textbf{Le contradictoire.} Soumettre les constatations à
+          l'entité avant de conclure. Le directeur des affaires
+          financières et le chef de la cellule informatique recevront le
+          Tableau~P.4 et pourront le contester pièce par pièce
+          (Chapitre~\ref{chap:constater}).
+\end{enumerate}
+
+\begin{boxprocedure}
+\textbf{Le contenu minimal d'un papier de travail}, pour chaque contrôle
+coté~:
+\begin{itemize}
+    \item le contrôle attendu et le critère qui le fonde~;
+    \item le test effectué, la date et la personne qui l'a fait~;
+    \item la pièce obtenue (nom du fichier, empreinte, source)~;
+    \item la cote (\OUI{}, \NON{} ou \NEK{}) et la constatation qui la
+          justifie~;
+    \item pour un \NEK{}, la pièce manquante et la relance.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxmetier}{Vérificateur}
+Avant tout tirage d'échantillon, rapprochez le nombre et le montant des
+opérations du système avec ceux de la source que vous allez échantillonner
+(classeurs, bordereaux). Un écart, même de quelques unités, désigne les
+opérations qu'il faut examiner en premier.
+\end{boxmetier}
+
+\begin{boxmetier}{Inspecteur}
+Un rapport qui conclut «~régularité satisfaisante~» doit dire sur quelle
+population il porte. Écrivez-le~: «~sur les 1\,184 dossiers classés de
+décembre~», et non «~sur les dépenses de décembre~».
+\end{boxmetier}
+
+\begin{boxmetier}{Contrôleur financier}
+Les paiements de fin de gestion concentrent le risque~: volume élevé,
+délais courts, personnel réduit. Une revue des mandats émis hors des
+heures de service et des RIB modifiés dans les derniers jours de
+l'exercice est un contrôle simple, et il aurait arrêté le second paiement.
+\end{boxmetier}
+
+\separateur
+
+% ============================================================================
+\section{Le chemin du cours}
+\label{sec:pro-chemin}
+% ============================================================================
+
+Le cours se déroule en huit journées de quatre heures. Les deux dernières
+heures de la huitième journée sont offertes.
+
+\begin{tableaucours}{L{1.3cm}L{8.6cm}L{2.3cm}}{%
+    \tableauHeader{Jour} &
+    \tableauHeader{Question traitée} &
+    \tableauHeader{Chapitres}
+}
+J01 & Qu'est-ce qu'auditer un système d'information public~? & P00,
+\ref{chap:audit-public} \\
+J02 & Qu'est-ce qu'un système de contrôle interne, et comment
+l'évaluer~? & \ref{chap:sci}, \ref{chap:eval-sci} \\
+J03 & Qui contrôle quoi, et selon quelles normes~? &
+\ref{chap:institutions}, \ref{chap:normes} \\
+J04 & Comment préparer la mission et obtenir la preuve~? &
+\ref{chap:preparer}, \ref{chap:preuve} \\
+J05 & Comment conclure~? Que vaut le contrôle des accès~? &
+\ref{chap:constater}, \ref{chap:acces} \\
+J06 & Que valent l'exploitation et les contrôles des applications~? &
+\ref{chap:exploitation}, \ref{chap:applications} \\
+J07 & Que disent les données~? Que valent les projets et les
+prestataires~? & \ref{chap:donnees-fraude}, \ref{chap:gouvernance} \\
+J08 & Une mission complète, en équipe & \ref{chap:cas-integrateur} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~P.5. Les huit journées}\end{center}
+
+Trois dossiers accompagnent le cours. Le MINÉQUIR revient dans les
+chapitres sur le contrôle interne, la mission, les accès et les
+applications. La \emph{CAPNO}, caisse publique de prévoyance de Garoua,
+sert aux chapitres sur la preuve et l'analyse des données~: son fichier de
+paie contient des agents qui n'existent pas. Le projet \emph{e-RECETTES},
+à Bafoussam, sert aux chapitres sur l'exploitation, les projets et au cas
+intégrateur.
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Le dossier n'est pas le système.} Dans une administration
+          informatisée, le classeur n'est qu'une sortie de l'application~;
+          la population d'un contrôle se prend dans le système.
+    \item \textbf{Reconstituer avant de juger.} Chaque événement est
+          rattaché à une pièce~; ce qui n'a pas de pièce reste une
+          déclaration.
+    \item \textbf{Constatation et analyse se séparent.} La constatation est
+          vérifiable par un tiers~; l'analyse porte un niveau de
+          confiance.
+    \item \textbf{La question du contrôle interne.} Ce qui aurait dû
+          empêcher ou détecter l'irrégularité, et pourquoi cela n'a pas
+          fonctionné.
+    \item \textbf{Trois réponses.} \OUI{}, \NON{}, \NEK{}~; l'absence d'une
+          trace exigée vaut \NON{}, une pièce non encore obtenue vaut
+          \NEK{}.
+    \item \textbf{Une compétence écrite.} Le décret n°~2013/287 range le
+          contrôle des systèmes d'information parmi les cinq contrôles du
+          CONSUPE.
+    \item \textbf{Trois réflexes.} Le mandat, la preuve, le contradictoire.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.1. Constatation ou analyse~? \niveaubase}]
+Classez chacun des énoncés suivants et justifiez en une ligne.
+\begin{enumerate}[(a)]
+    \item «~Le compte \texttt{mbarga.j} a ordonnancé le mandat 2025-09342
+          le 28~décembre~2025 à 23~h~14 (journal extrait le 23~mars,
+          empreinte au dossier).~»
+    \item «~M.~MBARGA a détourné 187\,450\,000~FCFA.~»
+    \item «~Sept mandats de décembre n'ont pas de dossier papier.~»
+    \item «~Le contrôle des modifications de RIB n'est pas efficace.~»
+    \item «~La cellule informatique semble débordée.~»
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.2. Coter un contrôle \niveaubase}]
+Pour chacune des situations suivantes, donnez la cote (\OUI{}, \NON{} ou
+\NEK{}) et justifiez.
+\begin{enumerate}[(a)]
+    \item La procédure exige un procès-verbal mensuel de revue des comptes
+          actifs~; la DAF n'en produit aucun pour 2025.
+    \item Le chef de la cellule informatique affirme que les mots de passe
+          expirent tous les 90~jours~; le paramétrage n'a pas encore été
+          montré.
+    \item La matrice des profils, extraite par la vérificatrice, ne donne
+          à aucun profil à la fois la liquidation et l'ordonnancement.
+    \item Le test de doublon a été paramétré en juin 2026, après les
+          faits.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.3. Deux populations \niveaumoyen}]
+L'inspection de janvier a examiné 40 dossiers parmi 1\,184.
+\begin{enumerate}[(a)]
+    \item Quelle était la probabilité que le mandat 2025-09342 figure dans
+          son échantillon~? Justifiez.
+    \item Proposez, en trois étapes, la démarche qui aurait permis de le
+          détecter sans augmenter la taille de l'échantillon.
+    \item Rédigez la phrase de conclusion que l'inspection aurait dû
+          écrire, compte tenu de sa population réelle.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~P.4. Le premier constat \niveauexpert}]
+À partir du Tableau~P.4 et du journal (Tableau~P.3)~:
+\begin{enumerate}[(a)]
+    \item Rédigez, en séparant constatation et analyse, le constat portant
+          sur le contrôle~2 (séparation entre liquidation et
+          ordonnancement).
+    \item Indiquez le critère que vous citez, et la pièce qui fonde la
+          cote.
+    \item Formulez une recommandation adressée au directeur des affaires
+          financières, et une adressée au chef de la cellule
+          informatique.
+    \item Dites quelles réponses vous attendez de chacun pendant la
+          procédure contradictoire, et ce qui pourrait vous faire changer
+          la cote.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Le prologue a montré un contrôle qui n'a rien vu et
+une vérificatrice qui a vu, parce qu'elle est partie du système. Le
+Chapitre~\ref{chap:audit-public} pose le vocabulaire~: ce que signifient
+contrôler, auditer, vérifier, et ce qui change quand l'objet du contrôle
+est un système d'information public.
+\end{boxinfo}

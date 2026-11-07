@@ -1,0 +1,315 @@
+% ============================================================================
+% Fichier  : partie4/P04_C12_donnees_fraude.tex
+% Titre    : Analyse de Données et Détection de la Fraude
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : INF3226 C06 (fraude) et C27 (audit continu) ; COSO 2013
+% principe 8 ; guide COSO-ACFE (dossier Normes) ; Cressey (1953) ; Benford
+% (1938) ; Nigrini (2012).
+% Faits CAPNO (LAB-06) : 4 312 agents payés en décembre 2025 ; 37 absents
+% du fichier du personnel, net mensuel cumulé 9 842 500 FCFA ; 12 comptes
+% bancaires partagés par 27 agents ; 9 agents de plus de 60 ans au
+% 31/12/2025 encore payés.
+% Faits MINÉQUIR (LAB-07) : 23 bons de commande entre 4 800 000 et
+% 4 999 999 FCFA en 2025, adressés à 3 fournisseurs, sous le seuil de
+% 5 000 000 FCFA (seuil fictif de mise en concurrence de la DAF) ; chiffre 4
+% en premier chiffre : 15,8 % des montants des bons (attendu 9,7 %).
+% ============================================================================
+
+\chapter{Analyse de Données et Détection de la Fraude}
+\label{chap:donnees-fraude}
+\chaptermark{Données et fraude}
+
+\epigraph{%
+    « Les données ne mentent pas~; elles attendent qu'on leur pose la
+    bonne question. »%
+}{Adage des auditeurs de données}
+
+\niveauChapitre{Expert}{Chapitres~\ref{chap:preuve}
+et~\ref{chap:applications}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Expliquer le risque de fraude au sens du COSO (principe~8) et le
+          triangle de la fraude.
+    \item Conduire sur un fichier de paie les tests d'existence, d'unicité
+          et de cohérence.
+    \item Repérer le fractionnement des commandes sous un seuil.
+    \item Appliquer la loi de Benford à une série de montants et en
+          interpréter l'écart avec prudence.
+    \item Passer d'un indice à un constat, sans confondre anomalie et
+          fraude.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Les chapitres précédents ont testé des contrôles. Celui-ci teste les
+\emph{données} elles-mêmes, sur toute la population, pour y chercher ce
+que les contrôles auraient dû empêcher. C'est l'outil le plus puissant de
+l'auditeur public d'aujourd'hui~: un tableur suffit, et quelques
+formules révèlent ce que des semaines de contrôle sur pièces ne
+voient pas.
+
+\separateur
+
+% ============================================================================
+\section{Le risque de fraude}
+\label{sec:c12-risque}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Fraude}\index{fraude}~: acte intentionnel destiné à obtenir un
+avantage indu, par la tromperie ou la dissimulation. Elle se distingue de
+l'erreur par l'intention, que l'auditeur ne peut pas établir seul.
+\end{boxdef}
+
+Le COSO demande à l'organisation d'évaluer le risque de fraude
+(principe~8)~\cite{coso2013icfr}, et le guide commun du COSO et de l'ACFE
+en détaille la démarche~\cite{coso2016fraude}. L'analyse classique de
+Cressey réunit trois conditions, dites \termecle{triangle de la
+fraude}\index{triangle de la fraude}~: une \emph{pression}, une
+\emph{occasion}, une \emph{rationalisation}~\cite{cressey1953}.
+L'auditeur ne peut agir que sur l'occasion~: c'est exactement ce que
+créent les déficiences du contrôle interne.
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Schéma} &
+    \tableauHeader{Occasion dans le SI, et test de données}
+}
+Agent fictif & Un profil peut créer un agent et valider la paie~; tester
+l'existence au fichier du personnel \\
+Double paiement & Pas de blocage des doublons~; tester fournisseur,
+montant, facture normalisée \\
+Changement de bénéficiaire & RIB modifiable sans seconde validation~;
+tester les RIB modifiés avant un paiement \\
+Fractionnement & Seuil de mise en concurrence~; tester les montants juste
+sous le seuil \\
+Annulation de recette & Annulation sans second agent~; tester la
+concentration des annulations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.1. Schémas de fraude, occasions
+et tests}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Analyser un fichier de paie}
+\label{sec:c12-paie}
+% ============================================================================
+
+\subsection{Trois questions}
+
+\begin{enumerate}
+    \item \textbf{Existence}~: chaque agent payé existe-t-il au fichier du
+          personnel, en position d'activité~?
+    \item \textbf{Unicité}~: chaque agent n'est-il payé qu'une fois, sur un
+          compte qui n'est qu'à lui~?
+    \item \textbf{Cohérence}~: l'âge, le grade, l'indice et les éléments de
+          solde sont-ils compatibles entre eux et avec les règles~?
+\end{enumerate}
+
+\begin{boxoutils}{Tests de paie dans un tableur}
+Feuille \texttt{PAIE}~: A matricule, B nom, C date de naissance, D compte
+bancaire, E net. Feuille \texttt{PERSONNEL}~: A matricule.
+\begin{lstlisting}
+F2 (existence) : =SI(NB.SI(PERSONNEL!A:A;A2)=0;"ABSENT";"")
+G2 (compte)    : =NB.SI(D:D;D2)
+H2 (age)       : =DATEDIF(C2;DATE(2025;12;31);"y")
+\end{lstlisting}
+Un filtre sur \texttt{ABSENT}, sur \texttt{G~>~1} et sur \texttt{H~>~60}
+donne les trois listes à examiner.
+\end{boxoutils}
+
+\begin{boxscenario}{Dossier CAPNO. Les trois listes}
+\textbf{Constatation.} Sur les 4\,312 agents payés en décembre~2025~:
+37 ne figurent pas au fichier du personnel (net cumulé
+9\,842\,500~FCFA par mois)~; 12 comptes bancaires sont partagés par 27
+agents~; 9 agents ont plus de 60 ans et sont toujours payés.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). Les 37 absents sont des agents
+fictifs \emph{probables}, pas certains~: un retard de mise à jour du
+fichier du personnel peut en expliquer une partie. Les comptes partagés
+peuvent être des comptes de couples. Chaque cas est examiné avec sa
+pièce~; seuls les cas inexpliqués deviennent des constats.
+\end{boxscenario}
+
+\begin{boxalert}
+\textbf{Violation typique.} Écrire au rapport «~37 agents fictifs~» à la
+sortie du tableur.
+
+\smallskip
+\textbf{Règle~:} l'analyse de données produit des \emph{indices}. Le
+constat vient après l'examen de chaque cas~: dossier individuel,
+présence physique, acte de recrutement.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Le fractionnement des commandes}
+\label{sec:c12-fractionnement}
+% ============================================================================
+
+Quand un seuil déclenche une procédure plus lourde (mise en concurrence,
+visa), la tentation est de découper une commande en plusieurs commandes
+sous le seuil. Le test est simple~: compter les montants dans une bande
+juste sous le seuil, par fournisseur et par période.
+
+\begin{boxscenario}{Dossier MINÉQUIR. Juste sous le seuil}
+\textbf{Constatation.} La DAF fixe à 5\,000\,000~FCFA le seuil de mise en
+concurrence de ses bons de commande\footnote{Seuil interne fictif, propre
+au cas~; il ne reproduit pas les seuils de la réglementation des marchés
+publics.}. En 2025, 23 bons de commande sont compris entre 4\,800\,000 et
+4\,999\,999~FCFA~; ils sont adressés à trois fournisseurs seulement.
+
+\medskip
+\textbf{Analyse} (confiance moyenne). La concentration dans une bande
+étroite sous le seuil, sur peu de fournisseurs, est un indice classique
+de fractionnement. Il faut examiner, pour chaque fournisseur, l'objet et
+la date des bons~: des commandes de même objet à quelques jours
+d'intervalle confirmeraient l'indice.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{La loi de Benford}
+\label{sec:c12-benford}
+% ============================================================================
+
+Dans de nombreuses séries de montants naturels, le premier chiffre n'est
+pas uniformément réparti~: le 1 apparaît environ trois fois sur dix, le 9
+moins d'une fois sur vingt~\cite{benford1938,nigrini2012benford}. La
+proportion attendue du premier chiffre $d$ est $\log_{10}(1 + 1/d)$.
+
+\begin{tableaucours}{L{3.0cm}ccccccccc}{%
+    \tableauHeader{Premier chiffre} &
+    \tableauHeader{1} & \tableauHeader{2} & \tableauHeader{3} &
+    \tableauHeader{4} & \tableauHeader{5} & \tableauHeader{6} &
+    \tableauHeader{7} & \tableauHeader{8} & \tableauHeader{9}
+}
+Attendu (\%) & 30,1 & 17,6 & 12,5 & 9,7 & 7,9 & 6,7 & 5,8 & 5,1 & 4,6 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~12.2. Distribution de Benford du
+premier chiffre}\end{center}
+
+\begin{boxoutils}{Premier chiffre et proportion attendue}
+\begin{lstlisting}
+B2 (premier chiffre) : =GAUCHE(TEXTE(A2;"0");1)*1
+Attendu pour d       : =LOG10(1+1/d)
+Observe pour d       : =NB.SI(B:B;d)/NB(B:B)
+\end{lstlisting}
+\end{boxoutils}
+
+\begin{boxinfo}
+\textbf{Prudence.} La loi de Benford vaut pour des séries nombreuses,
+étalées sur plusieurs ordres de grandeur, et non bornées par des seuils ou
+des barèmes. Une paie (barème) ou des montants plafonnés ne la suivent
+pas, sans aucune fraude. L'écart désigne où regarder~; il ne prouve rien.
+\end{boxinfo}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Le chiffre 4}
+\textbf{Constatation.} Parmi les montants des bons de commande de 2025, le
+premier chiffre 4 apparaît dans 15,8~\% des cas, contre 9,7~\% attendus.
+
+\medskip
+\textbf{Analyse} (confiance faible à moyenne). L'excès de 4 est cohérent
+avec les 23 bons compris entre 4,8 et 5~millions. Benford ne dit rien de
+plus que le test de bande~; il le confirme par une autre voie.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{De l'indice au constat}
+\label{sec:c12-constat}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Feuille d'analyse de données}~:
+\begin{enumerate}
+    \item fichier analysé (source, date, empreinte, totaux rapprochés)~;
+    \item question posée et formule ou requête utilisée, recopiée
+          intégralement~;
+    \item résultat brut (nombre de cas, liste en annexe)~;
+    \item examen de chaque cas, avec la pièce~: expliqué, inexpliqué, en
+          attente~;
+    \item constat sur les seuls cas inexpliqués~; \NEK{} sur les cas en
+          attente.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxmetier}{Vérificateur}
+Gardez la formule exacte de chaque test dans le dossier. Lors du
+contradictoire, l'entité refera votre calcul~; elle doit trouver le même
+résultat.
+\end{boxmetier}
+
+\begin{boxmetier}{Juge des comptes}
+Un paiement à un agent absent du fichier du personnel engage la
+responsabilité de celui qui a payé sans vérifier l'existence du
+créancier. Demandez quel contrôle d'application devait l'en empêcher.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Faites tourner chaque mois les trois tests de paie et le test de
+fractionnement~: c'est un contrôle continu peu coûteux, qui relève du
+pilotage (principe~16 du COSO).
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{La fraude suppose une intention}, que l'auditeur ne peut
+          établir seul~; il agit sur l'occasion.
+    \item \textbf{Chaque déficience ouvre un schéma}, et chaque schéma
+          appelle un test de données.
+    \item \textbf{Paie~:} existence, unicité, cohérence.
+    \item \textbf{Fractionnement~:} une bande étroite sous le seuil, peu de
+          fournisseurs.
+    \item \textbf{Benford désigne, ne prouve pas}~; il ne s'applique pas à
+          des séries bornées.
+    \item \textbf{Un indice n'est pas un constat.} Chaque cas est examiné
+          avec sa pièce.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.1. Le triangle \niveaubase}]
+Pour le double paiement du MINÉQUIR, dites ce que l'auditeur peut
+établir de chaque côté du triangle de la fraude, et ce qui ne relève pas
+de lui.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.2. Benford \niveaubase}]
+Calculez la proportion attendue du premier chiffre 1 et du premier
+chiffre 9. Dites pourquoi on n'applique pas le test aux indemnités de
+logement de la CAPNO, qui suivent un barème.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.3. Les comptes partagés \niveaumoyen}]
+Proposez la démarche d'examen des 12 comptes partagés par 27 agents de la
+CAPNO~: pièces, ordre d'examen, critères pour classer un cas comme
+expliqué.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~12.4. Du tableur au rapport \niveauexpert}]
+Après examen, 31 des 37 agents absents restent inexpliqués. Rédigez le
+constat en cinq éléments, avec l'effet chiffré sur l'exercice 2025, et
+dites ce que vous écrivez sur les 6 autres.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Il reste à regarder le système d'information de
+plus haut~: qui le pilote, comment il est acheté, et à qui il est confié.
+C'est l'objet du Chapitre~\ref{chap:gouvernance}.
+\end{boxinfo}

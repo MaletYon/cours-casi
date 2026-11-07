@@ -1,0 +1,343 @@
+% ============================================================================
+% Fichier  : partie2/P02_C05_normes_referentiels.tex
+% Titre    : Normes et Référentiels de l'Auditeur Public
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : INF3226 C13 et C14 (resserrés) ; GUID 5100 et manuel IDI
+% (dossier Normes) ; normes IIA 2017 (DOC-20230213, DOC-20330213) ; COBIT
+% 2019 ; ISO/IEC 27001 et 27002 (2022) ; lois n° 2010/012 et 2024/017.
+% Aucune norme ISO ou COBIT n'est reproduite (droits) : résumés seulement.
+% ============================================================================
+
+\chapter{Normes et Référentiels de l'Auditeur Public}
+\label{chap:normes}
+\chaptermark{Normes et référentiels}
+
+\epigraph{%
+    « La norme dit comment auditer~; le référentiel dit à quoi comparer. »%
+}{Règle du cours}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:institutions}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Distinguer une norme professionnelle (comment auditer) d'un
+          référentiel de critères (à quoi comparer).
+    \item Situer les normes de l'INTOSAI (ISSAI, GUID~5100) et le manuel de
+          l'IDI dans le travail du vérificateur.
+    \item Situer les normes de l'IIA dans le travail de l'auditeur interne.
+    \item Utiliser COBIT~2019 et ISO/IEC~27001 et~27002 comme sources de
+          critères, sans les confondre avec la loi.
+    \item Choisir, pour un test donné, un critère explicite et le citer
+          correctement.
+    \item Énoncer les principes de déontologie communs aux auditeurs.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Le prologue l'a montré~: une cote \NON{} n'a de sens que si l'on sait à
+quoi l'on compare. Ce chapitre sépare deux choses que l'on confond
+souvent. Les \emph{normes professionnelles} disent comment conduire la
+mission~; les \emph{référentiels} et les \emph{textes} fournissent les
+critères. L'auditeur public a besoin des deux.
+
+\separateur
+
+% ============================================================================
+\section{Norme, référentiel, critère}
+\label{sec:c05-notions}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Norme professionnelle}\index{norme professionnelle}~: règle qui
+encadre la conduite d'une mission~: indépendance, planification, preuve,
+documentation, rapport. Elle s'impose à l'auditeur.
+
+\medskip
+\termecle{Référentiel}\index{référentiel}~: ensemble structuré de bonnes
+pratiques ou d'exigences (COBIT, ISO/IEC~27002) dans lequel l'auditeur
+puise des critères. Il ne s'impose à l'entité que si un texte ou un
+engagement le rend obligatoire.
+
+\medskip
+\termecle{Critère d'audit}\index{critère d'audit}~: exigence de référence,
+choisie avant le test, à laquelle on compare la situation constatée.
+\end{boxdef}
+
+\begin{tableaucours}{L{3.0cm}L{4.4cm}L{4.8cm}}{%
+    \tableauHeader{Source} &
+    \tableauHeader{Force} &
+    \tableauHeader{Exemple de critère}
+}
+Loi, décret & Obligatoire & Les SI des organismes publics font l'objet
+d'un audit de sécurité (loi n°~2010/012, art.~32) \\
+Règle interne & Obligatoire pour l'entité & Procédure de la DAF sur la
+désactivation des comptes \\
+Référentiel adopté & Obligatoire si l'entité l'a adopté & Politique de
+sécurité fondée sur ISO/IEC~27002 \\
+Bonne pratique & Recommandation & Un objectif de gestion COBIT~2019 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~5.1. Hiérarchie des sources de
+critères}\end{center}
+
+\begin{boxalert}
+\textbf{Violation typique.} Écrire «~non conforme à ISO/IEC~27002~» pour
+une administration qui n'a jamais adopté cette norme.
+
+\smallskip
+\textbf{Règle~:} on n'est «~non conforme~» qu'à une règle qui s'impose.
+Face à une simple bonne pratique, on écrit «~l'entité ne dispose pas de…,
+alors que les bonnes pratiques (référence) recommandent…~», et l'on
+classe l'écart en conséquence.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Les normes de l'INTOSAI}
+\label{sec:c05-intosai}
+% ============================================================================
+
+\subsection{Le cadre}
+
+L'INTOSAI réunit les institutions supérieures de contrôle des finances
+publiques, dont le CONSUPE fait partie au titre de l'article~2 du décret
+n°~2013/287. Son cadre de prises de position professionnelles comprend
+des principes, des normes (\sigle{ISSAI}) et des lignes directrices
+(\sigle{GUID}).
+
+\begin{tableaucours}{L{2.6cm}L{9.6cm}}{%
+    \tableauHeader{Texte} &
+    \tableauHeader{Objet}
+}
+ISSAI~100 & Principes fondamentaux de l'audit du secteur public~: les
+trois types d'audit, les éléments de l'audit, les principes généraux \\
+ISSAI~200, 300, 400 & Principes de l'audit financier, de performance et de
+conformité \\
+ISSAI~4000 & Norme de l'audit de conformité \\
+GUID~5100 & Lignes directrices sur la vérification des systèmes
+d'information \\
+Manuel de l'IDI & Mise en œuvre pratique de l'audit de conformité selon les
+ISSAI \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~5.2. Les textes de l'INTOSAI utiles à
+l'auditeur des SI publics}\end{center}
+
+\subsection{Le GUID 5100}
+
+Le GUID~5100 complète les principes de l'ISSAI~100 pour les missions qui
+portent sur les systèmes d'information~\cite{intosai2019guid5100}. Il
+précise qu'un audit des SI peut être autonome ou s'insérer dans un audit
+financier, de conformité ou de performance, et il énumère treize domaines
+que la mission peut couvrir, parmi lesquels la politique et la
+gouvernance des TI, le développement et l'acquisition des systèmes, la
+gestion des opérations, la sécurité de l'information, la conformité
+réglementaire, la continuité et la reprise après sinistre, et les
+contrôles d'applications. Le cours suit la même logique~:
+la Partie~IV reprend ces domaines.
+
+\subsection{L'audit de conformité selon l'IDI}
+
+Le manuel de l'IDI décrit l'audit de conformité comme une relation entre
+trois parties~: l'auditeur, la partie responsable (l'entité auditée) et
+les utilisateurs du rapport~\cite{idi2021conformite}. Il insiste sur deux
+exigences que l'auditeur des SI applique directement~: identifier des
+\emph{critères} appropriés avant le travail de terrain, et documenter
+suffisamment la mission pour qu'un auditeur expérimenté, sans lien avec
+elle, comprenne les travaux et les conclusions.
+
+\separateur
+
+% ============================================================================
+\section{Les normes de l'audit interne}
+\label{sec:c05-iia}
+% ============================================================================
+
+L'auditeur interne d'un ministère ou d'un établissement public suit les
+normes de l'Institut des auditeurs internes (\sigle{IIA}). Le dossier des
+normes contient l'édition 2017 du Cadre de référence international des
+pratiques professionnelles~\cite{iia2017cripp}~; l'IIA l'a remplacée par
+les normes mondiales d'audit interne publiées en
+2024~\cite{iia2024gias}. Les exigences qui comptent ici sont stables
+d'une édition à l'autre~: indépendance et objectivité, compétence,
+planification fondée sur les risques, preuve suffisante, communication
+des résultats et suivi des recommandations.
+
+\begin{boxinfo}
+\textbf{Vérificateur et auditeur interne parlent la même langue.} Les
+normes de l'INTOSAI et celles de l'IIA convergent sur l'essentiel~:
+critère, preuve, documentation, contradictoire. C'est ce qui permet au
+CONSUPE de s'appuyer sur les rapports d'audit interne qu'il reçoit au
+titre de l'article~5 du décret n°~2013/287.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Les référentiels de critères}
+\label{sec:c05-referentiels}
+% ============================================================================
+
+\subsection{COBIT 2019}
+
+COBIT~2019, de l'ISACA, est un référentiel de gouvernance et de gestion
+des informations et des technologies~\cite{isaca2018cobitintro}. Il
+organise quarante objectifs en cinq domaines~: un domaine de gouvernance
+(évaluer, diriger, surveiller) et quatre domaines de
+gestion~\cite{isaca2018cobitobjectifs}. L'auditeur public y puise des
+critères pour la gouvernance de la fonction informatique, les projets, et
+la gestion des changements (Chapitres~\ref{chap:exploitation}
+et~\ref{chap:gouvernance}).
+
+\subsection{ISO/IEC 27001 et 27002}
+
+ISO/IEC~27001 fixe les exigences d'un système de management de la
+sécurité de l'information~; ISO/IEC~27002 détaille les mesures de
+sécurité, regroupées dans l'édition 2022 en quatre thèmes~: mesures
+organisationnelles, liées aux personnes, physiques et
+technologiques~\cite{iso27001_2022,iso27002_2022}. Ces normes sont sous
+droits~: le cours les résume, il ne les reproduit pas.
+
+\subsection{Les textes camerounais comme critères}
+
+\begin{tableaucours}{L{3.4cm}L{8.8cm}}{%
+    \tableauHeader{Texte} &
+    \tableauHeader{Ce qu'il fournit comme critère}
+}
+Décret n°~2013/287 & Le droit du vérificateur à obtenir les pièces,
+électroniques comprises \\
+Loi n°~2010/012 & L'audit de sécurité des SI des organismes publics, les
+obligations de sécurité des exploitants \\
+Loi n°~2018/012 (régime financier) & Les principes de l'exécution de la
+dépense et la séparation ordonnateur / comptable (à lire dans le
+texte)~\cite{minfi2023regimefinancier} \\
+Loi n°~2024/017 & La protection des données personnelles traitées par
+les SI publics (paie, contribuables, usagers) \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~5.3. Textes camerounais utiles comme
+critères}\end{center}
+
+\subsection{Choisir et citer un critère}
+
+\begin{boxprocedure}
+\textbf{Fiche de critère}, une par test~:
+\begin{itemize}
+    \item l'énoncé du critère, en une phrase vérifiable~;
+    \item sa source exacte (texte, article, alinéa~; ou référentiel et
+          objectif), et sa force (Tableau~5.1)~;
+    \item la date à laquelle le texte a été lu, et dans quelle version~;
+    \item le test qui permettra de dire \OUI{} ou \NON{}.
+\end{itemize}
+\end{boxprocedure}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Le critère du contrôle 1}
+\textbf{Constatation.} La DAF n'a aucune procédure écrite sur la
+désactivation des comptes.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Faute de règle interne, la
+vérificatrice fonde son critère sur une bonne pratique
+(principe~11 du COSO~; gestion des accès dans ISO/IEC~27002) et le
+signale comme tel. Son constat portera donc sur deux points~: l'absence
+de règle interne, qui est elle-même une déficience de conception, et les
+9 comptes encore actifs, qui en sont la conséquence.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Déontologie}
+\label{sec:c05-deontologie}
+% ============================================================================
+
+Les codes de l'INTOSAI, de l'IIA et de l'ISACA convergent sur quatre
+exigences.
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Exigence} &
+    \tableauHeader{Ce qu'elle impose dans une mission SI}
+}
+Intégrité & Ne jamais modifier une donnée de l'entité~; travailler sur
+une copie \\
+Indépendance et objectivité & Ne pas auditer un système que l'on a
+conçu, paramétré ou exploité \\
+Compétence & Se faire assister par un spécialiste pour les tests
+techniques que l'on ne maîtrise pas, et le dire au rapport \\
+Confidentialité & Protéger les extractions (paie, contribuables) et les
+détruire selon les règles à la fin de la mission \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~5.4. Quatre exigences
+déontologiques dans une mission SI}\end{center}
+
+\begin{boxmetier}{Vérificateur}
+Écrivez dans le programme de travail, pour chaque test, la fiche de
+critère. Lors du contradictoire, la première contestation porte presque
+toujours sur le critère~: «~aucun texte ne nous l'impose~».
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Si votre ministère a adopté une politique de sécurité fondée sur
+ISO/IEC~27002, ses mesures deviennent des règles internes~: citez la
+politique, pas la norme.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Norme et référentiel.} La norme dit comment auditer~; le
+          référentiel fournit des critères.
+    \item \textbf{L'INTOSAI pour le vérificateur.} ISSAI~100, 400 et 4000,
+          GUID~5100, manuel de l'IDI.
+    \item \textbf{L'IIA pour l'auditeur interne.} Mêmes exigences
+          essentielles~: critère, preuve, documentation.
+    \item \textbf{COBIT et ISO/IEC~27002 comme sources de critères}, qui ne
+          s'imposent que si l'entité les a adoptés.
+    \item \textbf{Une hiérarchie des critères.} Loi, règle interne,
+          référentiel adopté, bonne pratique~; l'écart se qualifie selon la
+          force du critère.
+    \item \textbf{Une fiche de critère par test}, avec la source exacte et la
+          date de lecture.
+    \item \textbf{Quatre exigences déontologiques.} Intégrité,
+          indépendance, compétence, confidentialité.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.1. Norme ou référentiel~? \niveaubase}]
+Classez~: (a) GUID~5100~; (b) ISO/IEC~27002~; (c) ISSAI~4000~; (d) COBIT~2019~;
+(e) normes de l'IIA~; (f) loi n°~2024/017.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.2. Qualifier l'écart \niveaumoyen}]
+La CAPNO n'a pas testé ses sauvegardes depuis deux ans. Rédigez le
+constat dans deux cas~: (a) la politique de sécurité de la CAPNO exige un
+test semestriel~; (b) aucune règle interne n'existe.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.3. Fiches de critère \niveaumoyen}]
+Établissez la fiche de critère des contrôles~2 (séparation LIQ / ORD) et~4
+(blocage des doublons) du circuit de la dépense du MINÉQUIR
+(Tableau~3.2).
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~5.4. Un conflit d'intérêts \niveauexpert}]
+Un vérificateur a participé, deux ans plus tôt, au comité de pilotage du
+projet SIDÉPENSE. Analysez la situation au regard des exigences
+déontologiques, et proposez ce que son chef de division doit décider.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Le mandat et les normes sont posés. La Partie~III
+conduit la mission elle-même, en commençant par sa préparation
+(Chapitre~\ref{chap:preparer}).
+\end{boxinfo}

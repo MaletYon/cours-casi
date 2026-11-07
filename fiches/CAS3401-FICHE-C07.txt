@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C07
+Chapitre 7 : Collecter la preuve : OUI, NON, NEK
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. NEK signifie :
+      a) Connaissance insuffisante
+      b) Non applicable
+      c) Non conforme
+      d) Non évalué par choix
+
+ 2. L'article qui construit l'instrument OUI / NON / NEK est :
+      a) A0
+      b) A1
+      c) COSO 2013
+      d) GUID 5100
+
+ 3. Selon A0, la modalité NEK découle des axiomes :
+      a) 5 et 6
+      b) 2 et 6
+      c) 1 à 4
+      d) 4 et 6
+
+ 4. Un contrôle sans objet dans le périmètre :
+      a) Se cote NEK
+      b) Se cote NON
+      c) Se cote OUI
+      d) Sort de la décomposition, raison écrite
+
+ 5. Une grille binaire tend à :
+      a) Surestimer la conformité
+      b) Sous-estimer la conformité
+      c) Mesurer exactement la conformité
+      d) Supprimer l'ignorance
+
+ 6. L'indice rho se calcule comme :
+      a) mu trichotomique moins mu binaire
+      b) mu binaire moins mu trichotomique
+      c) U moins H
+      d) H moins U
+
+ 7. Sur les accès du MINÉQUIR, rho vaut :
+      a) 0,15
+      b) 0,55
+      c) 0,30
+      d) 0,85
+
+ 8. Avec l'instrument trichotomique, le domaine D1 donne :
+      a) 17 OUI, 3 NON
+      b) 13 OUI, 2 NON, 5 NEK
+      c) 20 OUI
+      d) 11 OUI, 3 NON, 6 NEK
+
+ 9. La preuve la plus fiable est :
+      a) Une trace du système extraite par l'auditeur
+      b) Une déclaration orale
+      c) Une note interne non signée
+      d) Un courriel de l'audité
+
+10. Une déclaration orale seule donne la cote :
+      a) OUI
+      b) NEK
+      c) NON
+      d) Sans objet
+
+11. Deux sources qui se contredisent sans qu'on puisse les départager donnent :
+      a) OUI
+      b) NON
+      c) NEK
+      d) Sans objet
+
+12. Dans l'entretien d'audit, on interroge :
+      a) Toute l'équipe ensemble
+      b) Le chef pour son équipe
+      c) Par courriel
+      d) Un répondant à la fois
+
+13. Une bonne question d'entretien :
+      a) Ne suggère pas la réponse et admet « je ne sais pas »
+      b) Commence par « n'est-ce pas »
+      c) Est ouverte et vague
+      d) Est posée par le prestataire
+
+14. Rechercher les doublons parmi 9 611 mandats relève de :
+      a) L'entretien
+      b) L'analyse de données
+      c) L'observation
+      d) La ré-exécution
+
+15. Pour 95 % de confiance et 5 % d'écart toléré, sans écart attendu, il faut tirer :
+      a) 29 éléments
+      b) 45 éléments
+      c) 59 éléments
+      d) 100 éléments
+
+16. La formule de la taille d'échantillon par attributs est :
+      a) n = c / t
+      b) n = t / c
+      c) n = 1 / t
+      d) n ≥ ln(1 - c) / ln(1 - t)
+
+17. Si l'on trouve un écart dans l'échantillon par attributs, le contrôle est :
+      a) NON
+      b) OUI
+      c) NEK
+      d) Sans objet
+
+18. L'empreinte SHA-256 prouve :
+      a) L'exhaustivité
+      b) L'intégrité
+      c) L'exactitude
+      d) L'origine
+
+19. Combien de lignes manquaient dans la première extraction de la CAPNO ?
+      a) Trente-sept
+      b) Douze
+      c) Trois
+      d) Aucune
+
+20. Selon le cours, la possibilité pour un tiers de refaire les travaux traduit l'axiome :
+      a) De cognition limitée
+      b) D'individuation temporelle
+      c) De mesurabilité
+      d) D'opposabilité
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. NEK et « non applicable » sont synonymes.
+      Vrai / Faux
+
+22. L'instrument sert auprès des répondants et pour la cotation de l'auditeur.
+      Vrai / Faux
+
+23. L'indice rho mesure la conformité réelle d'un domaine.
+      Vrai / Faux
+
+24. En 2025, la grille binaire donnait 17 OUI sur 20 sur les accès du MINÉQUIR.
+      Vrai / Faux
+
+25. Deux preuves indépendantes qui concordent valent plus que la plus fiable prise seule.
+      Vrai / Faux
+
+26. Il faut annoncer en entretien que NEK est une réponse admise.
+      Vrai / Faux
+
+27. L'auditeur peut faire un essai dans l'application de production.
+      Vrai / Faux
+
+28. Un échantillon raisonné permet d'étendre la conclusion à la population.
+      Vrai / Faux
+
+29. L'empreinte suffit à prouver qu'une extraction est complète.
+      Vrai / Faux
+
+30. La feuille de test indique la confiance, le taux toléré et la taille de l'échantillon.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. NEK est l'abréviation de Not Enough ______.
+
+32. L'espace de réponse OUI, NON, NEK est dit ______.
+
+33. L'indice de réduction du biais se note ______.
+
+34. Une preuve doit être suffisante et ______.
+
+35. Recouper deux sources indépendantes, c'est la ______.
+
+36. Pour 95 % de confiance et 3 % d'écart toléré, il faut ______ tirages.
+
+37. Un échantillon où chaque opération a la même chance d'être tirée est ______.
+
+38. Le nombre de lignes et les sommes rapprochés d'une source indépendante sont les totaux de ______.
+
+39. Sous Linux, l'empreinte se calcule avec ______.
+
+40. Le manuel qui exige une documentation compréhensible par un tiers est celui de l'______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

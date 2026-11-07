@@ -1,0 +1,329 @@
+% ============================================================================
+% Fichier  : partie4/P04_C09_acces_habilitations.tex
+% Titre    : Accès et Habilitations
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : INF3226 C18, C21 (accès) ; COSO principe 11 ; ISO/IEC 27002:2022
+% (gestion des accès, résumé) ; ACSI LAB-02 (matrice des droits).
+% Faits MINÉQUIR établis ici (LAB-03) : 47 comptes actifs au 23/03/2026 ;
+% 9 comptes d'agents partis ; 3 comptes génériques (saisie01, daf, admin) ;
+% 5 comptes LIQ + ORD (dont mbarga.j) ; 2 comptes FRS + ORD (mbarga.j,
+% nkolo.r) ; profil ADM : atangana.p et admin (générique) ; mot de passe
+% sans expiration ; dernière revue des droits : aucune.
+% ============================================================================
+
+\chapter{Accès et Habilitations}
+\label{chap:acces}
+
+\epigraph{%
+    « Un droit d'accès est une signature que l'on peut prêter. »%
+}{Principe du cours}
+
+\niveauChapitre{Intermédiaire}{Chapitres~\ref{chap:eval-sci}
+et~\ref{chap:preuve}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Décrire le cycle de vie d'un compte et les contrôles attendus à
+          chaque étape.
+    \item Repérer les comptes à risque~: partis, génériques, à privilèges,
+          inactifs.
+    \item Croiser la liste des comptes avec le fichier du personnel.
+    \item Analyser une matrice de profils et identifier les conflits de
+          séparation des tâches.
+    \item Évaluer la revue périodique des habilitations.
+    \item Coter les contrôles d'accès et classer les déficiences.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Les accès sont le premier des contrôles généraux informatiques, et le
+plus important~: s'ils ne sont pas maîtrisés, aucun autre contrôle n'est
+fiable (Chapitre~\ref{chap:sci}). Le double paiement du prologue est
+d'abord une défaillance des accès. Ce chapitre donne la grille complète
+pour les évaluer.
+
+\separateur
+
+% ============================================================================
+\section{Le cycle de vie d'un compte}
+\label{sec:c09-cycle}
+% ============================================================================
+
+\begin{tableaucours}{L{2.4cm}L{4.8cm}L{5.0cm}}{%
+    \tableauHeader{Étape} &
+    \tableauHeader{Contrôle attendu} &
+    \tableauHeader{Preuve à demander}
+}
+Création & Demande écrite, validée par le chef de service, pour un agent
+identifié & Formulaires de demande, liste des créations \\
+Attribution des profils & Profils conformes à la fiche de poste~; pas
+de combinaison interdite & Matrice des profils, demandes \\
+Modification & Nouvelle demande validée lors d'un changement de poste &
+Historique des profils \\
+Revue périodique & Le propriétaire de l'application valide la liste des
+comptes et des profils & Revues signées, avec suites \\
+Désactivation & À la date d'effet du départ ou de la mutation & Journal
+des désactivations, rapproché du fichier du personnel \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.1. Le cycle de vie d'un
+compte}\end{center}
+
+\begin{boxdef}
+\termecle{Propriétaire d'application}\index{propriétaire d'application}~:
+responsable métier qui décide des droits dans une application (pour
+SIDÉPENSE, le directeur des affaires financières). La cellule
+informatique \emph{exécute} les décisions du propriétaire~; elle ne les
+prend pas.
+\end{boxdef}
+
+\separateur
+
+% ============================================================================
+\section{Les comptes à risque}
+\label{sec:c09-risque}
+% ============================================================================
+
+\begin{tableaucours}{L{2.8cm}L{4.4cm}L{5.0cm}}{%
+    \tableauHeader{Type} &
+    \tableauHeader{Risque} &
+    \tableauHeader{Test}
+}
+Compte d'un agent parti & Utilisé par l'ancien titulaire ou par un
+tiers & Croiser avec le fichier du personnel \\
+Compte générique (\texttt{saisie01}) & Aucune action n'est imputable à
+une personne & Lister les comptes sans titulaire nominatif \\
+Compte à privilèges (ADM) & Peut tout faire, y compris effacer ses traces
+& Lister les détenteurs, vérifier la journalisation de leurs actions \\
+Compte inactif & Oublié, donc non surveillé & Dernière connexion de plus
+de 90 jours \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.2. Les comptes à risque}\end{center}
+
+\begin{boxoutils}{Croiser les comptes avec le fichier du personnel}
+Deux feuilles dans le même classeur~: \texttt{COMPTES} (colonne A
+matricule) et \texttt{PERSONNEL} (colonne A matricule, colonne D
+situation). Dans \texttt{COMPTES}~:
+\begin{lstlisting}
+E2 : =SIERREUR(RECHERCHEV(A2;PERSONNEL!$A:$D;4;FAUX);"ABSENT")
+\end{lstlisting}
+Un filtre sur \texttt{E} donne les comptes d'agents mutés ou partis
+(situation autre que «~en poste~») et les comptes sans titulaire au
+fichier (\texttt{ABSENT}), qui sont souvent des comptes génériques.
+\end{boxoutils}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Les 47 comptes}
+\textbf{Constatation.} Au 23~mars~2026, SIDÉPENSE compte 47 comptes
+actifs. Le croisement avec le fichier du personnel donne 9 comptes
+d'agents mutés ou partis et 3 comptes sans titulaire~:
+\texttt{saisie01}, \texttt{daf} et \texttt{admin}. Le profil ADM est
+détenu par \texttt{atangana.p} et par le compte générique
+\texttt{admin}. Les mots de passe n'expirent jamais.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le compte \texttt{admin} est le plus
+grave~: il peut tout faire, et rien de ce qu'il fait n'est imputable à une
+personne. Le journal du prologue ne serait d'aucune aide si les
+opérations du 28~décembre avaient été faites sous ce compte.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{La matrice des profils}
+\label{sec:c09-matrice}
+% ============================================================================
+
+L'analyse part de la matrice extraite par l'auditeur (un compte par ligne,
+un profil par colonne) et des paires interdites du Tableau~2.6.
+
+\begin{boxoutils}{Repérer les conflits dans la matrice}
+Colonnes \texttt{B} à \texttt{F}~: ENG, LIQ, ORD, FRS, ADM (1 si le
+compte détient le profil, 0 sinon). Une colonne par paire interdite~:
+\begin{lstlisting}
+G2 (LIQ+ORD) : =SI(ET(C2=1;D2=1);"CONFLIT";"")
+H2 (FRS+ORD) : =SI(ET(E2=1;D2=1);"CONFLIT";"")
+I2 (FRS+LIQ) : =SI(ET(E2=1;C2=1);"CONFLIT";"")
+J2 (ADM+...) : =SI(ET(F2=1;SOMME(B2:E2)>0);"CONFLIT";"")
+\end{lstlisting}
+\end{boxoutils}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Les conflits}
+\textbf{Constatation.} Cinq comptes réunissent LIQ et ORD, dont
+\texttt{mbarga.j}~; deux réunissent FRS et ORD (\texttt{mbarga.j} et
+\texttt{nkolo.r}). Aucune revue des habilitations n'a été faite depuis la
+mise en service de SIDÉPENSE en 2024.
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le conflit LIQ + ORD n'est pas un
+cas isolé~: il touche cinq comptes, ce qui montre que la séparation n'a
+jamais été conçue dans l'attribution des profils. L'absence de revue
+explique que personne ne l'ait vu.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{La revue des habilitations}
+\label{sec:c09-revue}
+% ============================================================================
+
+\begin{boxdef}
+\termecle{Revue des habilitations}\index{revue des habilitations}~:
+contrôle détectif par lequel le propriétaire de l'application examine,
+à intervalle fixé, la liste des comptes et de leurs profils, confirme ou
+retire chaque droit, et signe. Elle n'est efficace que si la liste est
+exhaustive et extraite de l'application, et si les retraits décidés sont
+exécutés.
+\end{boxdef}
+
+\begin{boxobjet}{C-ACC-03 · Revue des habilitations}
+\textbf{Objectif.} Les droits dans SIDÉPENSE restent conformes aux
+fonctions.
+
+\textbf{Risque couvert.} Accumulation de droits, comptes oubliés.
+
+\textbf{Critère.} Revue semestrielle signée par le DAF (bonne pratique~;
+aucune règle interne).
+
+\textbf{Test de conception.} Une procédure de revue existe-t-elle~?
+Non.
+
+\textbf{Test de fonctionnement.} Sans objet~: aucune revue n'a eu lieu.
+
+\textbf{Cote.} \NON{}.
+\end{boxobjet}
+
+\separateur
+
+% ============================================================================
+\section{L'authentification}
+\label{sec:c09-authentification}
+% ============================================================================
+
+L'authentification relie un compte à une personne. Les contrôles attendus
+sont simples~: un compte par personne, un mot de passe personnel, une
+longueur minimale, un changement périodique ou une authentification à
+deux facteurs pour les profils sensibles, un verrouillage après plusieurs
+échecs. Ces règles relèvent aussi de l'audit de sécurité de l'ANTIC
+(Chapitre~\ref{chap:institutions})~: le vérificateur les note sans
+conduire lui-même un audit de sécurité.
+
+\begin{boxalert}
+\textbf{Violation typique.} Constater que les mots de passe n'expirent
+jamais, et conclure que la sécurité de SIDÉPENSE est défaillante.
+
+\smallskip
+\textbf{Règle~:} rester dans son objectif. Pour le contrôle interne de la
+dépense, le constat est que l'imputation des opérations aux personnes
+n'est pas garantie~; la sécurité d'ensemble relève de l'audit de
+sécurité.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Lecture du domaine}
+\label{sec:c09-lecture}
+% ============================================================================
+
+\begin{tableaucours}{L{6.2cm}cL{4.4cm}}{%
+    \tableauHeader{Contrôle} &
+    \tableauHeader{Cote} &
+    \tableauHeader{Pièce}
+}
+Création sur demande validée & \NON{} & Aucune demande archivée \\
+Profils sans combinaison interdite & \NON{} & Matrice (5 et 2 conflits) \\
+Désactivation à la date du départ & \NON{} & 9 comptes sur 31 \\
+Revue des habilitations & \NON{} & Aucune revue \\
+Comptes nominatifs & \NON{} & 3 comptes génériques \\
+Journalisation des actions des comptes ADM & \OUI{} & Journal \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~9.3. Lecture du domaine D1
+(accès)}\end{center}
+
+\begin{boxlecture}{Domaine D1, accès à SIDÉPENSE}
+\textbf{Constatation.} Un contrôle sur six fonctionne.
+
+\textbf{Analyse} (confiance élevée). Le domaine est au niveau~0 ou~1 de
+l'échelle du Chapitre~\ref{chap:eval-sci}. La déficience est majeure~:
+elle prive de valeur tous les contrôles d'application de SIDÉPENSE.
+
+\medskip
+\hfill\conformite{1}{6}{0}
+\end{boxlecture}
+
+\begin{boxmetier}{Vérificateur}
+Demandez toujours trois listes extraites devant vous~: les comptes et
+leurs profils, la dernière connexion de chaque compte, et les
+détenteurs des profils d'administration. Croisez-les avec le fichier du
+personnel du même jour.
+\end{boxmetier}
+
+\begin{boxmetier}{Contrôleur financier}
+Votre visa électronique est un profil. Si un compte générique ou un autre
+agent peut viser à votre place, votre contrôle n'existe pas~: signalez-le
+par écrit.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Proposez à la direction une revue semestrielle des habilitations, signée
+par le propriétaire de l'application~: c'est le contrôle le moins coûteux
+du domaine, et celui qui aurait détecté les cinq conflits.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Cinq étapes, cinq contrôles.} Création, attribution,
+          modification, revue, désactivation.
+    \item \textbf{Le propriétaire décide, la cellule exécute.}
+    \item \textbf{Quatre comptes à risque.} Partis, génériques, à
+          privilèges, inactifs.
+    \item \textbf{Croiser avec le personnel}, le même jour, sur des listes
+          extraites devant l'auditeur.
+    \item \textbf{La matrice révèle les conflits}~; la revue les fait
+          disparaître.
+    \item \textbf{Rester dans son objectif.} L'authentification se note~;
+          l'audit de sécurité relève de l'ANTIC.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.1. Classer les comptes \niveaubase}]
+Classez selon le Tableau~9.2~: (a) \texttt{admin}~; (b) \texttt{mbarga.j}
+au 23~mars~2026~; (c) \texttt{saisie01}~; (d) un compte dont la dernière
+connexion date de juin~2025.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.2. Une formule \niveaubase}]
+Écrivez la formule qui signale, dans la matrice, un compte qui détient à
+la fois ENG et ORD, puis dites si cette combinaison doit être interdite.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.3. La revue qui ne sert à rien \niveaumoyen}]
+À la CAPNO, une revue des habilitations est signée chaque semestre. Elle
+porte sur une liste saisie à la main par l'informaticien, et aucun retrait
+n'a jamais été décidé. Cotez le contrôle et rédigez le constat.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~9.4. Un petit service \niveauexpert}]
+La recette des finances de Bafoussam n'a que trois agents pour
+e-RECETTES. Proposez une attribution des profils, les contrôles
+compensatoires nécessaires et la preuve que chacun doit laisser.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Les accès maîtrisés, il faut encore que les
+programmes et leurs paramètres ne changent pas sans contrôle, et que
+l'exploitation tienne. C'est l'objet du Chapitre~\ref{chap:exploitation}.
+\end{boxinfo}

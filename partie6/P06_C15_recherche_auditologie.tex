@@ -1,0 +1,484 @@
+% ============================================================================
+% Fichier  : partie6/P06_C15_recherche_auditologie.tex
+% Titre    : Ouvrir sur la Recherche : l'Auditologie
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Ajouté à la demande de l'auteur (07/11/2026) : ultime chapitre qui ouvre le
+% cours sur la recherche, avec des axes et des exemples de sujets.
+% Sources : A0 « Vers l'auditologie » (hal-05701007) ; A1 « Modelling
+% Epistemic Uncertainty in IS Audit » (hal-05701270) ; INF3226 C30 et C31.
+% Règle de l'auteur (06/11/2026) : seuls A0 et A1 (HAL) et des travaux
+% publiés sont cités ; aucun travail non publié n'est annoncé.
+% Axiomes cités avec la numérotation d'A0 (1 à 6), pas avec l'environnement
+% auto-numéroté.
+% ============================================================================
+
+\chapter[Ouvrir sur la recherche : l'auditologie]{Ouvrir sur la Recherche : l'Auditologie}
+\label{chap:recherche}
+\chaptermark{Ouvrir sur la recherche}
+
+\epigraph{%
+    « Ce que l'organisation ignore de ses propres systèmes conditionne la
+    qualité des décisions qu'elle peut prendre à leur sujet. »%
+}{\textit{Vers l'auditologie}~\cite{minka2026auditologie}}
+
+\niveauChapitre{Recherche}{L'ensemble du cours, en particulier les
+Chapitres~\ref{chap:preparer} à~\ref{chap:constater}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir l'auditologie et la mission auditologique.
+    \item Énoncer les six axiomes de l'article A0 et relier chacun à une
+          pratique du cours.
+    \item Présenter les cinq piliers théoriques et les prédictions
+          falsifiables qu'ils engendrent.
+    \item Distinguer ce qui est établi par des travaux publiés, ce qui est
+          déposé en prépublication, et ce qui reste à valider.
+    \item Identifier des axes de recherche à partir de la pratique de
+          l'audit public, et formuler un sujet de mémoire falsifiable.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Tout au long du cours, des choix de méthode ont été justifiés par une
+recherche~: la réponse \NEK{}, la décomposition en huit niveaux, les mesures
+$\mu$, $U$ et $H$, le quadrant, la comparaison des cycles. Ces outils
+viennent d'un programme de recherche que l'auteur a nommé
+\emph{auditologie}~\cite{minka2026auditologie}, et dont l'instrument de
+réponse est étudié dans un second article~\cite{minka2026nek}. Ce chapitre
+le présente pour lui-même, puis montre comment un auditeur des finances
+publiques peut y contribuer, par un mémoire ou par sa pratique.
+
+\begin{boiteRemarque}{Ce que ce chapitre est, et n'est pas}
+Il expose un programme de recherche déposé en prépublication, non un savoir
+établi. Les axiomes et les piliers forment un cadre~; les prédictions qui en
+découlent restent à tester. C'est précisément là que les auditeurs publics,
+qui disposent de missions réelles et répétées, peuvent apporter ce qui
+manque~: des données longitudinales.
+\end{boiteRemarque}
+
+\separateur
+
+% ============================================================================
+\section{L'objet : la mission auditologique}
+\label{sec:c15-objet}
+% ============================================================================
+
+L'article A0 part d'un constat~: l'audit des systèmes d'information dispose
+de méthodes, de référentiels et d'une abondante littérature instrumentale,
+mais d'aucun socle axiomatique ni d'aucun espace de mesure unifié pour son
+objet central, la réduction de l'incertitude. Il propose de le constituer en
+une science appliquée.
+
+\begin{boxdef}
+\termecle{Mission auditologique}\index{mission auditologique} (A0)~:
+quintuplet
+$\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, \mathcal{I},
+\mathcal{G}, \mathcal{T} \rangle$, où $\mathcal{S}$ est le système audité
+(ensemble sociotechnique d'agents, d'artefacts, de flux et de dispositifs),
+$\mathcal{A}$ l'architecture cognitive de l'auditeur ou de l'équipe,
+$\mathcal{I}$ le canal d'information par lequel les preuves parviennent à
+$\mathcal{A}$, $\mathcal{G}$ la structure stratégique de l'interaction
+entre l'auditeur, l'audité et les tiers, et $\mathcal{T}$ la trajectoire
+temporelle du système au fil des missions.
+
+\medskip
+\termecle{Auditologie}\index{auditologie}~: science appliquée de la
+réduction de l'incertitude sur les missions auditologiques.
+\end{boxdef}
+
+\begin{tableaucours}{cL{3.6cm}L{8.4cm}}{%
+    \tableauHeader{} &
+    \tableauHeader{Composante} &
+    \tableauHeader{Dans la mission MINÉQUIR}
+}
+$\mathcal{S}$ & Système audité & La DAF, SIDÉPENSE, ses 47 comptes, ses
+procédures, le poste comptable \\
+$\mathcal{A}$ & Architecture cognitive & L'équipe du CONSUPE, sa méthode,
+ses papiers de travail \\
+$\mathcal{I}$ & Canal d'information & Entretiens, pièces des trois strates,
+extractions faites devant la vérificatrice \\
+$\mathcal{G}$ & Structure stratégique & DAF, cellule informatique, DRH,
+contrôle financier, vérificateurs, CDBF \\
+$\mathcal{T}$ & Trajectoire & Mars~2026, novembre~2026, et les cycles
+suivants \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.1. La mission MINÉQUIR comme
+mission auditologique}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Six axiomes}
+\label{sec:c15-axiomes}
+% ============================================================================
+
+L'article A0 pose six axiomes, qui contraignent toute mission
+auditologique~\cite{minka2026auditologie}. Le cours les a rencontrés
+chapitre après chapitre~; leur numérotation est celle de l'article.
+
+\begin{tableaucours}{cL{3.4cm}L{5.0cm}L{3.6cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Axiome} &
+    \tableauHeader{Énoncé résumé} &
+    \tableauHeader{Dans le cours}
+}
+1 & Observabilité partielle & L'auditeur n'accède qu'à une partie des états
+du système, elle-même partiellement opaque & Partir du système~; la réponse
+\NEK{} (Ch.~\ref{chap:preuve}) \\
+2 & Cognition limitée & L'auditeur et l'audité sont des agents
+cognitivement limités & Décomposition bornée à sept éléments
+(Ch.~\ref{chap:preparer}) \\
+3 & Mesurabilité & L'incertitude épistémique se mesure par l'entropie et
+ses généralisations & $\mu$, $U$, $H$ (Ch.~\ref{chap:constater}) \\
+4 & Interaction stratégique & Auditeur et audité ont des intérêts
+distincts, dans un jeu à information imparfaite & Biais du choix forcé,
+indice $\rho$~; indépendance \\
+5 & Individuation temporelle & Le système évolue, et son état dépend des
+missions antérieures & Suivi, divergence entre cycles \\
+6 & Opposabilité & Toute conclusion doit pouvoir être défendue devant un
+tiers légitime & Papiers de travail, contradictoire, observation en sept
+éléments \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.2. Les six axiomes de
+l'auditologie (d'après A0)}\end{center}
+
+A0 écarte explicitement trois candidats~: l'\emph{indépendance} n'est pas un
+axiome, mais une conséquence des axiomes~4 et~6~; la \emph{conformité à un
+référentiel} est un choix de fonction objectif~; la \emph{matérialité} est
+un paramètre dérivé de l'opposabilité.
+
+\subsection{Quatre propositions}
+
+A0 en tire quatre propositions, que ce cours a mises en pratique.
+\begin{enumerate}
+    \item \textbf{Modalité d'ignorance explicite} (axiomes~1 à~4)~: tout
+          instrument de réponse valide inclut \NEK{}.
+    \item \textbf{Décomposition hiérarchique} (axiomes~2 et~6)~: tout
+          instrument couvrant un espace d'audit non trivial est organisé en
+          niveaux, bornés par la mémoire de travail.
+    \item \textbf{Métriques longitudinales} (axiome~5)~: les conclusions ne
+          se testent que par l'observation de plusieurs cycles.
+    \item \textbf{Réflexivité} (axiomes~4 et~6)~: l'audit fait partie de la
+          trajectoire du système qu'il observe.
+\end{enumerate}
+
+\separateur
+
+% ============================================================================
+\section{Cinq piliers}
+\label{sec:c15-piliers}
+% ============================================================================
+
+Les axiomes disent ce qu'est une mission~; les piliers apportent les théories
+qui permettent de la modéliser. A0 en retient cinq, chacun avec une
+prédiction falsifiable.
+
+\begin{tableaucours}{L{2.6cm}L{3.6cm}L{6.0cm}}{%
+    \tableauHeader{Pilier} &
+    \tableauHeader{Ancrage} &
+    \tableauHeader{Prédiction falsifiable}
+}
+1. Cognition limitée & Miller, Simon,
+Kahneman~\cite{miller1956,simon1957,kahneman2011} & Les grilles de plus de
+neuf dimensions simultanées produisent plus d'incohérences et d'oublis \\
+2. Théorie de l'information & Shannon, Kullback et
+Leibler~\cite{shannon1948,kullback1951} & Le diagnostic conformité et
+entropie prédit mieux que le seul taux de conformité \\
+3. Théorie des jeux & von~Neumann, Nash,
+Harsanyi~\cite{vonneumann1944,nash1951,harsanyi1967} & Les instruments
+compatibles avec les incitations réduisent la dissimulation \\
+4. Systèmes dynamiques & Chaînes de Markov~\cite{norris1998} & Les
+prévisions par matrice de transition entre niveaux de maturité battent la
+persistance naïve \\
+5. Ontologie critique-réaliste & Bhaskar, Simondon,
+Latour~\cite{bhaskar1975,simondon1958,latour2005} & Les cadres qui tiennent
+compte des personnes, des procédures et des artefacts font mieux appliquer
+les recommandations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.3. Les cinq piliers et leurs
+prédictions (d'après A0)}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{La méthode : science du design et falsifiabilité}
+\label{sec:c15-methode}
+% ============================================================================
+
+\subsection{Une science du design}
+
+L'auditologie produit des artefacts~: instruments, métriques, grilles,
+outils. A0 l'inscrit dans la recherche en science du design~: on construit
+un artefact, on l'évalue dans son environnement, on l'appuie sur la base de
+connaissances, et l'on recommence~\cite{hevner2004design}. Les outils de ce
+cours (l'instrument \OUI{}~/ \NON{}~/ \NEK{}, le gabarit canonique, les
+labs de NDAP SUKULU) sont de tels artefacts, et chaque promotion
+d'auditeurs participe à leur évaluation.
+
+\subsection{Un noyau dur et une ceinture protectrice}
+
+A0 adopte le falsificationnisme sophistiqué de Lakatos~\cite{lakatos1970}.
+Les axiomes et les piliers forment un \emph{noyau dur}, qui n'est pas
+directement testé~; les hypothèses auxiliaires, les procédures de mesure et
+les prédictions forment la \emph{ceinture protectrice}, qui l'est. La
+réfutation d'une prédiction n'emporte pas le programme~: elle oblige à
+réviser la ceinture.
+
+\subsection{Ce que l'auditologie n'est pas}
+
+A0 précise quatre refus~: l'auditologie n'est pas \emph{normative} (elle ne
+prescrit pas le bon audit), ni \emph{critique} (elle n'invalide pas les
+cadres existants), ni \emph{un référentiel de plus}, ni \emph{une idéologie}
+(ses propositions sont falsifiables). C'est pourquoi le cours a enseigné
+ensemble les normes du métier (Partie~II) et leur lecture auditologique
+(Partie~III).
+
+\separateur
+
+% ============================================================================
+\section{Établi, déposé, à valider}
+\label{sec:c15-statut}
+% ============================================================================
+
+\begin{tableaucours}{L{3.0cm}L{5.0cm}L{4.2cm}}{%
+    \tableauHeader{Statut} &
+    \tableauHeader{Contenu} &
+    \tableauHeader{Références}
+}
+Établi par des travaux publiés & Borne de la mémoire de travail, entropie
+de Shannon, divergence de Kullback-Leibler, théorie des jeux, contrôle
+interne & Miller, Shannon, Kullback, Nash, COSO \\
+Déposé en prépublication & Axiomes, piliers, mission auditologique,
+instrument \OUI{}~/ \NON{}~/ \NEK{}, mesures, quadrant & A0 et A1, sur
+HAL~\cite{minka2026auditologie,minka2026nek} \\
+À valider & Les prédictions des cinq piliers, sur des missions réelles et
+répétées & Les recherches à venir, dont les vôtres \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.4. Le statut des travaux sur
+lesquels repose le cours}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Axes de recherche pour l'auditeur public}
+\label{sec:c15-axes}
+% ============================================================================
+
+Les auditeurs des finances publiques disposent de ce qui manque le plus à la
+recherche en audit~: des missions réelles, sur des systèmes réels, répétées
+dans le temps. Huit axes s'ouvrent à partir de ce cours. Pour chacun, un
+exemple de sujet de mémoire est donné, avec sa question falsifiable.
+
+\begin{tableaucours}{cL{3.2cm}L{5.0cm}L{3.0cm}}{%
+    \tableauHeader{Axe} &
+    \tableauHeader{Thème} &
+    \tableauHeader{Question de recherche} &
+    \tableauHeader{Pilier, axiome}
+}
+1 & Le biais du choix forcé & De combien les grilles binaires des
+inspections surestiment-elles la conformité~? & Pilier~3~; axiome~4 \\
+2 & L'incertitude dans les rapports publics & Quelle part des conclusions
+des rapports de contrôle repose sur des déclarations sans preuve~? &
+Pilier~2~; axiome~1 \\
+3 & La valeur prédictive du quadrant & Les domaines en conformité opaque
+révèlent-ils plus d'irrégularités aux missions suivantes~? & Pilier~2~;
+axiome~3 \\
+4 & Trajectoires des recommandations & Le suivi des recommandations
+suit-il une chaîne de Markov prévisible~? & Pilier~4~; axiome~5 \\
+5 & L'usage stratégique de \NEK{} & Les audités répondent-ils davantage
+\NEK{} en entretien formel qu'en auto-évaluation~? & Pilier~3~; axiome~4 \\
+6 & La décomposition et l'erreur & Les grilles qui dépassent la borne de
+sept produisent-elles plus d'oublis~? & Pilier~1~; axiome~2 \\
+7 & Contrôle interne des applications de l'État & Quelles déficiences
+reviennent dans les applications financières publiques, et pourquoi~? &
+Pilier~5~; axiome~1 \\
+8 & L'opposabilité de la preuve électronique & Quelles conditions rendent
+une extraction recevable devant le CDBF et la Chambre des Comptes~? &
+Axiome~6 \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~15.5. Huit axes de recherche ouverts
+par le cours}\end{center}
+
+\subsection{Exemples de sujets}
+
+\begin{boxscenario}{Axe 1. Mesurer le biais des grilles binaires}
+\textbf{Sujet.} \emph{Le biais du choix forcé dans les questionnaires de
+contrôle interne des administrations financières camerounaises~: mesure par
+l'indice $\rho$.}
+
+\textbf{Hypothèse falsifiable.} Sur les mêmes questions et les mêmes
+répondants, la part de \OUI{} d'une grille binaire dépasse d'au moins dix
+points celle de l'instrument trichotomique.
+
+\textbf{Données.} Deux passages d'un même questionnaire (binaire puis
+trichotomique) dans trois à cinq services, avec l'accord de la hiérarchie.
+
+\textbf{Méthode.} Calcul de $\rho$ par question et par domaine~; test
+statistique de l'écart~; analyse des questions où le biais est le plus fort.
+
+\textbf{Réfutation.} Un $\rho$ proche de zéro sur l'ensemble des services.
+\end{boxscenario}
+
+\begin{boxscenario}{Axe 3. La valeur prédictive du quadrant}
+\textbf{Sujet.} \emph{Conformité opaque et irrégularités ultérieures~: étude
+longitudinale de missions de vérification.}
+
+\textbf{Hypothèse falsifiable.} Les domaines classés en conformité opaque à
+une mission présentent, à la mission suivante, plus d'irrégularités établies
+que les domaines en conformité claire.
+
+\textbf{Données.} Les mesures $\mu$, $U$, $H$ de domaines audités sur deux
+cycles au moins, et les constats de la mission suivante.
+
+\textbf{Méthode.} Comparaison des taux d'irrégularités par région~; contrôle
+de la taille des domaines.
+
+\textbf{Réfutation.} Aucune différence entre régions, ou une différence
+inverse.
+\end{boxscenario}
+
+\begin{boxscenario}{Axe 4. Trajectoires des recommandations}
+\textbf{Sujet.} \emph{Le suivi des recommandations de contrôle comme
+processus de Markov~: estimation d'une matrice de transition des niveaux de
+maturité.}
+
+\textbf{Hypothèse falsifiable.} Une matrice de transition estimée sur trois
+cycles prévoit le niveau de maturité au cycle suivant mieux que la simple
+reconduction du niveau actuel.
+
+\textbf{Données.} Les niveaux de maturité (échelle du
+Chapitre~\ref{chap:eval-sci}) de plusieurs domaines, sur au moins quatre
+cycles.
+
+\textbf{Méthode.} Estimation de la matrice, prévision, comparaison à la
+persistance naïve.
+
+\textbf{Réfutation.} Aucun avantage prédictif de la matrice.
+\end{boxscenario}
+
+\begin{boxscenario}{Axe 8. L'opposabilité de la preuve électronique}
+\textbf{Sujet.} \emph{Les conditions de recevabilité des extractions
+informatiques dans les procédures du CDBF et de la Chambre des Comptes.}
+
+\textbf{Question.} Quelles garanties (origine, exhaustivité, exactitude,
+intégrité) sont effectivement exigées, et lesquelles manquent le plus
+souvent~?
+
+\textbf{Données.} Un échantillon de dossiers, anonymisés, avec l'autorisation
+des institutions~; entretiens avec des rapporteurs.
+
+\textbf{Méthode.} Grille d'analyse fondée sur les quatre garanties du
+Chapitre~\ref{chap:preuve}~; étude des cas où une pièce a été écartée.
+\end{boxscenario}
+
+\separateur
+
+% ============================================================================
+\section{Conduire un mémoire de recherche appliquée}
+\label{sec:c15-memoire}
+% ============================================================================
+
+\begin{boxprocedure}
+\textbf{Les étapes d'un mémoire en auditologie appliquée}~:
+\begin{enumerate}
+    \item partir d'une difficulté réelle de mission, et la rattacher à un
+          axiome ou à un pilier~;
+    \item formuler une hypothèse \emph{falsifiable}~: dire à l'avance quel
+          résultat la réfuterait~;
+    \item obtenir l'autorisation écrite de la hiérarchie et des entités
+          concernées~;
+    \item construire le protocole~: instrument, échantillon, mesures
+          ($\mu$, $U$, $H$, $\rho$, $D_{\mathrm{KL}}$), seuils déclarés~;
+    \item anonymiser les données personnelles et protéger les extractions~;
+    \item analyser, puis séparer ce qui est établi, ce qui est probable et ce
+          qui reste inconnu~;
+    \item discuter les limites, et proposer la révision de la ceinture
+          protectrice si la prédiction est réfutée.
+\end{enumerate}
+\end{boxprocedure}
+
+\begin{boxalert}
+\textbf{Violation typique.} Formuler un sujet du type «~l'importance de
+l'audit des SI dans l'administration camerounaise~».
+
+\smallskip
+\textbf{Règle~:} un sujet de recherche pose une question à laquelle des
+données peuvent répondre non. «~Importance~» ne se réfute pas~; «~les
+domaines en conformité opaque révèlent plus d'irrégularités au cycle
+suivant~» se réfute.
+\end{boxalert}
+
+\begin{boxmetier}{Vérificateur}
+Vos missions répétées sur les mêmes entités sont des données longitudinales
+rares. Conservez, d'un cycle à l'autre, les mêmes questions et les mêmes
+fonctions répondantes~: vous rendez possibles les axes~3 et~4.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Mesurer $\rho$ sur vos propres questionnaires est un premier travail de
+recherche, utile dès la première année.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{L'auditologie} est la science appliquée de la réduction de
+          l'incertitude~; son objet est la mission
+          $\langle \mathcal{S}, \mathcal{A}, \mathcal{I}, \mathcal{G},
+          \mathcal{T} \rangle$.
+    \item \textbf{Six axiomes}~: observabilité partielle, cognition limitée,
+          mesurabilité, interaction stratégique, individuation temporelle,
+          opposabilité.
+    \item \textbf{Quatre propositions} fondent les pratiques du cours~:
+          \NEK{}, décomposition, mesures longitudinales, réflexivité.
+    \item \textbf{Cinq piliers}, chacun avec une prédiction falsifiable.
+    \item \textbf{Une science du design, à la Lakatos}~: un noyau dur, une
+          ceinture protectrice qui se teste.
+    \item \textbf{Un statut clair}~: A0 et A1 sont des prépublications~; les
+          prédictions restent à valider.
+    \item \textbf{Huit axes} s'ouvrent aux auditeurs publics~; un bon sujet
+          dit à l'avance ce qui le réfuterait.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.1. Axiomes et pratiques \niveaubase}]
+Pour chacune des pratiques suivantes, citez l'axiome d'A0 qui la fonde~:
+(a) coter \NEK{} une pièce non encore remise~; (b) borner chaque niveau de
+la décomposition à sept éléments~; (c) comparer deux cycles par la
+divergence~; (d) soumettre le rapport provisoire à l'entité.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.2. Rendre un sujet falsifiable \niveaumoyen}]
+Réécrivez les sujets suivants pour qu'ils deviennent falsifiables, en
+précisant l'hypothèse, les données et la condition de réfutation~: (a)
+«~Le rôle du CONSUPE dans la bonne gouvernance numérique~»~; (b) «~Les
+enjeux de la dématérialisation des recettes~».
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~15.3. Un protocole \niveauexpert}]
+Choisissez l'un des huit axes du Tableau~15.5 et rédigez le protocole
+complet d'un mémoire~: question, hypothèse, données et autorisations,
+instrument, mesures, seuils, analyse, condition de réfutation, risques
+éthiques et parade.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Pour finir.} Le cours s'arrête ici~; le métier, et peut-être la
+recherche, commencent. Chaque mission refera les mêmes gestes~: partir du
+système, écrire ses critères avant de tester, coter honnêtement, y compris
+\NEK{}, conclure sur ce que l'on a prouvé, et mesurer, d'un cycle à
+l'autre, ce que l'on a appris.
+\end{boxinfo}

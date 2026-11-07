@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C01
+Chapitre 1 : Contrôler et auditer un SI public
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Un contrôle est exercé :
+      a) Par l'entité elle-même
+      b) Par le juge
+      c) Par la presse
+      d) Par le seul CONSUPE
+
+ 2. Un audit se distingue d'un contrôle parce qu'il est :
+      a) Plus rapide
+      b) Indépendant et au profit d'un tiers
+      c) Toujours financier
+      d) Fait par le DAF
+
+ 3. L'inspection est le plus souvent :
+      a) Permanente
+      b) Automatique
+      c) Ponctuelle et déclenchée par un événement
+      d) Réservée aux banques
+
+ 4. Dans le décret n° 2013/287, la vérification désigne :
+      a) Le contrôle budgétaire a priori
+      b) La comptabilité matières
+      c) L'audit de sécurité
+      d) L'activité des vérificateurs du CONSUPE
+
+ 5. Le critère d'audit est choisi :
+      a) Avant le test
+      b) Après le test
+      c) Par l'audité
+      d) Au moment du rapport
+
+ 6. La comparaison de la preuve au critère produit :
+      a) Une opinion
+      b) Une constatation
+      c) Un mandat
+      d) Une norme
+
+ 7. « Un mandat ne peut pas être payé deux fois » est un exemple de :
+      a) Preuve
+      b) Conclusion
+      c) Critère
+      d) Opinion
+
+ 8. L'assurance raisonnable s'exprime sous une forme :
+      a) Négative
+      b) Chiffrée
+      c) Juridique
+      d) Positive
+
+ 9. « Nous n'avons rien relevé qui laisse penser que... » exprime une assurance :
+      a) Limitée
+      b) Raisonnable
+      c) Absolue
+      d) Nulle
+
+10. Le niveau d'assurance se choisit :
+      a) À la fin de la mission
+      b) Au moment du mandat
+      c) Lors du contradictoire
+      d) Jamais
+
+11. Les trois types d'audit du secteur public sont :
+      a) Interne, externe, mixte
+      b) Fiscal, social, douanier
+      c) Financier, de conformité, de performance
+      d) Technique, juridique, comptable
+
+12. L'audit de conformité demande au SI :
+      a) S'il est rapide
+      b) S'il est moderne
+      c) S'il coûte peu
+      d) S'il impose les règles
+
+13. Selon le GUID 5100, un audit des SI peut être :
+      a) Autonome ou partie d'une mission plus large
+      b) Seulement autonome
+      c) Seulement financier
+      d) Interdit aux ISC
+
+14. Combien de contrôles le décret n° 2013/287 énumère-t-il à l'article 2, alinéa 3 ?
+      a) Trois
+      b) Cinq
+      c) Sept
+      d) Dix
+
+15. Selon l'article 2, alinéa 1, le CONSUPE est chargé de :
+      a) L'audit interne des ministères
+      b) La régulation des télécommunications
+      c) L'audit externe
+      d) La comptabilité de l'État
+
+16. Le risque typique de la fonction paie est :
+      a) Le dépassement de crédit
+      b) La perte d'un titre de recette
+      c) Le fractionnement
+      d) Les agents fictifs
+
+17. Les anomalies naissent souvent :
+      a) Aux jointures entre applications et sur les données de référence
+      b) Dans les imprimantes
+      c) Dans les bureaux de la direction
+      d) Au moment du vote du budget
+
+18. Un RIB est une donnée :
+      a) Comptable
+      b) De référence
+      c) Budgétaire
+      d) Statistique
+
+19. Dans le système, la signature devient :
+      a) Un tampon
+      b) Une photographie
+      c) Un droit d'accès utilisé
+      d) Un courriel
+
+20. Une extraction remise sans empreinte ni rapprochement est :
+      a) Une preuve forte
+      b) Une pièce juridictionnelle
+      c) Une norme
+      d) Une déclaration de l'audité
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un constat sans critère est une opinion personnelle.
+      Vrai / Faux
+
+22. L'audit sert l'entité, le contrôle sert un tiers.
+      Vrai / Faux
+
+23. Une assurance raisonnable est une certitude.
+      Vrai / Faux
+
+24. Une inspection de deux jours ne peut donner qu'une assurance limitée.
+      Vrai / Faux
+
+25. L'audit des SI est un quatrième type d'audit, séparé des trois autres.
+      Vrai / Faux
+
+26. Le décret n° 2013/287 cite le contrôle des systèmes d'information.
+      Vrai / Faux
+
+27. Le cours décrit en détail les applications réelles de l'État camerounais.
+      Vrai / Faux
+
+28. La modification d'un barème ou d'un plafond est un point de risque.
+      Vrai / Faux
+
+29. L'archive papier devient une sauvegarde qu'il faut pouvoir restaurer.
+      Vrai / Faux
+
+30. La population d'un test se prend dans les classeurs.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Les cinq éléments d'un audit : critère, preuve, constatation, conclusion, ______.
+
+32. Un examen méthodique, indépendant et documenté au profit d'un tiers est un ______.
+
+33. Une assurance obtenue par des travaux réduits est dite ______.
+
+34. Les normes de l'audit public sont publiées par l'______.
+
+35. Les lignes directrices sur la vérification des SI portent le code GUID ______.
+
+36. L'ISC du Cameroun est le Contrôle Supérieur de l'______.
+
+37. La fonction qui calcule et verse la solde est la ______.
+
+38. Le fichier des fournisseurs, les profils et les transmissions sont des ______.
+
+39. Le visa devient un contrôle ______.
+
+40. Le classeur devient une ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

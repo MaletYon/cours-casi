@@ -1,0 +1,230 @@
+% ============================================================================
+% Fichier     : CASI_main.tex
+% Titre       : Contrôle et Audit des Systèmes d'Information
+% Auteur      : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Institution : PSSFP — Université de Yaoundé II
+% Version     : 0.1 -- novembre 2026 (squelette)
+% ============================================================================
+% UE CAS3401, Master professionnel en finances publiques, spécialité Audit et
+% Contrôle, niveau 5. 8 jours de 4 h ; 30 h effectives (les 2 dernières
+% heures du J08 sont offertes). Prologue + C01 à C14, numérotation continue.
+% ============================================================================
+
+\documentclass[12pt, twoside, openright, a4paper]{book}
+
+\usepackage{Style_CASI}
+\raggedbottom
+
+\addbibresource{bibliographie/CASI_references.bib}
+
+\hypersetup{
+    pdftitle={Contrôle et Audit des Systèmes d'Information},
+    pdfauthor={MINKA MI NGUIDJOÏ Thierry Emmanuel},
+    pdfsubject={CAS3401 · Master professionnel en finances publiques · PSSFP, Université de Yaoundé II},
+    pdfkeywords={contrôle interne, évaluation du contrôle interne, audit des SI, finances publiques, CONSUPE, COSO, INTOSAI}
+}
+
+\begin{document}
+
+\frontmatter
+
+    \input{front/00_page_titre}
+    \cleardoublepage
+
+    \input{front/01_avant_propos}
+    \cleardoublepage
+
+    \input{front/02_mode_emploi}
+    \cleardoublepage
+
+    \input{front/03_ndap_sukulu}
+    \cleardoublepage
+
+    \tableofcontents
+    \cleardoublepage
+
+    \listoffigures
+    \listoftables
+    \cleardoublepage
+
+\mainmatter
+
+    % ======================================================================
+    % PROLOGUE OPÉRATIONNEL (J01)
+    % « Le dossier était en ordre ; le système, non. »
+    % Standards de référence : aucun ; un cas qui échoue.
+    % Niveau : introductif
+    % ======================================================================
+    \part*{Prologue Opérationnel}
+    \addcontentsline{toc}{part}{Prologue Opérationnel}
+
+        \setcounter{chapter}{-1}
+        \IfFileExists{partie0/P00_paiement_28_decembre.tex}{\input{partie0/P00_paiement_28_decembre}}{}
+
+    % ======================================================================
+    % PARTIE 1 — FONDEMENTS ET CONTRÔLE INTERNE (J01, J02)
+    % « On n'audite pas un système, on évalue la maîtrise qu'on en a. »
+    % Standards de référence : ISSAI 100, COSO 2013, INTOSAI GOV 9100 ;
+    %   décret n° 2013/287 (art. 2).
+    % Niveau : fondamental à intermédiaire
+    % ======================================================================
+    \part{Fondements et Contrôle Interne}
+    \label{part:fondements}
+
+        \IfFileExists{partie1/P01_C01_controler_auditer_si_public.tex}{\input{partie1/P01_C01_controler_auditer_si_public}}{}
+        \IfFileExists{partie1/P01_C02_systeme_controle_interne.tex}{\input{partie1/P01_C02_systeme_controle_interne}}{}
+        \IfFileExists{partie1/P01_C03_evaluer_controle_interne.tex}{\input{partie1/P01_C03_evaluer_controle_interne}}{}
+
+    % ======================================================================
+    % PARTIE 2 — CADRE INSTITUTIONNEL ET NORMATIF (J03)
+    % « Le mandat précède la méthode. »
+    % Standards de référence : décret n° 2013/287 ; loi n° 2010/012 ;
+    %   ISSAI 100, 400, 4000 ; GUID 5100 ; normes IIA 2017 ; COBIT 2019 ;
+    %   ISO/IEC 27001 et 27002 ; loi n° 2024/017.
+    % Niveau : fondamental
+    % ======================================================================
+    \part{Cadre Institutionnel et Normatif}
+    \label{part:cadre}
+
+        \IfFileExists{partie2/P02_C04_qui_controle_si_publics.tex}{\input{partie2/P02_C04_qui_controle_si_publics}}{}
+        \IfFileExists{partie2/P02_C05_normes_referentiels.tex}{\input{partie2/P02_C05_normes_referentiels}}{}
+
+    % ======================================================================
+    % PARTIE 3 — DÉMARCHE DE MISSION (J04, J05)
+    % « Pas de constat sans critère, pas de conclusion sans preuve. »
+    % Standards de référence : ISO 19011, ISSAI 4000, GUID 5100, manuel IDI ;
+    %   articles A0 (hal-05701007) et A1 (hal-05701270).
+    % Niveau : intermédiaire
+    % ======================================================================
+    \part{Démarche de Mission}
+    \label{part:demarche}
+
+        \IfFileExists{partie3/P03_C06_preparer_mission.tex}{\input{partie3/P03_C06_preparer_mission}}{}
+        \IfFileExists{partie3/P03_C07_collecter_preuve.tex}{\input{partie3/P03_C07_collecter_preuve}}{}
+        \IfFileExists{partie3/P03_C08_constater_rapporter_suivre.tex}{\input{partie3/P03_C08_constater_rapporter_suivre}}{}
+
+    % ======================================================================
+    % PARTIE 4 — DOMAINES D'AUDIT (J05 à J07)
+    % « Chaque domaine a ses contrôles, chaque contrôle a sa trace. »
+    % Standards de référence : GUID 5100, COBIT 2019, ISO/IEC 27002,
+    %   guide COSO sur la fraude ; lois n° 2010/012 et 2024/017.
+    % Niveau : intermédiaire à expert
+    % ======================================================================
+    \part{Domaines d'Audit}
+    \label{part:domaines}
+
+        \IfFileExists{partie4/P04_C09_acces_habilitations.tex}{\input{partie4/P04_C09_acces_habilitations}}{}
+        \IfFileExists{partie4/P04_C10_changements_exploitation_continuite.tex}{\input{partie4/P04_C10_changements_exploitation_continuite}}{}
+        \IfFileExists{partie4/P04_C11_controles_application.tex}{\input{partie4/P04_C11_controles_application}}{}
+        \IfFileExists{partie4/P04_C12_donnees_fraude.tex}{\input{partie4/P04_C12_donnees_fraude}}{}
+        \IfFileExists{partie4/P04_C13_gouvernance_projets_prestataires.tex}{\input{partie4/P04_C13_gouvernance_projets_prestataires}}{}
+
+    % ======================================================================
+    % PARTIE 5 — SYNTHÈSE (J08)
+    % « Une mission se juge à sa conclusion. »
+    % Standards de référence : l'ensemble du cours.
+    % Niveau : expert
+    % ======================================================================
+    \part{Synthèse}
+    \label{part:synthese}
+
+        \IfFileExists{partie5/P05_C14_cas_integrateur.tex}{\input{partie5/P05_C14_cas_integrateur}}{}
+
+    % ======================================================================
+    % PARTIE 6 — OUVERTURE SUR LA RECHERCHE (J08, fin de journée, et lecture)
+    % « Un programme qui énonce sa falsifiabilité n'est pas une idéologie. »
+    % Standards de référence : articles A0 (hal-05701007) et A1
+    %   (hal-05701270) ; travaux publiés.
+    % Niveau : recherche
+    % ======================================================================
+    \part{Ouverture sur la Recherche}
+    \label{part:recherche}
+
+        \IfFileExists{partie6/P06_C15_recherche_auditologie.tex}{\input{partie6/P06_C15_recherche_auditologie}}{}
+
+\appendix
+
+    \input{annexes/Ann_A_glossaire}
+    \input{annexes/Ann_B_outils}
+    \input{annexes/Ann_C_templates}
+    \input{annexes/Ann_D_textes}
+    \input{annexes/Ann_E_bibliographie}
+    \input{annexes/Ann_F_contacts}
+
+\backmatter
+
+    \printbibliography[heading=bibintoc, title={Références bibliographiques}]
+
+    \printindex
+
+% ==============================================================================
+% 4ÈME DE COUVERTURE
+% ==============================================================================
+\clearpage
+\thispagestyle{empty}
+\pagecolor{CouleurPrimaire}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[CouleurAccent]
+        (current page.south west) rectangle
+        ([yshift=1.8cm] current page.south east);
+    \fill[CouleurAccent]
+        ([yshift=-1.4cm] current page.north west) rectangle
+        ([yshift=-1.7cm] current page.north east);
+\end{tikzpicture}
+
+\vspace*{2.5cm}
+
+\begin{center}
+    {\color{CouleurAccent}\rule{0.6\linewidth}{1pt}}\\[1.5ex]
+    {\color{white}\Large\bfseries À propos de ce cours}\\[1.5ex]
+    {\color{CouleurAccent}\rule{0.6\linewidth}{1pt}}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\begin{minipage}{0.75\textwidth}
+\color{white!85!gray}\setstretch{1.4}
+Quand l'administration financière s'informatise, le contrôle interne ne
+disparaît pas~: il passe du dossier papier aux droits d'accès, aux
+contrôles automatiques et aux journaux. Ce cours apprend à l'auditeur
+public à le suivre, à l'évaluer et à conclure sur son efficacité.
+
+\medskip
+
+Il progresse en six parties, précédées d'un prologue~: le contrôle
+interne et son évaluation, les institutions et les normes, la démarche de
+mission et la mesure de l'incertitude, l'évaluation domaine par domaine
+(accès, exploitation, applications, données, projets), un cas intégrateur,
+et une ouverture sur la recherche en auditologie.
+
+\medskip
+
+Chaque notion est ancrée dans les normes internationales (INTOSAI, COSO,
+IIA, ISACA, ISO) et dans le droit camerounais, à commencer par le décret
+qui confie au Contrôle Supérieur de l'État le contrôle des systèmes
+d'information. Le cours s'adresse aux vérificateurs, juges des comptes,
+inspecteurs, contrôleurs financiers et auditeurs internes du secteur
+public.
+\end{minipage}
+\end{center}
+
+\vfill
+
+\begin{center}
+    {\color{CouleurAccent}\rule{0.7\linewidth}{1.2pt}}\\[1.2ex]
+    {\color{white}\large\bfseries MINKA MI NGUIDJOÏ Thierry Emmanuel}\\[0.4ex]
+    {\color{white!80!gray}\small
+        CISA~·~CISM~·~CGEIT~·~CRISC~·~CDPSE~·~ISO 27001~·~ISO 22301~·~ISO 9001}\\[0.3ex]
+    {\color{white!70!gray}\footnotesize\itshape
+        Chercheur au laboratoire d'Ingénierie Mathématiques et des Systèmes d'Information}\\[0.3ex]
+    {\color{white!70!gray}\footnotesize\itshape
+        Chercheur~|~Cryptologue~|~Auditeur Senior~|~Expert Judiciaire~|~GRC \& Sécurité de l'Information}\\[1.2ex]
+    {\color{CouleurAccent}\rule{0.7\linewidth}{1.2pt}}
+\end{center}
+
+\vspace{1cm}
+
+\afterpage{\nopagecolor}
+\end{document}

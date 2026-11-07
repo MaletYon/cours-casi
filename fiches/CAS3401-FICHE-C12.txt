@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C12
+Chapitre 12 : Analyse de données et détection de la fraude
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. La fraude se distingue de l'erreur par :
+      a) L'intention
+      b) Le montant
+      c) La date
+      d) Le service
+
+ 2. Le COSO traite du risque de fraude dans le principe :
+      a) 11
+      b) 8
+      c) 16
+      d) 2
+
+ 3. Les trois côtés du triangle de la fraude sont :
+      a) Risque, contrôle, preuve
+      b) Budget, dépense, recette
+      c) Pression, occasion, rationalisation
+      d) Accès, changement, exploitation
+
+ 4. L'auditeur peut agir surtout sur :
+      a) La pression
+      b) La rationalisation
+      c) L'intention
+      d) L'occasion
+
+ 5. Le test associé au schéma « agent fictif » est :
+      a) L'existence au fichier du personnel
+      b) La loi de Benford
+      c) Les sauvegardes
+      d) Le visa
+
+ 6. Les trois questions sur un fichier de paie sont :
+      a) Qui, quand, combien
+      b) Existence, unicité, cohérence
+      c) Accès, changements, exploitation
+      d) Conception, fonctionnement, conclusion
+
+ 7. Combien d'agents payés par la CAPNO ne figurent pas au fichier du personnel ?
+      a) 12
+      b) 27
+      c) 37
+      d) 9
+
+ 8. Le net mensuel cumulé des agents absents est de :
+      a) 1 293 418 500 FCFA
+      b) 187 450 000 FCFA
+      c) 1 905 000 FCFA
+      d) 9 842 500 FCFA
+
+ 9. Combien de comptes bancaires sont partagés à la CAPNO ?
+      a) 12
+      b) 27
+      c) 37
+      d) 4 312
+
+10. La formule =NB.SI(D:D;D2) sert à repérer :
+      a) Les agents de plus de 60 ans
+      b) Les comptes bancaires partagés
+      c) Les agents absents
+      d) Les mandats en double
+
+11. Un compte bancaire partagé peut s'expliquer par :
+      a) Une sauvegarde
+      b) Une erreur d'impression
+      c) Le compte d'un couple
+      d) Le budget
+
+12. Le fractionnement consiste à :
+      a) Payer en plusieurs devises
+      b) Arrondir les montants
+      c) Regrouper les commandes
+      d) Découper une commande en plusieurs sous un seuil
+
+13. Combien de bons de commande du MINÉQUIR sont entre 4 800 000 et 4 999 999 FCFA ?
+      a) 23
+      b) 3
+      c) 5
+      d) 212
+
+14. Ces bons sont adressés à combien de fournisseurs ?
+      a) Un
+      b) Trois
+      c) Vingt-trois
+      d) Dix
+
+15. Selon Benford, la proportion attendue du premier chiffre 1 est d'environ :
+      a) 11 %
+      b) 50 %
+      c) 30 %
+      d) 4,6 %
+
+16. La proportion attendue du premier chiffre d est :
+      a) 1/9
+      b) d/10
+      c) 10 %
+      d) log10(1 + 1/d)
+
+17. La loi de Benford ne s'applique pas :
+      a) Aux montants suivant un barème ou plafonnés
+      b) Aux grandes séries de montants
+      c) Aux montants étalés
+      d) Aux factures
+
+18. Au MINÉQUIR, le premier chiffre 4 apparaît dans :
+      a) 9,7 % des bons
+      b) 15,8 % des bons
+      c) 30,1 % des bons
+      d) 4,6 % des bons
+
+19. L'analyse de données produit :
+      a) Des constats
+      b) Des sanctions
+      c) Des indices
+      d) Des preuves définitives
+
+20. Seuls deviennent des constats :
+      a) Tous les cas du tableur
+      b) Les cas expliqués
+      c) Les cas en attente
+      d) Les cas inexpliqués après examen de la pièce
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. L'auditeur peut établir seul l'intention de frauder.
+      Vrai / Faux
+
+22. Les déficiences du contrôle interne créent des occasions de fraude.
+      Vrai / Faux
+
+23. Les 37 absents sont des agents fictifs certains.
+      Vrai / Faux
+
+24. Neuf agents de plus de 60 ans sont encore payés par la CAPNO.
+      Vrai / Faux
+
+25. Une bande étroite sous un seuil, sur peu de fournisseurs, est un indice de fractionnement.
+      Vrai / Faux
+
+26. Le seuil de 5 000 000 FCFA du cas reproduit la réglementation des marchés publics.
+      Vrai / Faux
+
+27. Un écart à la loi de Benford prouve une fraude.
+      Vrai / Faux
+
+28. Le premier chiffre 9 apparaît moins souvent que le 1.
+      Vrai / Faux
+
+29. La formule exacte de chaque test doit être conservée dans le dossier.
+      Vrai / Faux
+
+30. On écrit « 37 agents fictifs » au rapport dès la sortie du tableur.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'auteur de l'analyse du triangle de la fraude est ______.
+
+32. Le guide de gestion du risque de fraude est publié par le COSO et l'______.
+
+33. Un agent payé qui n'existe pas est un agent ______.
+
+34. La caisse publique de prévoyance du cas est la ______.
+
+35. La fonction de tableur qui calcule l'âge est ______.
+
+36. Le seuil de mise en concurrence de la DAF est de 5 ______ FCFA.
+
+37. La loi du premier chiffre porte le nom de ______.
+
+38. La proportion attendue du premier chiffre 4 est de ______ %.
+
+39. Un cas en attente de pièce se cote ______.
+
+40. L'analyse désigne des opérations ; le constat vient après l'examen de chaque ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C03
+Chapitre 3 : Évaluer le système de contrôle interne
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. La première étape de l'évaluation est :
+      a) Décrire le système
+      b) Tester le fonctionnement
+      c) Classer les déficiences
+      d) Rédiger le rapport
+
+ 2. Un contrôle dont la conception est défaillante :
+      a) Doit être testé sur 60 cas
+      b) Est déjà une déficience
+      c) Est coté NEK
+      d) Est sans objet
+
+ 3. La matrice des risques et des contrôles part :
+      a) Des contrôles déclarés par l'entité
+      b) Du budget
+      c) Des risques du circuit
+      d) Des noms des agents
+
+ 4. La matrice est établie :
+      a) Après le rapport
+      b) Pendant le contradictoire
+      c) Par le prestataire
+      d) Avant d'interroger l'entité
+
+ 5. Un risque sans contrôle en face est :
+      a) Déjà une constatation
+      b) Sans importance
+      c) Un NEK
+      d) Un contrôle compensatoire
+
+ 6. Une réponse au QCI est :
+      a) Une preuve
+      b) Une déclaration
+      c) Une opinion d'audit
+      d) Un critère
+
+ 7. Quelle question de QCI est bien formée ?
+      a) Les droits sont-ils bien gérés ?
+      b) Tout va-t-il bien ?
+      c) Qui désactive le compte d'un agent muté, dans quel délai, sur quelle pièce ?
+      d) La sécurité est-elle bonne ?
+
+ 8. Le test de cheminement établit :
+      a) Que le contrôle a fonctionné toute l'année
+      b) Le montant de la fraude
+      c) L'identité du fraudeur
+      d) Que l'auditeur a compris le circuit et que les contrôles existent tels que décrits
+
+ 9. Sur le mandat 2025-08817, la séparation LIQ et ORD a été respectée :
+      a) Par habitude, pas par contrainte
+      b) Parce que l'application l'impose
+      c) Grâce au prestataire
+      d) Par hasard total
+
+10. La question de la conception est :
+      a) Le contrôle a-t-il fonctionné toute la période ?
+      b) Le contrôle, s'il fonctionne, réduit-il le risque ?
+      c) Qui a payé ?
+      d) Combien coûte le contrôle ?
+
+11. Pour un contrôle quotidien, l'échantillon indicatif du cours est de :
+      a) 1
+      b) 2 à 5
+      c) 20 à 40
+      d) 250
+
+12. Pour un contrôle automatisé, si les contrôles généraux sont efficaces, on teste :
+      a) 60 opérations
+      b) Toute la population
+      c) Rien
+      d) Un essai qui doit passer et un qui doit être bloqué
+
+13. Combien de comptes d'agents partis restaient actifs au MINÉQUIR ?
+      a) 9 sur 31
+      b) 31 sur 31
+      c) 0
+      d) 47
+
+14. Le contrôle 5 (pièces jointes) passe de NEK à :
+      a) NON
+      b) OUI
+      c) Sans objet
+      d) NEK
+
+15. Une déficience majeure réduit la probabilité d'atteindre les objectifs :
+      a) Légèrement
+      b) Pas du tout
+      c) Fortement
+      d) Seulement en fin d'année
+
+16. Selon le COSO, une déficience majeure d'une composante :
+      a) Est compensée par une autre composante
+      b) Disparaît au bout d'un an
+      c) Se transforme en NEK
+      d) Ne peut pas être compensée par une autre composante
+
+17. Au MINÉQUIR, la déficience majeure porte sur :
+      a) Les accès
+      b) Les sauvegardes
+      c) Le budget
+      d) La recette
+
+18. Les cinq NON du MINÉQUIR sont regroupés en :
+      a) Cinq déficiences
+      b) Trois déficiences
+      c) Une seule
+      d) Huit
+
+19. Le circuit de la dépense du MINÉQUIR est au niveau de maturité :
+      a) 4
+      b) 3
+      c) 1
+      d) 2
+
+20. Une conclusion porte sur :
+      a) Une personne
+      b) Un sentiment
+      c) Toute l'administration
+      d) Un objectif, une période et un périmètre
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Chaque étape de l'évaluation peut arrêter la suivante.
+      Vrai / Faux
+
+22. On construit la liste des contrôles à partir de ce que l'entité déclare faire.
+      Vrai / Faux
+
+23. Le QCI recueille des déclarations, le cheminement et les tests produisent des preuves.
+      Vrai / Faux
+
+24. Un cheminement réussi prouve que le contrôle a fonctionné toute l'année.
+      Vrai / Faux
+
+25. L'absence d'une trace exigée par le critère se cote NEK.
+      Vrai / Faux
+
+26. NEK s'accompagne toujours des diligences effectuées.
+      Vrai / Faux
+
+27. En présence d'une déficience majeure, on ne peut pas conclure à l'efficacité du SCI.
+      Vrai / Faux
+
+28. La déficience B du MINÉQUIR est majeure à elle seule.
+      Vrai / Faux
+
+29. L'échelle de maturité du cours est une norme internationale.
+      Vrai / Faux
+
+30. Après les tests, le circuit du MINÉQUIR compte 3 OUI, 5 NON et 0 NEK.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Les étapes : décrire, questionner, cheminer, évaluer la conception, tester le ______.
+
+32. La liste des risques et des contrôles attendus est la matrice des risques et des ______.
+
+33. Le sigle du questionnaire de contrôle interne est ______.
+
+34. En anglais, le test de cheminement se dit ______.
+
+35. Les deux niveaux d'évaluation d'un contrôle : conception et ______.
+
+36. L'encadré qui présente un contrôle à tester s'appelle « Point de ______ ».
+
+37. Une déficience qui réduit fortement la probabilité d'atteindre les objectifs est dite ______.
+
+38. Le décret qui charge le CONSUPE d'évaluer le contrôle interne porte le numéro 2013/______.
+
+39. Le niveau 4 de l'échelle de maturité est le niveau ______.
+
+40. Le niveau 0 de l'échelle de maturité est le niveau ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

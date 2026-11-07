@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C09
+Chapitre 9 : Accès et habilitations
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. La création d'un compte exige :
+      a) Une demande écrite validée par le chef de service
+      b) Un appel téléphonique
+      c) L'accord du prestataire
+      d) Rien
+
+ 2. Le compte d'un agent muté doit être désactivé :
+      a) À la fin de l'exercice
+      b) À la date d'effet de la mutation
+      c) Lors de l'audit suivant
+      d) Jamais
+
+ 3. Qui décide des droits dans SIDÉPENSE ?
+      a) La cellule informatique
+      b) Le prestataire
+      c) Le propriétaire de l'application, le DAF
+      d) L'agent lui-même
+
+ 4. La cellule informatique, pour les droits :
+      a) Décide seule
+      b) Ignore les demandes
+      c) Signe la revue
+      d) Exécute les décisions du propriétaire
+
+ 5. Un compte générique comme saisie01 pose surtout le problème :
+      a) De l'imputation des actions à une personne
+      b) De la vitesse
+      c) Du coût
+      d) De l'impression
+
+ 6. Le compte le plus grave relevé au MINÉQUIR est :
+      a) saisie01
+      b) admin, générique avec le profil ADM
+      c) pc.fotso
+      d) daf
+
+ 7. Un compte inactif est un compte dont la dernière connexion date de plus de :
+      a) Un jour
+      b) Une semaine
+      c) 90 jours
+      d) Dix ans
+
+ 8. Combien de comptes actifs compte SIDÉPENSE au 23 mars 2026 ?
+      a) 9
+      b) 31
+      c) 3
+      d) 47
+
+ 9. Pour repérer les comptes d'agents partis, on croise la liste des comptes avec :
+      a) Le fichier du personnel
+      b) Le budget
+      c) Le journal des sauvegardes
+      d) La liste des fournisseurs
+
+10. La formule RECHERCHEV renvoyant « ABSENT » signale :
+      a) Un compte à privilèges
+      b) Un compte sans titulaire au fichier
+      c) Un conflit de profils
+      d) Une sauvegarde manquée
+
+11. Combien de comptes réunissent LIQ et ORD au MINÉQUIR ?
+      a) Un
+      b) Deux
+      c) Cinq
+      d) Neuf
+
+12. Quels comptes réunissent FRS et ORD ?
+      a) admin et daf
+      b) saisie01 et daf
+      c) atangana.p et pc.fotso
+      d) mbarga.j et nkolo.r
+
+13. Que montre le fait que cinq comptes réunissent LIQ et ORD ?
+      a) Que la séparation n'a jamais été conçue
+      b) Une erreur isolée
+      c) Une bonne pratique
+      d) Une fraude prouvée
+
+14. La revue des habilitations est un contrôle :
+      a) Préventif automatisé
+      b) Détectif
+      c) Correctif
+      d) Budgétaire
+
+15. Une revue n'est efficace que si la liste est :
+      a) Saisie à la main
+      b) Courte
+      c) Exhaustive et extraite de l'application
+      d) Envoyée par le prestataire
+
+16. Au MINÉQUIR, la dernière revue des habilitations date :
+      a) De janvier 2026
+      b) De 2025
+      c) D'hier
+      d) D'aucune date : il n'y en a jamais eu
+
+17. L'authentification relie :
+      a) Un compte à une personne
+      b) Un fournisseur à un RIB
+      c) Un mandat à un crédit
+      d) Une facture à un engagement
+
+18. Au MINÉQUIR, les mots de passe :
+      a) Expirent tous les 30 jours
+      b) N'expirent jamais
+      c) Sont à deux facteurs
+      d) Sont changés chaque jour
+
+19. Le constat sur les mots de passe, pour le contrôle interne de la dépense, porte sur :
+      a) La sécurité d'ensemble
+      b) Le réseau
+      c) L'imputation des opérations aux personnes
+      d) Le budget
+
+20. Combien de contrôles du domaine D1 sont cotés OUI ?
+      a) Six
+      b) Trois
+      c) Zéro
+      d) Un
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. La revue périodique est une étape du cycle de vie d'un compte.
+      Vrai / Faux
+
+22. La cellule informatique peut attribuer des profils sans demande.
+      Vrai / Faux
+
+23. Un compte à privilèges peut effacer ses propres traces.
+      Vrai / Faux
+
+24. Les listes à croiser peuvent dater de mois différents.
+      Vrai / Faux
+
+25. ENG et ORD figurent parmi les paires interdites du Tableau 2.6.
+      Vrai / Faux
+
+26. Le profil ADM associé à un profil métier est une combinaison interdite.
+      Vrai / Faux
+
+27. Une revue signée chaque semestre sur une liste saisie à la main est efficace.
+      Vrai / Faux
+
+28. L'audit de sécurité d'ensemble relève de l'ANTIC.
+      Vrai / Faux
+
+29. La déficience des accès prive de valeur les contrôles d'application.
+      Vrai / Faux
+
+30. Le domaine D1 du MINÉQUIR est au niveau 4, piloté.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le responsable métier qui décide des droits est le ______ de l'application.
+
+32. Un compte sans titulaire nominatif est un compte ______.
+
+33. Le profil d'administration de SIDÉPENSE est le profil ______.
+
+34. Combien de comptes génériques compte SIDÉPENSE ? ______
+
+35. Une combinaison de profils interdite sur un même compte crée un ______.
+
+36. Le profil qui émet le mandat est le profil ______.
+
+37. L'examen périodique et signé des droits est la revue des ______.
+
+38. La périodicité proposée pour la revue au MINÉQUIR est ______.
+
+39. Pour les profils sensibles, on peut exiger une authentification à deux ______.
+
+40. Le seul contrôle coté OUI du domaine D1 est la ______ des actions des comptes ADM.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

@@ -1,0 +1,304 @@
+% ============================================================================
+% Fichier  : partie5/P05_C14_cas_integrateur.tex
+% Titre    : Cas Intégrateur : la Mission e-RECETTES
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% J08, 2 h en salle, par équipes de 4 à 5 ; les 2 heures suivantes sont
+% offertes. Reprend les faits e-RECETTES de C10, C11, C13. Faits ajoutés :
+% profils e-RECETTES : FOMEKONG (ENC, ANN), TAGNE (ENC, ANN, VAL),
+% MBIDA (VER), numerika_adm (ADM, prestataire) ; recette totale 2025 :
+% 2 184 600 000 FCFA ; versements au Trésor : 2 171 950 000 FCFA (écart
+% 12 650 000 FCFA, non expliqué à la date de la mission).
+% Corrigé détaillé : livret (corriges/Corr_C14.tex).
+% ============================================================================
+
+\chapter{Cas Intégrateur : la Mission e-RECETTES}
+\label{chap:cas-integrateur}
+\chaptermark{Cas intégrateur}
+
+\epigraph{%
+    « Une mission se juge à sa conclusion. »%
+}{Règle du cours}
+
+\niveauChapitre{Expert}{L'ensemble du cours.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Conduire, en équipe et en temps limité, une mission complète
+          d'évaluation du contrôle interne d'un système d'information
+          public.
+    \item Mobiliser le mandat, la matrice des risques et des contrôles, le
+          questionnaire, les tests et le classement des déficiences.
+    \item Rédiger au moins deux constats en cinq éléments.
+    \item Formuler et défendre oralement une conclusion sur l'efficacité du
+          contrôle interne.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Mode d'emploi}
+% ============================================================================
+
+Le cas se traite en salle, le dernier jour, en deux heures, par équipes de
+quatre ou cinq. Chaque équipe est une équipe de vérification du Contrôle
+Supérieur de l'État. Elle reçoit le dossier de la section~\ref{sec:c14-dossier},
+suit le déroulé de la section~\ref{sec:c14-deroule}, et restitue ses
+résultats oralement en dix minutes. Le formateur dispose du corrigé dans
+le livret de correction.
+
+\separateur
+
+% ============================================================================
+\section{Le mandat}
+\label{sec:c14-mandat}
+% ============================================================================
+
+\begin{tableaucours}{L{3.0cm}L{9.2cm}}{%
+    \tableauHeader{Rubrique} &
+    \tableauHeader{Ordre de mission}
+}
+Fondement & Décret n°~2013/287, art.~2, al.~3 et~4 \\
+Objectif & Le contrôle interne d'e-RECETTES garantit-il l'exhaustivité et
+la régularité des recettes de la recette des finances de Bafoussam~? \\
+Périmètre & e-RECETTES~; le contrat avec NUMÉRIKA~SARL~; les versements
+au Trésor \\
+Période & Exercice 2025 \\
+Livrables & Matrice des risques et des contrôles, cotations, tableau des
+déficiences, deux constats, conclusion \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.1. Ordre de mission du cas
+intégrateur}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Le dossier}
+\label{sec:c14-dossier}
+% ============================================================================
+
+\subsection*{Pièce 1. Fiche de l'entité}
+
+La recette des finances de Bafoussam encaisse les recettes de l'État de
+son ressort. Depuis le 2~janvier~2025, les encaissements passent par
+e-RECETTES, livré par NUMÉRIKA~SARL au titre d'un marché de
+640\,000\,000~FCFA. 12\,400 contribuables y sont enregistrés. Trois agents
+utilisent l'application.
+
+\subsection*{Pièce 2. Profils d'e-RECETTES}
+
+\begin{tableaucours}{L{3.0cm}L{4.4cm}L{4.8cm}}{%
+    \tableauHeader{Compte} &
+    \tableauHeader{Fonction} &
+    \tableauHeader{Profils}
+}
+\texttt{fomekong.a} & Caissier & ENC (encaisser), ANN (annuler) \\
+\texttt{tagne.m} & Chef de la recette & ENC, ANN, VAL (valider la
+journée) \\
+\texttt{mbida.s} & Comptable & VER (verser au Trésor) \\
+\texttt{numerika\_adm} & Prestataire & ADM (administration) \\
+\end{tableaucours}
+
+\subsection*{Pièce 3. Réponses au questionnaire de contrôle interne}
+
+\begin{tableaucours}{L{6.0cm}L{6.2cm}}{%
+    \tableauHeader{Question} &
+    \tableauHeader{Réponse déclarée}
+}
+Les quittances sont-elles numérotées automatiquement et sans trou~? &
+«~Oui, l'application numérote.~» \\
+Une annulation exige-t-elle une validation~? & «~Le chef valide la
+journée.~» \\
+Les encaissements sont-ils rapprochés des versements~? & «~Chaque fin de
+mois.~» \\
+Les changements de l'application sont-ils approuvés~? & «~NUMÉRIKA nous
+prévient.~» \\
+Les sauvegardes sont-elles testées~? & «~NUMÉRIKA s'en occupe.~» \\
+\end{tableaucours}
+
+\subsection*{Pièce 4. Résultats d'extractions (faites devant l'équipe)}
+
+\begin{itemize}
+    \item Quittances 2025~: Q-000001 à Q-018640~; 37 numéros absents.
+    \item Annulations~: 112, dont 61 par \texttt{fomekong.a}~; aucune
+          validation d'un second agent n'est enregistrée.
+    \item Recettes encaissées en 2025~: 2\,184\,600\,000~FCFA~; versements
+          au Trésor~: 2\,171\,950\,000~FCFA.
+    \item Aucune trace d'un rapprochement mensuel.
+\end{itemize}
+
+\subsection*{Pièce 5. Journaux techniques}
+
+\begin{itemize}
+    \item 14 mises en production en 2025, dont 11 sans demande écrite.
+    \item 9~septembre~2025~: modification directe du taux de pénalité par
+          \texttt{numerika\_adm}.
+    \item Sauvegardes~: 23 échecs, dont 6 consécutifs~; aucune
+          restauration testée.
+\end{itemize}
+
+\subsection*{Pièce 6. Contrat et réception}
+
+\begin{itemize}
+    \item Ni propriété des données, ni réversibilité, ni droit d'audit~;
+          hébergement hors du pays.
+    \item Procès-verbal de réception du 15~janvier~2025~: 47 anomalies
+          ouvertes, dont 9 bloquantes.
+    \item Aucun audit de sécurité de l'ANTIC.
+\end{itemize}
+
+\subsection*{Pièce 7. Réponses des répondants (instrument OUI / NON / NEK)}
+
+Cinq questions par domaine, posées à quatre fonctions (chef de la recette,
+caissier, comptable, correspondant de NUMÉRIKA), soit vingt réponses par
+domaine.
+
+\begin{tableaucours}{L{5.0cm}ccc}{%
+    \tableauHeader{Domaine} &
+    \tableauHeader{\OUI{}} & \tableauHeader{\NON{}} & \tableauHeader{\NEK{}}
+}
+R1 Encaissement, quittances, annulations & 9 & 4 & 7 \\
+R2 Accès et changements & 6 & 7 & 7 \\
+R3 Sauvegardes et continuité & 3 & 9 & 8 \\
+\end{tableaucours}
+
+\separateur
+
+% ============================================================================
+\section{Le déroulé}
+\label{sec:c14-deroule}
+% ============================================================================
+
+\begin{tableaucours}{L{2.0cm}L{5.4cm}L{4.8cm}}{%
+    \tableauHeader{Temps} &
+    \tableauHeader{Travail de l'équipe} &
+    \tableauHeader{Chapitres mobilisés}
+}
+0 -- 10 min & Lire le mandat~; répartir les rôles (chef de mission,
+rédacteur, deux testeurs) & \ref{chap:institutions},
+\ref{chap:preparer} \\
+10 -- 30 min & Construire la matrice des risques et des contrôles
+(au moins 10 lignes) & \ref{chap:eval-sci}, \ref{chap:applications} \\
+30 -- 50 min & Confronter le QCI aux pièces~; coter chaque contrôle~;
+calculer $\mu$, $U$, $H$ (pièce~7) et situer les domaines dans le quadrant
+& \ref{chap:preuve}, \ref{chap:constater} \\
+50 -- 65 min & Regrouper et classer les déficiences & \ref{chap:eval-sci} \\
+65 -- 85 min & Rédiger deux observations et la conclusion &
+\ref{chap:constater} \\
+85 -- 105 min & Restitution~: 5 à 7 minutes par équipe, questions du jury
+& tout le cours \\
+105 -- 120 min & Ouverture sur la recherche~: quel sujet de mémoire ce
+cas suggère-t-il~? & \ref{chap:recherche} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.2. Déroulé du cas en deux
+heures}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{La grille de restitution}
+\label{sec:c14-grille}
+% ============================================================================
+
+\begin{tableaucours}{L{7.8cm}c}{%
+    \tableauHeader{Critère} &
+    \tableauHeader{Points}
+}
+Le mandat est cité et l'objectif reformulé correctement & 2 \\
+La matrice part des risques et couvre accès, changements, exploitation,
+application, versements, prestataire & 4 \\
+Les cotes distinguent les déclarations (QCI) des preuves~; les trois
+domaines sont situés dans le quadrant & 3 \\
+Le classement identifie au moins une déficience majeure, et la justifie &
+4 \\
+Les deux observations ont leurs sept éléments et parlent de comptes, pas
+de personnes & 4 \\
+La conclusion porte sur un objectif, une période et un périmètre & 3 \\
+\textbf{Total} & \textbf{20} \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.3. Grille d'évaluation de la
+restitution}\end{center}
+
+\separateur
+
+% ============================================================================
+\section{Les erreurs fréquentes}
+\label{sec:c14-erreurs}
+% ============================================================================
+
+\begin{tableaucours}{L{5.8cm}L{6.4cm}}{%
+    \tableauHeader{Erreur} &
+    \tableauHeader{Ce qu'il fallait faire}
+}
+Conclure « conforme à 45~\% » sur R1 & $U = 0{,}35 \geq 0{,}20$~: le
+domaine est opaque~; aucune conclusion de conformité (règle~1) \\
+Coter \OUI{} la numérotation parce que l'application «~numérote~» &
+Partir des 37 numéros absents~: \NON{} \\
+Coter \NEK{} le rapprochement mensuel & Aucune trace~: l'absence d'une
+trace exigée est un \NON{} \\
+Écrire «~M.~FOMEKONG détourne des recettes~» & Constater la
+concentration des annulations sur un compte, sans validation \\
+Conclure sur la sécurité d'ensemble & Rester dans l'objectif~; signaler
+l'absence d'audit de l'ANTIC \\
+Additionner les \NON{} comme autant de déficiences & Regrouper par cause
+(accès, changements, projet) \\
+Oublier l'écart de 12\,650\,000~FCFA & C'est l'effet chiffré le plus
+direct sur l'objectif d'exhaustivité \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~14.4. Grille des erreurs
+fréquentes}\end{center}
+
+\begin{boxmetier}{Vérificateur}
+Dans un vrai dossier, l'écart entre recettes encaissées et versements
+appellerait une note de faits distincte du rapport
+(Chapitre~\ref{chap:constater})~: c'est une suite possible devant le CDBF.
+\end{boxmetier}
+
+\begin{boxmetier}{Juge des comptes}
+L'écart entre encaissements et versements concerne directement le compte
+du comptable~: il sera examiné, par extension, à travers les comptes
+produits par e-RECETTES.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Une mission complète} tient en six gestes~: mandat,
+          matrice, cotation, classement, constats, conclusion.
+    \item \textbf{Le QCI se confronte aux pièces}~; une déclaration ne vaut
+          pas preuve.
+    \item \textbf{Les déficiences se regroupent par cause.}
+    \item \textbf{La conclusion se défend}~: objectif, période, périmètre,
+          travaux.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.1. La matrice \niveaumoyen}]
+Construisez la matrice des risques et des contrôles d'e-RECETTES (au moins
+dix lignes), à partir des pièces du dossier.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.2. Les déficiences \niveauexpert}]
+Regroupez les contrôles cotés \NON{} en déficiences, classez-les avec la
+grille du Chapitre~\ref{chap:eval-sci}, et justifiez chaque déficience
+majeure.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~14.3. La conclusion \niveauexpert}]
+Rédigez la conclusion de la mission et le premier paragraphe de la
+synthèse du rapport.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} La mission est complète. Le
+Chapitre~\ref{chap:recherche} remonte aux fondements de la méthode, le
+programme de recherche de l'auditologie, et ouvre des pistes de mémoire
+pour les auditeurs qui voudront contribuer à le tester.
+\end{boxinfo}

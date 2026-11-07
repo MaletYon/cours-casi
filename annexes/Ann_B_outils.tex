@@ -1,0 +1,57 @@
+%% ============================================================================
+%% Fichier  : annexes/Ann_B_outils.tex
+%% Titre    : Référentiel des Outils
+%% Version  : 0.1 -- novembre 2026
+%% ============================================================================
+
+\chapter{Référentiel des Outils}
+\label{ann:outils}
+
+Le cours ne demande qu'un tableur (Excel ou LibreOffice Calc) et l'outil de
+calcul d'empreinte du système. Les formules sont données avec les noms
+français des fonctions et le point-virgule comme séparateur.
+
+\section*{Intégrité des fichiers}
+
+\begin{tableaucours}{L{3.6cm}L{8.6cm}}{%
+    \tableauHeader{Besoin} &
+    \tableauHeader{Commande}
+}
+Empreinte sous Windows & \texttt{certutil -hashfile fichier.csv SHA256} \\
+Empreinte sous Linux & \texttt{sha256sum fichier.csv} \\
+Vérifier un manifeste & \texttt{sha256sum -c MANIFESTE\_SHA256.txt} \\
+\end{tableaucours}
+
+\section*{Formules de tableur}
+
+\begin{tableaucours}{L{3.8cm}L{5.8cm}L{2.6cm}}{%
+    \tableauHeader{Test} &
+    \tableauHeader{Formule} &
+    \tableauHeader{Chapitre}
+}
+Doublons sur une clé & \texttt{=NB.SI(\$F\$2:\$F\$9612;F2)} &
+\ref{chap:prologue} \\
+Tirage aléatoire & \texttt{=ALEA()} puis tri, valeurs figées &
+\ref{chap:preuve} \\
+Existence dans une autre liste & \texttt{=SIERREUR(RECHERCHEV(A2;
+PERSONNEL!\$A:\$D;4;FAUX);"ABSENT")} & \ref{chap:acces} \\
+Conflit de profils & \texttt{=SI(ET(C2=1;D2=1);"CONFLIT";"")} &
+\ref{chap:acces} \\
+Suite d'échecs & \texttt{=SI(B2="ECHEC";C1+1;0)} puis
+\texttt{=MAX(C:C)} & \ref{chap:exploitation} \\
+Seuil sans visa & \texttt{=SI(ET(F2>50000000;G2<>"OUI");"SANS VISA";"")} &
+\ref{chap:applications} \\
+Âge & \texttt{=DATEDIF(C2;DATE(2025;12;31);"y")} &
+\ref{chap:donnees-fraude} \\
+Premier chiffre & \texttt{=GAUCHE(TEXTE(A2;"0");1)*1} &
+\ref{chap:donnees-fraude} \\
+Proportion de Benford & \texttt{=LOG10(1+1/d)} & \ref{chap:donnees-fraude}
+\\
+\end{tableaucours}
+
+\section*{NDAP SUKULU}
+
+Les labs se font dans le bureau d'analyse de NDAP SUKULU, ouvert dans le
+navigateur. Il contient un tableur, un éditeur de texte et un terminal.
+Les pièces sont en lecture seule dans \texttt{preuves}~; on travaille sur
+la copie du dossier \texttt{travail}.

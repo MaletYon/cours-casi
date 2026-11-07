@@ -1,0 +1,548 @@
+% ============================================================================
+% Fichier  : partie1/P01_C02_systeme_controle_interne.tex
+% Titre    : Le Système de Contrôle Interne en Environnement Informatisé
+% Auteur   : MINKA MI NGUIDJOÏ Thierry Emmanuel
+% Version  : 0.1 -- novembre 2026
+% ============================================================================
+% Sources : COSO 2013, traduction IFACI (Normes) ; INF3226 C03 (resserré) ;
+% décret n° 2013/287 (art. 28). INTOSAI GOV 9100 cité sans citation
+% textuelle (texte absent du dossier Normes).
+% Faits MINÉQUIR : profils de SIDÉPENSE (P00) ; matrice de C09 à garder
+% cohérente : ENG (engagement), LIQ (liquidation), ORD (ordonnancement),
+% FRS (fichier des fournisseurs), ADM (administration des comptes).
+% ============================================================================
+
+\chapter{Le Système de Contrôle Interne en Environnement Informatisé}
+\label{chap:sci}
+\chaptermark{Le système de contrôle interne}
+
+\epigraph{%
+    « L'organisation est-elle sous contrôle~? »%
+}{Question à laquelle le Référentiel COSO veut permettre de répondre}
+
+\niveauChapitre{Fondamental}{Chapitre~\ref{chap:audit-public}.}
+
+\begin{boxobjectifs}
+\begin{itemize}
+    \item Définir le contrôle interne selon le COSO~2013 et en expliquer
+          les quatre idées clés.
+    \item Énoncer les trois catégories d'objectifs et les illustrer dans
+          une administration financière.
+    \item Présenter les cinq composantes et les dix-sept principes, et dire
+          ce que chacun exige du système d'information.
+    \item Classer un contrôle selon son moment (préventif, détectif,
+          correctif) et son mode (manuel, automatisé, semi-automatisé).
+    \item Distinguer les contrôles généraux informatiques des contrôles
+          d'application, et expliquer pourquoi les premiers conditionnent
+          les seconds.
+    \item Traduire la séparation entre ordonnateur et comptable, et entre
+          les étapes de la dépense, en profils d'une application.
+    \item Énoncer les limites du contrôle interne.
+\end{itemize}
+\end{boxobjectifs}
+
+\bigskip
+
+% ============================================================================
+\section*{Pourquoi ce chapitre}
+% ============================================================================
+
+Le prologue a posé une question~: qu'est-ce qui aurait dû empêcher le
+double paiement~? La réponse porte un nom, le \emph{système de contrôle
+interne}. Ce chapitre dit ce qu'il est~; le Chapitre~\ref{chap:eval-sci}
+dit comment l'évaluer. Ensemble, ils forment le cœur du cours~: tous les
+chapitres de la Partie~IV appliquent la même grille, domaine par domaine.
+
+\separateur
+
+% ============================================================================
+\section{Qu'est-ce que le contrôle interne~?}
+\label{sec:c02-definition}
+% ============================================================================
+
+\subsection{La définition du COSO}
+
+Le cadre de référence le plus utilisé au monde est celui du \sigle{COSO}
+(\textit{Committee of Sponsoring Organizations of the Treadway
+Commission}), dans sa version de 2013, traduite en français par
+l'IFACI~\cite{coso2013ic,coso2013icfr}.
+
+\begin{boxdef}
+\termecle{Contrôle interne}\index{contrôle interne}~: processus mis en
+œuvre par l'organe de gouvernance, la direction et le personnel, destiné à
+fournir une assurance raisonnable quant à la réalisation d'objectifs liés
+aux opérations, à l'information (\textit{reporting}) et à la conformité.
+
+\medskip
+\termecle{Système de contrôle interne}\index{système de contrôle interne}
+(\sigle{SCI})~: l'ensemble organisé des dispositifs de contrôle interne
+d'une entité, considéré comme un tout~; c'est lui que l'auditeur évalue.
+\end{boxdef}
+{\small\itshape Définition du contrôle interne reformulée d'après le
+COSO~2013.}
+
+\medskip
+
+La définition contient quatre idées, que l'auditeur public retrouve dans
+son propre métier.
+\begin{enumerate}
+    \item \textbf{Un processus, pas un document.} Un manuel de procédures
+          que personne n'applique n'est pas un contrôle interne.
+    \item \textbf{L'affaire de tous.} Il est porté par l'ordonnateur, le
+          chef de service, l'agent de saisie, l'informaticien, et pas
+          seulement par le contrôleur.
+    \item \textbf{Une assurance raisonnable.} Le coût d'un contrôle ne doit
+          pas dépasser le risque qu'il traite~; aucun dispositif n'empêche
+          tout.
+    \item \textbf{Des objectifs.} On ne contrôle pas «~en général~», mais
+          en vue d'objectifs précis~: sans objectif, pas de risque, et sans
+          risque, pas de contrôle à justifier.
+\end{enumerate}
+
+\subsection{Trois catégories d'objectifs}
+
+\begin{tableaucours}{L{2.6cm}L{4.6cm}L{5.0cm}}{%
+    \tableauHeader{Catégorie} &
+    \tableauHeader{Question} &
+    \tableauHeader{Exemple au MINÉQUIR}
+}
+Opérations & Les activités sont-elles efficaces, les ressources
+protégées~? & Chaque facture n'est payée qu'une fois, au bon
+créancier \\
+Information & L'information produite est-elle fiable~? & Le compte
+administratif reflète les mandats réellement émis \\
+Conformité & Les lois et règlements sont-ils respectés~? & Le circuit
+engagement, liquidation, ordonnancement, paiement est respecté \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.1. Les objectifs du contrôle
+interne}\end{center}
+
+\subsection{Le contrôle interne dans le secteur public}
+
+L'INTOSAI a adapté le cadre du COSO au secteur public dans ses lignes
+directrices INTOSAI~GOV~9100. Elles ajoutent deux préoccupations propres à
+l'administration~: la \textbf{protection des ressources publiques} contre
+la perte, le gaspillage et l'usage abusif, et la conduite des opérations
+dans le respect de l'\textbf{éthique} du service public. Le cours retient
+le COSO~2013 comme cadre de travail, parce qu'il est le plus récent et le
+seul dont le texte est dans le dossier des normes, et lit chaque principe
+avec ces deux préoccupations.
+
+Au Cameroun, l'évaluation des structures de contrôle interne est une
+mission écrite du CONSUPE.
+
+\begin{boxjuris}
+\textbf{\loicam{Décret n°~2013/287}, article~28, alinéa~1}~\cite{decret2013287consupe}~:
+les sections des divisions d'inspection sont chargées, chacune dans son
+domaine de compétence, \textit{« de la préparation et de l'exécution des
+opérations de vérification~; du suivi et de l'évaluation des activités
+des structures de contrôle interne~; de la tenue de la documentation
+technique et du fichier. »}
+
+\medskip
+\textbf{Portée pour l'audit.} Le vérificateur ne se contente pas de
+relever des irrégularités~: il évalue les dispositifs qui auraient dû les
+empêcher. L'article~27 place par ailleurs les systèmes d'information dans
+le champ d'une section de la division chargée des administrations
+publiques.
+\end{boxjuris}
+
+\separateur
+
+% ============================================================================
+\section{Cinq composantes, dix-sept principes}
+\label{sec:c02-coso}
+% ============================================================================
+
+Le COSO organise le contrôle interne en \textbf{cinq composantes},
+détaillées en \textbf{dix-sept principes}. Un dispositif n'est efficace
+que si les cinq composantes sont mises en place, fonctionnent, et
+fonctionnent conjointement~: une excellente activité de contrôle ne
+compense pas une direction qui la contourne.
+
+\begin{tableaucours}{L{3.2cm}cL{8.0cm}}{%
+    \tableauHeader{Composante} &
+    \tableauHeader{N°} &
+    \tableauHeader{Principe (reformulé)}
+}
+Environnement de contrôle & 1 & S'engager en faveur de l'intégrité et de
+l'éthique \\
+ & 2 & Faire surveiller le contrôle interne par une instance indépendante
+de la direction \\
+ & 3 & Définir les structures, les pouvoirs et les responsabilités \\
+ & 4 & Développer et retenir des personnes compétentes \\
+ & 5 & Faire rendre compte chacun de ses responsabilités de contrôle \\
+Évaluation des risques & 6 & Fixer des objectifs assez clairs pour en
+identifier les risques \\
+ & 7 & Identifier et analyser les risques \\
+ & 8 & Évaluer le risque de fraude \\
+ & 9 & Identifier et analyser les changements significatifs \\
+Activités de contrôle & 10 & Choisir et mettre en place des activités de
+contrôle qui réduisent les risques \\
+ & 11 & Choisir et mettre en place des contrôles généraux informatiques \\
+ & 12 & Déployer les contrôles par des politiques et des procédures \\
+Information et communication & 13 & Produire et utiliser une information
+pertinente et de qualité \\
+ & 14 & Communiquer en interne sur le contrôle interne \\
+ & 15 & Communiquer avec les tiers \\
+Pilotage & 16 & Conduire des évaluations continues ou ponctuelles \\
+ & 17 & Évaluer les déficiences et les communiquer à temps \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.2. Les composantes et les principes
+du COSO~2013 (reformulation du cours)}\end{center}
+
+\subsection{Les principes vus depuis le système d'information}
+
+L'auditeur des SI lit chaque principe avec une question~: \emph{qu'est-ce
+que ce principe exige du système d'information, et quelle pièce le
+prouve~?} Le Tableau~2.3 en donne la réponse pour une administration
+financière. C'est la base du questionnaire de contrôle interne du
+Chapitre~\ref{chap:eval-sci}.
+
+\begin{tableaucours}{cL{5.6cm}L{6.0cm}}{%
+    \tableauHeader{N°} &
+    \tableauHeader{Ce que le principe exige du SI} &
+    \tableauHeader{Pièce que l'auditeur peut demander}
+}
+1 & Une charte d'usage des outils informatiques, connue des agents &
+Charte, accusés de réception \\
+2 & Une instance qui examine les risques informatiques & Comptes rendus du
+comité de direction ou d'un comité dédié \\
+3 & Des rôles écrits pour la cellule informatique et les propriétaires
+d'application & Organigramme, décisions de nomination, délégations \\
+4 & Des compétences informatiques entretenues & Plan de formation \\
+5 & Des propriétaires d'application qui valident les droits & Revues des
+habilitations signées \\
+6 & Des objectifs écrits de disponibilité et de sécurité & Schéma
+directeur, politique de sécurité \\
+7 & Une analyse des risques informatiques & Cartographie des risques \\
+8 & Une analyse des fraudes possibles par le système & Scénarios de
+fraude (Chapitre~\ref{chap:donnees-fraude}) \\
+9 & L'analyse des changements majeurs (nouvelle application, migration)
+& Dossier de mise en service \\
+10 & Des contrôles dans les applications & Paramétrage, contrôles
+bloquants \\
+11 & Des contrôles généraux informatiques & Accès, changements,
+exploitation (section~\ref{sec:c02-cgi}) \\
+12 & Des procédures informatiques écrites et appliquées & Procédures,
+preuves d'exécution \\
+13 & Des données fiables pour le pilotage & Rapprochements, contrôles de
+qualité \\
+14 & Une communication interne sur les règles & Notes de service \\
+15 & Des échanges fiables avec les tiers (banques, trésor, prestataires)
+& Conventions d'échange, contrats \\
+16 & Une surveillance des contrôles & Tableaux de bord, revues
+périodiques \\
+17 & Un suivi des déficiences & Plan d'action, suivi des
+recommandations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.3. Les dix-sept principes vus
+depuis le système d'information}\end{center}
+
+\begin{boxinfo}
+\textbf{Le principe~11 concerne directement l'auditeur des SI.} Le COSO
+y demande de choisir et de mettre en place des contrôles généraux sur les
+technologies~: les accès, les changements, l'exploitation. Les
+Chapitres~\ref{chap:acces} et~\ref{chap:exploitation} les évaluent.
+\end{boxinfo}
+
+\separateur
+
+% ============================================================================
+\section{Classer les contrôles}
+\label{sec:c02-types}
+% ============================================================================
+
+\subsection{Selon le moment}
+
+\begin{boxdef}
+\termecle{Contrôle préventif}\index{contrôle préventif}~: empêche
+l'anomalie de se produire (SIDÉPENSE refuse un engagement supérieur au
+crédit disponible).
+
+\medskip
+\termecle{Contrôle détectif}\index{contrôle détectif}~: repère l'anomalie
+après coup (la revue mensuelle des mandats émis hors des heures de
+service).
+
+\medskip
+\termecle{Contrôle correctif}\index{contrôle correctif}~: corrige
+l'anomalie et ses effets (le recouvrement d'un paiement indu).
+\end{boxdef}
+
+Un dispositif solide combine les trois. Le préventif est préférable,
+parce qu'il évite le dommage~; mais il peut être contourné, et seul le
+détectif révèle alors le contournement. Au MINÉQUIR, tous les contrôles
+préventifs du circuit ont manqué, et seuls deux contrôles détectifs ont
+fonctionné (Chapitre~\ref{chap:prologue}).
+
+\subsection{Selon le mode d'exécution}
+
+\begin{tableaucours}{L{2.8cm}L{4.6cm}L{4.8cm}}{%
+    \tableauHeader{Mode} &
+    \tableauHeader{Forces} &
+    \tableauHeader{Faiblesses}
+}
+Manuel (un visa) & Jugement humain, adaptable & Variable, oublié en fin
+de gestion, preuve souvent absente \\
+Automatisé (un blocage) & Constant, exhaustif & Ne vaut que si le
+paramétrage est protégé~; une erreur se répète à chaque opération \\
+Semi-automatisé (une liste d'anomalies examinée par un agent) & Combine
+exhaustivité et jugement & Dépend de l'exactitude de la liste et de la
+diligence de l'agent \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.4. Les modes d'exécution d'un
+contrôle}\end{center}
+
+\subsection{Selon la portée}
+
+\begin{boxdef}
+\termecle{Contrôles généraux informatiques}\index{contrôles généraux
+informatiques} (\sigle{CGI}, \textit{IT general controls})~: contrôles
+qui s'appliquent à l'environnement dans lequel les applications sont
+exploitées et maintenues~: gestion des accès, gestion des changements,
+exploitation (sauvegardes, traitements, incidents).
+
+\medskip
+\termecle{Contrôles d'application}\index{contrôles d'application}~:
+contrôles intégrés à une application, qui agissent sur les opérations~:
+contrôles de saisie, de traitement, d'interface et de sortie.
+\end{boxdef}
+
+\begin{boxalert}
+\textbf{Violation typique.} Constater que SIDÉPENSE refuse tout mandat
+supérieur au crédit disponible, et conclure que le contrôle budgétaire
+est efficace. Or un compte d'administration peut modifier le crédit
+directement dans la base, sans acte et sans trace.
+
+\smallskip
+\textbf{Règle~:} un contrôle d'application ne vaut que si les contrôles
+généraux qui le protègent (accès, changements) sont efficaces.
+L'auditeur les teste en premier.
+\end{boxalert}
+
+\separateur
+
+% ============================================================================
+\section{Les contrôles généraux informatiques}
+\label{sec:c02-cgi}
+% ============================================================================
+
+\begin{tableaucours}{L{2.6cm}L{5.0cm}L{4.6cm}}{%
+    \tableauHeader{Famille} &
+    \tableauHeader{Objectif} &
+    \tableauHeader{Contrôles typiques}
+}
+Accès & Seules les personnes autorisées accèdent aux applications et aux
+données, avec les seuls droits nécessaires & Création et retrait des
+comptes, revue des droits, comptes à privilèges \\
+Changements & Aucune modification de programme ou de paramètre n'est mise
+en service sans être demandée, testée et approuvée & Demande écrite,
+tests, approbation, journal des mises en service \\
+Exploitation & Les traitements s'exécutent comme prévu, les incidents sont
+traités, les données sont sauvegardées & Planification, suivi des
+incidents, sauvegardes testées \\
+Acquisition et développement & Les nouvelles applications répondent aux
+besoins et intègrent les contrôles & Cahier des charges, recette,
+réception \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.5. Les quatre familles de
+contrôles généraux informatiques}\end{center}
+
+L'ordre compte. Si les accès ne sont pas maîtrisés, n'importe qui peut
+modifier un paramètre~; si les changements ne le sont pas, un contrôle
+automatique peut être désactivé sans que personne ne le sache~; dans les
+deux cas, tester les contrôles d'application ne prouve plus rien. Le
+cours suit donc cet ordre~: accès (Chapitre~\ref{chap:acces}),
+changements et exploitation (Chapitre~\ref{chap:exploitation}), puis
+contrôles d'application (Chapitre~\ref{chap:applications}).
+
+\separateur
+
+% ============================================================================
+\section{Séparer les tâches dans une application}
+\label{sec:c02-separation}
+% ============================================================================
+
+\subsection{Du principe au profil}
+
+Le droit des finances publiques sépare l'ordonnateur, qui engage,
+liquide et ordonnance, du comptable, qui paie après contrôle~; il sépare
+aussi les étapes de la dépense~\cite{minfi2023regimefinancier}. Dans une
+administration informatisée, ces séparations n'existent que si
+l'application les impose.
+
+\begin{boxdef}
+\termecle{Séparation des tâches}\index{séparation des tâches}~: répartition
+des étapes d'une opération entre des personnes différentes, de sorte
+qu'aucune ne puisse à elle seule réaliser et dissimuler une irrégularité.
+
+\medskip
+\termecle{Profil}\index{profil}~: ensemble de droits attribué dans une
+application (créer un engagement, liquider, ordonnancer, modifier un
+RIB). Un utilisateur peut avoir plusieurs profils~: c'est leur
+combinaison qui crée, ou non, un conflit.
+\end{boxdef}
+
+\subsection{La matrice des profils de SIDÉPENSE}
+
+SIDÉPENSE connaît cinq profils~: ENG (engagement), LIQ (liquidation), ORD
+(ordonnancement), FRS (gestion du fichier des fournisseurs, dont les RIB)
+et ADM (administration des comptes). Le Tableau~2.6 indique les
+combinaisons qui ne doivent jamais être réunies sur un même compte.
+
+\begin{tableaucours}{L{2.2cm}L{4.4cm}L{5.6cm}}{%
+    \tableauHeader{Paire} &
+    \tableauHeader{Pourquoi elle est interdite} &
+    \tableauHeader{Ce qu'elle permet}
+}
+LIQ + ORD & L'ordonnancement contrôle la liquidation & Arrêter un montant et
+émettre seul le mandat \\
+FRS + ORD & Le RIB doit être fixé par un autre que celui qui émet le
+mandat & Changer le bénéficiaire puis le payer \\
+FRS + LIQ & Même raison, en amont & Créer un service fait au profit d'un
+compte choisi \\
+ADM + tout profil métier & L'administrateur peut s'attribuer n'importe
+quel droit & Contourner toutes les séparations \\
+\end{tableaucours}
+\vspace{-0.8em}
+\begin{center}{\small\itshape Tableau~2.6. Les paires de profils
+incompatibles dans SIDÉPENSE}\end{center}
+
+\begin{boxscenario}{Dossier MINÉQUIR. Le compte mbarga.j}
+\textbf{Constatation.} À la date du 28~décembre~2025, le compte
+\texttt{mbarga.j} détient les profils LIQ, ORD et FRS (matrice des
+profils extraite le 23~mars~2026).
+
+\medskip
+\textbf{Analyse} (confiance élevée). Le compte réunit les trois paires
+interdites du Tableau~2.6 qui ne demandent pas l'administration. Un seul
+compte suffisait pour modifier le RIB, liquider et ordonnancer~: le
+contrôle interne du circuit reposait entièrement sur la confiance en une
+personne, et cette personne n'était plus en poste.
+\end{boxscenario}
+
+\subsection{Quand on ne peut pas séparer}
+
+Dans un petit service, trois agents ne peuvent pas tenir cinq profils
+sans cumul. La pratique admet alors des \termecle{contrôles
+compensatoires}\index{contrôle compensatoire}~: une revue, par une
+personne indépendante, de toutes les opérations réalisées par un compte
+qui cumule des profils. Le contrôle compensatoire doit être écrit,
+exécuté et prouvé~; sinon, le cumul est une déficience.
+
+\separateur
+
+% ============================================================================
+\section{Les limites du contrôle interne}
+\label{sec:c02-limites}
+% ============================================================================
+
+Le COSO rappelle que le contrôle interne, même bien conçu, a des
+limites~\cite{coso2013icfr}. L'auditeur doit les connaître, pour ne pas
+reprocher à un dispositif ce qu'aucun dispositif ne peut empêcher, et pour
+savoir où chercher.
+
+\begin{itemize}
+    \item \textbf{Le jugement humain} peut être erroné~; les décisions
+          sont prises sous la contrainte du temps.
+    \item \textbf{Les défaillances} existent~: fatigue, erreur, oubli,
+          surtout en fin de gestion.
+    \item \textbf{La collusion} de deux personnes ou plus défait la
+          séparation des tâches.
+    \item \textbf{Le contournement par la direction}~: un responsable peut
+          passer outre un contrôle qu'il a lui-même mis en place.
+    \item \textbf{Les événements extérieurs} échappent à l'entité.
+\end{itemize}
+
+\begin{boxmetier}{Contrôleur financier}
+Le contrôle a priori que vous exercez est une activité de contrôle au sens
+du COSO (principe~10). S'il passe par SIDÉPENSE, demandez à voir le profil
+qui porte votre visa, et la liste des personnes qui le détiennent~: votre
+visa ne vaut que si personne d'autre ne peut l'apposer.
+\end{boxmetier}
+
+\begin{boxmetier}{Auditeur interne}
+Le COSO fait du pilotage (principes~16 et~17) une composante du contrôle
+interne~: votre propre travail en fait partie. Gardez une liste des
+déficiences que vous avez signalées et de leur suivi~; le vérificateur la
+demandera.
+\end{boxmetier}
+
+\separateur
+
+\begin{boxresume}
+\begin{itemize}
+    \item \textbf{Un processus orienté vers des objectifs.} Le contrôle
+          interne donne une assurance raisonnable sur les opérations,
+          l'information et la conformité.
+    \item \textbf{Cinq composantes, dix-sept principes.} Environnement,
+          risques, activités de contrôle, information et communication,
+          pilotage~; chacune doit être en place, fonctionner, et
+          fonctionner avec les autres.
+    \item \textbf{Chaque principe a une traduction informatique}, et une
+          pièce qui la prouve.
+    \item \textbf{Préventif, détectif, correctif~; manuel, automatisé,
+          semi-automatisé.} Un dispositif solide combine les modes.
+    \item \textbf{Les contrôles généraux d'abord.} Sans maîtrise des accès
+          et des changements, aucun contrôle d'application n'est fiable.
+    \item \textbf{La séparation se lit dans les profils.} Elle n'existe que
+          si l'application l'impose~; sinon, il faut un contrôle
+          compensatoire prouvé.
+    \item \textbf{Une mission écrite du CONSUPE.} Le décret n°~2013/287
+          (art.~28) le charge d'évaluer les structures de contrôle
+          interne.
+\end{itemize}
+\end{boxresume}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.1. Classer des contrôles \niveaubase}]
+Classez chaque contrôle selon son moment et son mode.
+\begin{enumerate}[(a)]
+    \item SIDÉPENSE refuse un engagement supérieur au crédit disponible.
+    \item Le chef de la liquidation signe chaque soir la liste des mandats
+          du jour, éditée par l'application.
+    \item Le poste comptable rejette un mandat dont la facture scannée est
+          illisible.
+    \item La DAF émet un ordre de reversement après un paiement indu.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.2. Composantes et principes \niveaubase}]
+Rattachez chacun des manques suivants, relevés au MINÉQUIR, à une
+composante et à un principe du COSO~: (a) aucune cartographie des risques
+de SIDÉPENSE~; (b) aucune procédure de désactivation des comptes lors des
+mutations~; (c) les anomalies de fin de gestion ne remontent jamais au
+directeur~; (d) la cellule informatique n'a aucune fiche de poste.
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.3. Une matrice des profils \niveaumoyen}]
+La DAF compte six utilisateurs de SIDÉPENSE~: ABENA (ENG), BELLO (LIQ,
+ORD), CHOUPO (LIQ), DJOMO (ORD, FRS), ESSOMBA (FRS), FOUDA (ADM).
+\begin{enumerate}[(a)]
+    \item Identifiez les comptes en conflit au regard du Tableau~2.6.
+    \item Proposez une nouvelle répartition sans conflit, sans créer de
+          compte.
+    \item Si une répartition sans conflit est impossible, décrivez le
+          contrôle compensatoire et la preuve qu'il doit laisser.
+\end{enumerate}
+\end{boxexo}
+
+\begin{boxexo}[title={\ding{45}\quad Exercice~2.4. Les contrôles généraux d'abord \niveauexpert}]
+Le chef de la cellule informatique vous montre que SIDÉPENSE bloque
+désormais les doublons (même fournisseur, même montant, même facture).
+Dites quels contrôles généraux vous devez tester avant de conclure que ce
+blocage est efficace pour toute l'année 2026, quelle pièce vous demandez
+pour chacun, et ce que vous concluez si l'une de ces pièces manque.
+\end{boxexo}
+
+\begin{boxinfo}
+\textbf{Transition.} Le contrôle interne est maintenant défini, composante
+par composante. Reste la question de l'auditeur~: comment savoir s'il est
+efficace~? Le Chapitre~\ref{chap:eval-sci} en donne la démarche, du
+questionnaire à la conclusion.
+\end{boxinfo}

@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C05
+Chapitre 5 : Normes et référentiels de l'auditeur public
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Une norme professionnelle dit :
+      a) Comment conduire la mission
+      b) À quoi comparer
+      c) Combien payer
+      d) Qui sanctionner
+
+ 2. Un référentiel comme COBIT s'impose à l'entité :
+      a) Toujours
+      b) Si un texte ou un engagement le rend obligatoire
+      c) Jamais
+      d) Seulement aux banques
+
+ 3. Le critère d'audit est choisi :
+      a) Après le test
+      b) Par l'audité
+      c) Avant le test
+      d) Au rapport final
+
+ 4. La source de critère la plus forte est :
+      a) Une bonne pratique
+      b) Un article de presse
+      c) L'avis du DAF
+      d) La loi ou le décret
+
+ 5. Face à une simple bonne pratique non adoptée, on écrit :
+      a) « L'entité ne dispose pas de..., alors que les bonnes pratiques recommandent... »
+      b) « Non conforme à ISO »
+      c) « Illégal »
+      d) Rien
+
+ 6. L'ISSAI 100 porte sur :
+      a) L'audit de sécurité
+      b) Les principes fondamentaux de l'audit du secteur public
+      c) La paie
+      d) Les marchés publics
+
+ 7. La norme de l'audit de conformité est l'ISSAI :
+      a) 200
+      b) 300
+      c) 4000
+      d) 27001
+
+ 8. Le GUID 5100 traite de :
+      a) L'audit financier des banques
+      b) La déontologie
+      c) La fraude
+      d) La vérification des systèmes d'information
+
+ 9. Combien de domaines le GUID 5100 énumère-t-il ?
+      a) Treize
+      b) Cinq
+      c) Quarante
+      d) Dix-sept
+
+10. Le manuel de l'IDI décrit l'audit de conformité comme une relation entre :
+      a) Deux parties
+      b) Trois parties
+      c) Quatre parties
+      d) Une seule partie
+
+11. Selon l'IDI, la documentation doit permettre :
+      a) De cacher les travaux
+      b) D'aller plus vite
+      c) À un auditeur expérimenté sans lien avec la mission de comprendre les travaux
+      d) De ne rien écrire
+
+12. L'auditeur interne suit les normes :
+      a) De l'ANTIC
+      b) Du COSO
+      c) De l'ISO 9001
+      d) De l'IIA
+
+13. L'IIA a remplacé l'édition 2017 de ses normes en :
+      a) 2024
+      b) 2019
+      c) 2010
+      d) 2030
+
+14. COBIT 2019 organise :
+      a) Dix-sept principes
+      b) Quarante objectifs en cinq domaines
+      c) Treize domaines
+      d) Quatre thèmes
+
+15. ISO/IEC 27002:2022 regroupe ses mesures en :
+      a) Cinq composantes
+      b) Treize domaines
+      c) Quatre thèmes
+      d) Quarante objectifs
+
+16. La loi n° 2024/017 porte sur :
+      a) La cybersécurité
+      b) Le régime financier
+      c) La Chambre des Comptes
+      d) La protection des données personnelles
+
+17. Une fiche de critère contient notamment :
+      a) La source exacte et la date de lecture
+      b) Le nom du coupable
+      c) Le budget de la mission
+      d) La note de l'étudiant
+
+18. L'exigence d'intégrité impose de :
+      a) Modifier les données pour les corriger
+      b) Ne jamais modifier une donnée de l'entité
+      c) Signer à la place de l'audité
+      d) Partager les extractions
+
+19. Un vérificateur qui a paramétré SIDÉPENSE ne doit pas l'auditer, par exigence :
+      a) De confidentialité
+      b) De compétence
+      c) D'indépendance
+      d) D'intégrité
+
+20. L'exigence de confidentialité impose de :
+      a) Publier les extractions
+      b) Garder les extractions sans limite
+      c) Envoyer la paie par courriel
+      d) Protéger les extractions et les détruire selon les règles
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. On peut être « non conforme » à une norme que l'entité n'a jamais adoptée.
+      Vrai / Faux
+
+22. Une règle interne de l'entité est un critère obligatoire pour elle.
+      Vrai / Faux
+
+23. Le CONSUPE fait partie des institutions supérieures de contrôle visées par l'INTOSAI.
+      Vrai / Faux
+
+24. Le GUID 5100 interdit l'audit des SI dans une mission financière.
+      Vrai / Faux
+
+25. Les normes de l'IIA et de l'INTOSAI convergent sur le critère, la preuve et la documentation.
+      Vrai / Faux
+
+26. Le cours reproduit intégralement les normes ISO.
+      Vrai / Faux
+
+27. Une politique de sécurité adoptée par l'entité rend ses mesures obligatoires pour elle.
+      Vrai / Faux
+
+28. La première contestation au contradictoire porte souvent sur le critère.
+      Vrai / Faux
+
+29. L'auditeur peut faire des essais dans l'application de production.
+      Vrai / Faux
+
+30. Un auditeur qui ne maîtrise pas un test technique se fait assister et le dit.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Une exigence de référence à laquelle on compare la situation est un ______.
+
+32. Les normes de l'INTOSAI portent le sigle ______.
+
+33. L'initiative de développement de l'INTOSAI a pour sigle ______.
+
+34. Les lignes directrices de l'INTOSAI portent le sigle ______.
+
+35. Le sigle de l'Institut des auditeurs internes est ______.
+
+36. COBIT est publié par l'______.
+
+37. La norme qui fixe les exigences d'un SMSI est ISO/IEC ______.
+
+38. La norme qui détaille les mesures de sécurité est ISO/IEC ______.
+
+39. Ne pas auditer ce que l'on a conçu relève de l'______.
+
+40. Protéger les données de paie extraites relève de la ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C10
+Chapitre 10 : Changements, exploitation et continuité
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Un changement est :
+      a) Toute modification d'un programme, d'un paramètre ou d'une base en production
+      b) Un changement de DAF
+      c) Une mutation d'agent
+      d) Un nouvel exercice
+
+ 2. La mise en production doit être faite par :
+      a) Le développeur lui-même
+      b) Une personne distincte du développeur
+      c) Le contribuable
+      d) L'auditeur
+
+ 3. Qui approuve un changement ?
+      a) Le prestataire
+      b) L'agent de saisie
+      c) Le propriétaire de l'application
+      d) Personne
+
+ 4. Combien de mises en production d'e-RECETTES en 2025 n'ont aucune demande écrite ?
+      a) Trois
+      b) Quatorze
+      c) Zéro
+      d) Onze
+
+ 5. L'écart le plus grave en gestion des changements est :
+      a) La modification directe en base hors mise en production
+      b) Un ticket mal rédigé
+      c) Une recette trop longue
+      d) Un test de trop
+
+ 6. Le 9 septembre 2025, le prestataire a modifié directement :
+      a) Le RIB d'un fournisseur
+      b) Le taux de pénalité de retard
+      c) Le budget
+      d) Un mot de passe
+
+ 7. Pour tester la gestion des changements, on rapproche :
+      a) Le budget et les recettes
+      b) Les comptes et le personnel
+      c) Les mises en production et les demandes
+      d) Les sauvegardes et les factures
+
+ 8. Les interfaces se contrôlent par :
+      a) Des entretiens
+      b) Des affiches
+      c) Des signatures manuelles
+      d) Des totaux de contrôle à l'émission et à la réception
+
+ 9. Le registre des incidents prouve que les incidents sont :
+      a) Enregistrés, analysés et clos
+      b) Inexistants
+      c) Secrets
+      d) Payés
+
+10. Une sauvegarde se prouve par :
+      a) Une déclaration du prestataire
+      b) Une restauration testée
+      c) Le prix du disque
+      d) Sa couleur
+
+11. Combien d'échecs de sauvegarde compte le journal 2025 d'e-RECETTES ?
+      a) 6
+      b) 14
+      c) 23
+      d) 365
+
+12. La plus longue suite d'échecs d'e-RECETTES dure :
+      a) 1 jour
+      b) 23 jours
+      c) 365 jours
+      d) 6 jours
+
+13. La plus longue suite d'échecs mesure :
+      a) La perte maximale de données courue sans le savoir
+      b) Le coût du prestataire
+      c) La vitesse du réseau
+      d) Le nombre d'agents
+
+14. La copie des sauvegardes d'e-RECETTES est :
+      a) Hors du site
+      b) Dans la salle du serveur
+      c) Chez l'ANTIC
+      d) Au Trésor
+
+15. La formule =SI(B2="ECHEC";C1+1;0) calcule :
+      a) Le total des recettes
+      b) Le nombre de jours de l'année
+      c) La longueur de la suite d'échecs en cours
+      d) L'empreinte
+
+16. Un PCA fixe notamment :
+      a) Le salaire du personnel
+      b) Le budget de l'année
+      c) La liste des fournisseurs
+      d) L'interruption et la perte de données maximales admissibles
+
+17. Le vérificateur, sur la continuité :
+      a) Vérifie qu'un plan existe, a été testé, et est compatible avec les sauvegardes
+      b) Conduit un audit ISO 22301 complet
+      c) Ignore le sujet
+      d) Rédige le PCA
+
+18. La recette des finances de Bafoussam a-t-elle un PCA ?
+      a) Oui, testé
+      b) Non
+      c) Oui, non testé
+      d) En cours d'audit ISO
+
+19. L'audit de sécurité de l'ANTIC d'e-RECETTES :
+      a) A eu lieu en 2025
+      b) Est annuel et à jour
+      c) N'a jamais été réalisé
+      d) Est publié
+
+20. Combien de contrôles du domaine D4 fonctionnent ?
+      a) Sept
+      b) Trois
+      c) Zéro
+      d) Un
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Un changement doit être testé par le métier avant la mise en production.
+      Vrai / Faux
+
+22. Une modification directe en base n'affecte pas la valeur des contrôles automatiques.
+      Vrai / Faux
+
+23. Trois mises en production d'e-RECETTES ont un procès-verbal de tests.
+      Vrai / Faux
+
+24. Les journaux doivent être activés, protégés et conservés.
+      Vrai / Faux
+
+25. Une sauvegarde jamais restaurée est un contrôle prouvé.
+      Vrai / Faux
+
+26. Aucune restauration d'e-RECETTES n'a été tentée.
+      Vrai / Faux
+
+27. Une copie sur un disque dans la salle du serveur protège contre un incendie de la salle.
+      Vrai / Faux
+
+28. Le vérificateur demande la date et le plan d'action du dernier audit de sécurité.
+      Vrai / Faux
+
+29. Le vérificateur refait lui-même l'audit de sécurité de l'ANTIC.
+      Vrai / Faux
+
+30. La déficience du domaine D4 d'e-RECETTES est majeure.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le prestataire d'e-RECETTES est la société ______.
+
+32. Le procès-verbal des tests du métier est le PV de ______.
+
+33. La liste des mises en production est tenue dans le ______ des mises en production.
+
+34. Les incidents sont enregistrés dans le ______ des incidents.
+
+35. Une sauvegarde ne se prouve que par une ______.
+
+36. La suite d'échecs d'e-RECETTES va du 14 au 19 ______ 2025.
+
+37. Le sigle du plan de continuité d'activité est ______.
+
+38. La norme de la continuité d'activité est ISO ______.
+
+39. Les données d'e-RECETTES sont hébergées hors du ______.
+
+40. Le seul contrôle qui fonctionne dans le domaine D4 est la ______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

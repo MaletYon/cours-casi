@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-P00
+Chapitre 0 : Prologue : le paiement du 28 décembre
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Quel montant la facture F-2025-117 du MINÉQUIR porte-t-elle ?
+      a) 187 450 000 FCFA
+      b) 18 745 000 FCFA
+      c) 1 874 500 000 FCFA
+      d) 87 450 000 FCFA
+
+ 2. Par quel compte le second mandat a-t-il été liquidé et ordonnancé ?
+      a) pc.fotso
+      b) admin
+      c) mbarga.j
+      d) atangana.p
+
+ 3. Quelle opération a précédé le second mandat, la veille au soir ?
+      a) Une annulation de crédit
+      b) La modification du RIB du fournisseur
+      c) La création d'un engagement
+      d) Une sauvegarde manuelle
+
+ 4. M. MBARGA avait été muté :
+      a) Le 28 décembre 2025
+      b) En janvier 2026
+      c) Il n'avait pas été muté
+      d) Le 14 août 2025
+
+ 5. Pourquoi l'inspection de janvier n'a-t-elle pas vu le second paiement ?
+      a) Elle a mal examiné les dossiers
+      b) Son échantillon était tiré dans les classeurs papier
+      c) Elle n'a examiné que les recettes
+      d) Le second mandat était dans un autre ministère
+
+ 6. Combien de mandats de décembre n'ont pas de dossier papier ?
+      a) Sept
+      b) Quarante
+      c) Un
+      d) 1 184
+
+ 7. La population d'un contrôle dans une administration informatisée est :
+      a) L'ensemble des classeurs
+      b) Les dossiers choisis par le DAF
+      c) L'ensemble des opérations enregistrées dans le système
+      d) Les 40 plus gros paiements
+
+ 8. Avant d'utiliser une extraction, la vérificatrice :
+      a) L'imprime
+      b) Assiste à l'extraction, calcule l'empreinte et rapproche les totaux
+      c) La fait envoyer par courriel
+      d) La corrige
+
+ 9. Le test des doublons porte d'abord sur :
+      a) Même fournisseur et même montant
+      b) Même date
+      c) Même agent
+      d) Même imputation
+
+10. Combien de paires de doublons le test renvoie-t-il ?
+      a) Une
+      b) Sept
+      c) Douze
+      d) Trois
+
+11. Le journal de SIDÉPENSE enregistre notamment :
+      a) Le salaire de l'agent
+      b) L'utilisateur, la date, l'heure et l'action
+      c) Le mot de passe
+      d) La météo
+
+12. L'identité de la personne qui a utilisé le compte mbarga.j est :
+      a) Établie par le journal
+      b) Établie par le DAF
+      c) Non établie à ce stade
+      d) Celle de M. FOTSO
+
+13. Sur les huit contrôles attendus, combien sont cotés OUI dans le prologue ?
+      a) Huit
+      b) Deux
+      c) Cinq
+      d) Zéro
+
+14. La cote NEK signifie :
+      a) Le contrôle n'existe pas
+      b) Le contrôle fonctionne
+      c) Connaissance insuffisante pour conclure
+      d) Le contrôle est sans objet
+
+15. Les deux contrôles qui ont fonctionné sont des contrôles :
+      a) De détection
+      b) De prévention
+      c) De correction
+      d) Budgétaires
+
+16. L'absence d'une trace que le contrôle devait produire vaut :
+      a) NEK
+      b) OUI
+      c) Sans objet
+      d) NON
+
+17. Quel texte donne au CONSUPE la compétence du contrôle des SI ?
+      a) La loi n° 2010/012
+      b) Le décret n° 2013/287
+      c) La loi n° 2024/017
+      d) Le code pénal
+
+18. Selon l'article 2, alinéa 4 du décret, les contrôles sont effectués :
+      a) Sur pièces et sur place
+      b) Uniquement sur pièces
+      c) Uniquement par courriel
+      d) À distance seulement
+
+19. Les trois réflexes du cours sont :
+      a) Le budget, la dépense, la recette
+      b) L'audit, le conseil, la formation
+      c) Le mandat, la preuve, le contradictoire
+      d) La loi, le décret, l'arrêté
+
+20. Pour un NEK, le papier de travail indique en plus :
+      a) Le nom du coupable
+      b) La pièce manquante et la relance
+      c) Le montant de la sanction
+      d) Rien de plus
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le second paiement a été fait sur le compte habituel de BATIRURAL.
+      Vrai / Faux
+
+22. Les opérations du 27 et du 28 décembre ont eu lieu hors des heures de service.
+      Vrai / Faux
+
+23. Les quarante dossiers examinés par l'inspection étaient complets.
+      Vrai / Faux
+
+24. Un échantillon tiré dans les classeurs couvre toutes les opérations du système.
+      Vrai / Faux
+
+25. Le test des doublons suffit à prouver une fraude.
+      Vrai / Faux
+
+26. Une constatation doit pouvoir être refaite par un tiers sur les mêmes pièces.
+      Vrai / Faux
+
+27. Tous les contrôles de prévention du circuit ont manqué.
+      Vrai / Faux
+
+28. Une pièce demandée et non encore reçue se cote NON.
+      Vrai / Faux
+
+29. L'ANTIC conduit les audits de sécurité des SI au titre de la loi n° 2010/012.
+      Vrai / Faux
+
+30. La Chambre des Comptes a une compétence écrite et explicite de contrôle des SI.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. L'application de dépense du MINÉQUIR s'appelle ______.
+
+32. Le fournisseur payé deux fois est la société ______.
+
+33. L'erreur de l'inspection n'est pas dans l'examen mais dans la ______.
+
+34. Le fichier qui enregistre les opérations sensibles s'appelle le ______.
+
+35. La facture du second mandat porte le suffixe « ______ ».
+
+36. Les trois cotes du cours sont OUI, NON et ______.
+
+37. L'ensemble des dispositifs qui donnent une assurance raisonnable s'appelle le contrôle ______.
+
+38. Le sigle du Contrôle Supérieur de l'État est ______.
+
+39. Soumettre les constatations à l'entité avant de conclure, c'est le ______.
+
+40. Une conclusion qui ne s'appuie pas sur une preuve conservée est une ______ personnelle.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

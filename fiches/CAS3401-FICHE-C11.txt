@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C11
+Chapitre 11 : Contrôles d'application de la dépense et de la recette
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Les quatre familles de contrôles d'application sont :
+      a) Saisie, traitement, interface, sortie
+      b) Accès, changements, exploitation, acquisition
+      c) Prévention, détection, correction, pilotage
+      d) Budget, dépense, recette, paie
+
+ 2. « Le total des mandats transmis est égal au total reçu » est un contrôle :
+      a) De saisie
+      b) D'interface
+      c) De sortie
+      d) De traitement
+
+ 3. La numérotation continue des quittances est un contrôle :
+      a) De saisie
+      b) D'interface
+      c) De sortie
+      d) D'accès
+
+ 4. Le contrôle « liquidation au plus égale à l'engagement » est un contrôle :
+      a) D'interface
+      b) De sortie
+      c) D'accès
+      d) De traitement
+
+ 5. La normalisation d'une donnée sert à :
+      a) Reconnaître comme égales deux valeurs qui désignent la même chose
+      b) Chiffrer la donnée
+      c) Supprimer la donnée
+      d) Imprimer la donnée
+
+ 6. Un contrôle de doublon sans normalisation se contourne :
+      a) Jamais
+      b) Par une lettre, comme « bis »
+      c) Par un visa
+      d) Par une sauvegarde
+
+ 7. Combien de numéros de quittance manquent dans e-RECETTES en 2025 ?
+      a) 112
+      b) 61
+      c) 37
+      d) 18 640
+
+ 8. Combien d'annulations a faites M. FOMEKONG ?
+      a) 112
+      b) 37
+      c) 6
+      d) 61
+
+ 9. La concentration des annulations sur un agent est :
+      a) Un indice qui justifie l'examen pièce par pièce
+      b) Une preuve de fraude
+      c) Sans intérêt
+      d) Un contrôle efficace
+
+10. Une annulation de quittance devrait exiger :
+      a) Rien
+      b) Un motif et la validation d'un second agent
+      c) L'accord du prestataire
+      d) Un audit de l'ANTIC
+
+11. Un essai unique suffit pour un contrôle automatique si :
+      a) Le DAF le confirme
+      b) Le prestataire le garantit
+      c) Les contrôles généraux sont efficaces
+      d) L'application est récente
+
+12. S'il n'existe pas d'environnement de test, on teste le contrôle :
+      a) En production
+      b) Par un entretien
+      c) On ne le teste pas
+      d) Par son résultat sur toute la population
+
+13. Combien de mandats du MINÉQUIR ont une liquidation supérieure à l'engagement ?
+      a) Zéro
+      b) Quatre
+      c) Trois
+      d) 212
+
+14. Combien de mandats de plus de 50 millions n'ont pas de visa du contrôle financier ?
+      a) Zéro
+      b) Quatre
+      c) 212
+      d) Trois
+
+15. Pourquoi la confiance reste moyenne sur le contrôle de la liquidation ?
+      a) Il a échoué
+      b) Les données sont fausses
+      c) Les accès n'étant pas maîtrisés, il a pu être désactivé
+      d) L'auditeur est novice
+
+16. Un seul cas trouvé dans la population que le contrôle aurait dû bloquer suffit à coter :
+      a) OUI
+      b) NEK
+      c) Sans objet
+      d) NON
+
+17. Le contrôle de doublon de SIDÉPENSE porte sur :
+      a) Le numéro de facture brut, sans normalisation
+      b) Le RIB
+      c) La date
+      d) Le montant arrondi
+
+18. Combien de contrôles d'application de SIDÉPENSE sur six fonctionnent ?
+      a) Un
+      b) Trois
+      c) Six
+      d) Zéro
+
+19. Un essai en production avec un « mandat fictif qu'on annulera » est :
+      a) Recommandé
+      b) Obligatoire
+      c) À refuser
+      d) Sans risque
+
+20. Zéro cas trouvé sur toute la population de l'année est :
+      a) Une absence de preuve
+      b) Un NEK
+      c) Une limitation d'étendue
+      d) Une preuve forte de fonctionnement
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Les contrôles d'application agissent sur les opérations.
+      Vrai / Faux
+
+22. Le visa du contrôle financier de SIDÉPENSE est bloquant.
+      Vrai / Faux
+
+23. L'imputation doit être cohérente avec la nature de la dépense.
+      Vrai / Faux
+
+24. Les 37 numéros absents prouvent un détournement.
+      Vrai / Faux
+
+25. e-RECETTES exige la validation d'un second agent pour une annulation.
+      Vrai / Faux
+
+26. L'essai d'un contrôle automatique se fait avec un paramétrage identique à la production.
+      Vrai / Faux
+
+27. Le contrôle de la liquidation a fonctionné toute l'année 2025.
+      Vrai / Faux
+
+28. Tester par la population est plus long mais sans risque pour l'entité.
+      Vrai / Faux
+
+29. Les contrôles d'application qui fonctionnent sont solides même si les accès sont défaillants.
+      Vrai / Faux
+
+30. Le blocage des doublons de SIDÉPENSE est coté OUI.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Les contrôles qui ne laissent entrer que des données valides sont des contrôles de ______.
+
+32. La transformation d'une donnée avant comparaison est la ______.
+
+33. Le seuil du visa du contrôle financier dans SIDÉPENSE est de 50 ______ FCFA.
+
+34. L'application de la recette des finances de Bafoussam s'appelle ______.
+
+35. La dernière quittance de 2025 porte le numéro Q-______.
+
+36. Le rapprochement quotidien relie les encaissements et les ______.
+
+37. Un contrôle d'application ne vaut que si les contrôles ______ informatiques sont efficaces.
+
+38. On teste un contrôle par son ______ quand l'essai est impossible.
+
+39. Combien de mandats de plus de 50 millions compte le MINÉQUIR en 2025 ? ______
+
+40. L'encadré du blocage des doublons porte le code C-APP-______.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................

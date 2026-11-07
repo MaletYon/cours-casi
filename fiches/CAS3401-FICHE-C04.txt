@@ -1,0 +1,233 @@
+NDAP SUKULU · CASI · fiche CAS3401-FICHE-C04
+Chapitre 4 : Qui contrôle les SI publics au Cameroun
+
+Version papier, à utiliser en attendant l'ouverture du portail NDAP SUKULU.
+La fiche complète compte 40 questions. Répondez sur la grille en fin de fiche.
+Durée indicative : 60 minutes. Seuil de réussite : 60 %.
+Les corrections figurent dans le livret de correction du cours.
+
+========================================================================
+Questions à choix multiple (une seule bonne réponse)
+========================================================================
+
+ 1. Les services du CONSUPE relèvent de l'autorité directe :
+      a) Du Président de la République
+      b) Du ministre des Finances
+      c) Du Premier ministre
+      d) De la Cour suprême
+
+ 2. Le CONSUPE est dirigé par :
+      a) Un magistrat
+      b) Un ministre délégué à la Présidence
+      c) Le DG de l'ANTIC
+      d) Un inspecteur général
+
+ 3. Selon l'article 2, alinéa 1, le CONSUPE est :
+      a) Une juridiction
+      b) Un régulateur des télécommunications
+      c) L'institution supérieure de contrôle des finances publiques
+      d) Une banque
+
+ 4. Le cinquième contrôle de l'article 2, alinéa 3 est :
+      a) Le contrôle budgétaire
+      b) Le contrôle des marchés
+      c) Le contrôle douanier
+      d) Le contrôle des systèmes d'information
+
+ 5. L'obligation de présenter les pièces vaut :
+      a) Nonobstant les contrôles des autres organes
+      b) Seulement en l'absence d'inspection
+      c) Si le DAF est d'accord
+      d) Uniquement pour les pièces papier
+
+ 6. La section qui couvre les systèmes d'information est créée par l'article :
+      a) 2
+      b) 27
+      c) 5
+      d) 56
+
+ 7. Le ministre délégué en charge du CONSUPE préside :
+      a) La Chambre des Comptes
+      b) L'ANTIC
+      c) Le conseil de discipline budgétaire et financière
+      d) Le conseil des ministres
+
+ 8. L'article 5 impose aux structures d'audit interne :
+      a) De détruire leurs rapports
+      b) De publier leurs rapports dans la presse
+      c) De ne rien transmettre
+      d) De transmettre leurs rapports au CONSUPE
+
+ 9. Le rapport de M. HAMADOU sur la paie de la CAPNO est transmis au CONSUPE en vertu de l'article :
+      a) 5
+      b) 28
+      c) 32
+      d) 13
+
+10. L'audit de sécurité est défini par la loi n° 2010/012 à l'article :
+      a) 2
+      b) 4, point 9
+      c) 56
+      d) 27
+
+11. L'ANTIC s'assure de la régularité des audits de sécurité des SI :
+      a) Des seules banques
+      b) Des seuls opérateurs privés
+      c) Des organismes publics et des autorités de certification
+      d) Des particuliers
+
+12. Selon l'article 32, l'audit de sécurité est effectué :
+      a) Tous les dix ans
+      b) Une seule fois
+      c) Jamais
+      d) Chaque année ou lorsque les circonstances l'exigent
+
+13. Les rapports d'audit de sécurité sont :
+      a) Confidentiels et adressés au ministre chargé des Télécommunications
+      b) Publiés au Journal officiel
+      c) Remis à la presse
+      d) Affichés à l'entrée
+
+14. Pour l'audit de sécurité, le vérificateur demande au moins :
+      a) Le code source
+      b) La date, le périmètre et le plan d'action
+      c) Les mots de passe
+      d) Le salaire des auditeurs
+
+15. La Chambre des Comptes rencontre les SI :
+      a) Par une compétence écrite explicite
+      b) Jamais
+      c) Par extension, à travers les comptes qu'ils produisent
+      d) Par l'ANTIC
+
+16. Un écart entre deux états produits par la même application est le symptôme :
+      a) D'une bonne gestion
+      b) D'une erreur d'impression
+      c) D'un contrôle de sécurité réussi
+      d) D'un contrôle d'application ou d'interface défaillant
+
+17. Le contrôle financier exerce un contrôle :
+      a) A priori de la dépense
+      b) Juridictionnel
+      c) De sécurité
+      d) Fiscal
+
+18. Pour SIDÉPENSE, la question de l'ANTIC est :
+      a) La séparation LIQ et ORD est-elle imposée ?
+      b) Le système est-il sécurisé selon les normes ?
+      c) Le compte de gestion est-il sincère ?
+      d) Le DAF est-il compétent ?
+
+19. Un rapport d'un autre organe :
+      a) Remplace la preuve du vérificateur
+      b) Est ignoré
+      c) Oriente les tests sans remplacer la preuve
+      d) Interdit la mission
+
+20. Le vérificateur qui constate une faille de sécurité :
+      a) Conduit lui-même un audit de sécurité complet
+      b) L'ignore
+      c) La corrige lui-même
+      d) La consigne et la signale
+
+========================================================================
+Vrai ou faux
+========================================================================
+
+21. Le contrôle des SI est une compétence explicite du CONSUPE.
+      Vrai / Faux
+
+22. Une entité peut refuser une extraction parce que l'ANTIC l'a déjà auditée.
+      Vrai / Faux
+
+23. Le champ du CONSUPE couvre les entreprises publiques et parapubliques.
+      Vrai / Faux
+
+24. Un constat du vérificateur peut fonder une poursuite devant le CDBF.
+      Vrai / Faux
+
+25. L'ANTIC juge la régularité des opérations financières qui transitent par les SI.
+      Vrai / Faux
+
+26. L'absence d'audit de sécurité est un constat.
+      Vrai / Faux
+
+27. Le cours cite textuellement les articles de la loi sur la Chambre des Comptes.
+      Vrai / Faux
+
+28. Le visa du contrôle financier peut être un profil dans l'application.
+      Vrai / Faux
+
+29. Un audit de sécurité suffit à prouver que les contrôles d'accès d'une application sont efficaces.
+      Vrai / Faux
+
+30. Dès la prise de connaissance, le vérificateur demande les rapports d'audit interne.
+      Vrai / Faux
+
+========================================================================
+Textes à trous
+========================================================================
+
+31. Le décret qui organise le CONSUPE date du 4 septembre ______.
+
+32. Les contrôles du CONSUPE sont effectués sur pièces et sur ______.
+
+33. Le sigle du conseil de discipline budgétaire et financière est ______.
+
+34. Le CONSUPE est chargé de l'audit ______.
+
+35. La loi sur la cybersécurité et la cybercriminalité porte le numéro 2010/______.
+
+36. Le régulateur de la sécurité électronique au Cameroun est l'______.
+
+37. La Chambre des Comptes juge les comptes des comptables ______.
+
+38. Les structures d'audit interne transmettent leurs rapports au ______.
+
+39. S'appuyer sur un autre rapport sans ______ la preuve.
+
+40. Trois institutions, trois ______ sur un même système.
+
+========================================================================
+Grille de réponses   Nom : ............................  Matricule : ............
+========================================================================
+ 1. ............................................
+ 2. ............................................
+ 3. ............................................
+ 4. ............................................
+ 5. ............................................
+ 6. ............................................
+ 7. ............................................
+ 8. ............................................
+ 9. ............................................
+10. ............................................
+11. ............................................
+12. ............................................
+13. ............................................
+14. ............................................
+15. ............................................
+16. ............................................
+17. ............................................
+18. ............................................
+19. ............................................
+20. ............................................
+21. ............................................
+22. ............................................
+23. ............................................
+24. ............................................
+25. ............................................
+26. ............................................
+27. ............................................
+28. ............................................
+29. ............................................
+30. ............................................
+31. ............................................
+32. ............................................
+33. ............................................
+34. ............................................
+35. ............................................
+36. ............................................
+37. ............................................
+38. ............................................
+39. ............................................
+40. ............................................
